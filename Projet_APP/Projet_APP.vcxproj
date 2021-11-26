@@ -83,7 +83,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>Main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -126,11 +127,67 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormCli.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormCliSelec.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormCliSelecMod.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormCom.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormComSelec.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormComSelecMod.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormPerso.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormPersoSelec.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormPersoSelecMod.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormStat.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormSto.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormStoSelec.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormStoSelecMod.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="pch.h" />
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="MyFormCli.cpp" />
+    <ClCompile Include="MyFormCliSelec.cpp" />
+    <ClCompile Include="MyFormCliSelecMod.cpp" />
+    <ClCompile Include="MyFormCom.cpp" />
+    <ClCompile Include="MyFormComSelec.cpp" />
+    <ClCompile Include="MyFormComSelecMod.cpp" />
+    <ClCompile Include="MyFormPerso.cpp" />
+    <ClCompile Include="MyFormPersoSelec.cpp" />
+    <ClCompile Include="MyFormPersoSelecMod.cpp" />
+    <ClCompile Include="MyFormStat.cpp" />
+    <ClCompile Include="MyFormSto.cpp" />
+    <ClCompile Include="MyFormStoSelec.cpp" />
+    <ClCompile Include="MyFormStoSelecMod.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -145,7 +202,54 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <DependentUpon>MyForm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCli.resx">
+      <DependentUpon>MyFormCli.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCliSelec.resx">
+      <DependentUpon>MyFormCliSelec.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCliSelecMod.resx">
+      <DependentUpon>MyFormCliSelecMod.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCom.resx">
+      <DependentUpon>MyFormCom.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormComSelec.resx">
+      <DependentUpon>MyFormComSelec.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormComSelecMod.resx">
+      <DependentUpon>MyFormComSelecMod.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormPerso.resx">
+      <DependentUpon>MyFormPerso.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormPersoSelec.resx">
+      <DependentUpon>MyFormPersoSelec.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormPersoSelecMod.resx">
+      <DependentUpon>MyFormPersoSelecMod.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormStat.resx">
+      <DependentUpon>MyFormStat.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormSto.resx">
+      <DependentUpon>MyFormSto.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormStoSelec.resx">
+      <DependentUpon>MyFormStoSelec.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormStoSelecMod.resx">
+      <DependentUpon>MyFormStoSelecMod.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
