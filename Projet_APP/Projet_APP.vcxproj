@@ -127,6 +127,11 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="actualiserVilles.h" />
+    <ClInclude Include="cad.h" />
+    <ClInclude Include="client.h" />
+    <ClInclude Include="mapClient.h" />
+    <ClInclude Include="mapPersonnel.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -170,9 +175,15 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="pch.h" />
+    <ClInclude Include="personnel.h" />
     <ClInclude Include="Resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="actualiserVilles.cpp" />
+    <ClCompile Include="cad.cpp" />
+    <ClCompile Include="client.cpp" />
+    <ClCompile Include="mapPersonnel.cpp" />
+    <ClCompile Include="personnel.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="MyFormCli.cpp" />
@@ -195,6 +206,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="Projet_APP.cpp" />
+    <ClCompile Include="mapClient.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />

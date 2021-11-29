@@ -1,6 +1,5 @@
 #pragma once
 
-
 namespace NS_Comp_Mappage_Personnel
 {
 	ref class mapPersonnel
@@ -18,7 +17,7 @@ namespace NS_Comp_Mappage_Personnel
 			System::String^ ville;
 			System::String^ codePostal;
 		}adressePersonnel;
-		array<int>^ dateEmbauche;
+		System::String^ dateEmbauche;
 		
 
 	public:
@@ -28,6 +27,7 @@ namespace NS_Comp_Mappage_Personnel
 		System::String^ supprimerPersonnel(void);
 		System::String^ afficherPersonnel(void);
 		System::String^ afficherToutPersonnel(void);
+		System::String^ afficherUnPersonnel(void);
 
 		
 		void setNom(System::String^);
@@ -35,7 +35,7 @@ namespace NS_Comp_Mappage_Personnel
 		void setIdPersonnel(int);
 		void setSuperieur(int);
 		void setAdressePersonnel(System::String^, System::String^, System::String^, System::String^);
-		void setDateEmbauche(int, int, int);
+		void setDateEmbauche(System::String^);
 		
 	};
 }

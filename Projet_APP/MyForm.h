@@ -85,19 +85,21 @@ namespace ProjetAPP {
 			// 
 			// btnGestPerso
 			// 
-			this->btnGestPerso->Location = System::Drawing::Point(12, 226);
+			this->btnGestPerso->Location = System::Drawing::Point(16, 278);
+			this->btnGestPerso->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnGestPerso->Name = L"btnGestPerso";
-			this->btnGestPerso->Size = System::Drawing::Size(201, 23);
+			this->btnGestPerso->Size = System::Drawing::Size(268, 28);
 			this->btnGestPerso->TabIndex = 0;
-			this->btnGestPerso->Text = L"Gestion Personnels";
+			this->btnGestPerso->Text = L"Gestion Personnel";
 			this->btnGestPerso->UseVisualStyleBackColor = true;
 			this->btnGestPerso->Click += gcnew System::EventHandler(this, &MyForm::Perso_Click);
 			// 
 			// btnExit
 			// 
-			this->btnExit->Location = System::Drawing::Point(12, 12);
+			this->btnExit->Location = System::Drawing::Point(16, 15);
+			this->btnExit->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnExit->Name = L"btnExit";
-			this->btnExit->Size = System::Drawing::Size(117, 23);
+			this->btnExit->Size = System::Drawing::Size(156, 28);
 			this->btnExit->TabIndex = 1;
 			this->btnExit->Text = L"Quitter l\'application ";
 			this->btnExit->UseVisualStyleBackColor = true;
@@ -105,19 +107,21 @@ namespace ProjetAPP {
 			// 
 			// btnSto
 			// 
-			this->btnSto->Location = System::Drawing::Point(12, 197);
+			this->btnSto->Location = System::Drawing::Point(16, 242);
+			this->btnSto->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnSto->Name = L"btnSto";
-			this->btnSto->Size = System::Drawing::Size(201, 23);
+			this->btnSto->Size = System::Drawing::Size(268, 28);
 			this->btnSto->TabIndex = 2;
-			this->btnSto->Text = L"Gestion Stocks";
+			this->btnSto->Text = L"Gestion Stock";
 			this->btnSto->UseVisualStyleBackColor = true;
 			this->btnSto->Click += gcnew System::EventHandler(this, &MyForm::Sto_Click);
 			// 
 			// btnCom
 			// 
-			this->btnCom->Location = System::Drawing::Point(12, 168);
+			this->btnCom->Location = System::Drawing::Point(16, 207);
+			this->btnCom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnCom->Name = L"btnCom";
-			this->btnCom->Size = System::Drawing::Size(201, 23);
+			this->btnCom->Size = System::Drawing::Size(268, 28);
 			this->btnCom->TabIndex = 3;
 			this->btnCom->Text = L"Gestion Commandes";
 			this->btnCom->UseVisualStyleBackColor = true;
@@ -125,9 +129,10 @@ namespace ProjetAPP {
 			// 
 			// btnCli
 			// 
-			this->btnCli->Location = System::Drawing::Point(12, 139);
+			this->btnCli->Location = System::Drawing::Point(16, 171);
+			this->btnCli->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnCli->Name = L"btnCli";
-			this->btnCli->Size = System::Drawing::Size(201, 23);
+			this->btnCli->Size = System::Drawing::Size(268, 28);
 			this->btnCli->TabIndex = 4;
 			this->btnCli->Text = L"Gestion Clients";
 			this->btnCli->UseVisualStyleBackColor = true;
@@ -135,9 +140,10 @@ namespace ProjetAPP {
 			// 
 			// btnStat
 			// 
-			this->btnStat->Location = System::Drawing::Point(402, 12);
+			this->btnStat->Location = System::Drawing::Point(536, 15);
+			this->btnStat->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnStat->Name = L"btnStat";
-			this->btnStat->Size = System::Drawing::Size(116, 23);
+			this->btnStat->Size = System::Drawing::Size(155, 28);
 			this->btnStat->TabIndex = 5;
 			this->btnStat->Text = L"Statistiques";
 			this->btnStat->UseVisualStyleBackColor = true;
@@ -145,9 +151,9 @@ namespace ProjetAPP {
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(530, 261);
+			this->ClientSize = System::Drawing::Size(707, 321);
 			this->Controls->Add(this->btnStat);
 			this->Controls->Add(this->btnCli);
 			this->Controls->Add(this->btnCom);
@@ -155,6 +161,7 @@ namespace ProjetAPP {
 			this->Controls->Add(this->btnExit);
 			this->Controls->Add(this->btnGestPerso);
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->Text = L"Acceuil";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);

@@ -1,44 +1,44 @@
 #pragma once
 
 //include
-#include "mapPersonnel.h"
-#include "cad.h"
+#include "mapClient.h"
+#include "cad.h"	
 
-namespace NS_Comp_Personnel{
-	ref class personnel
+namespace NS_Comp_Client {
+	ref class client
 	{
 	private:
 		NS_Comp_Data::cad^ oCad;
-		NS_Comp_Mappage_Personnel::mapPersonnel^ oMapPersonnel;
+		NS_Comp_Mappage_Client::mapClient^ oMapClient;
 		/*/
 		System::String^ nom;
 		System::String^ prenom;
-		int idPersonnel;
+		int idClient;
 		int superieur;
-		ref struct adressePersonnel {
+		ref struct adresseClient {
 			System::String^ numero;
 			System::String^ voie;
 			System::String^ ville;
 			System::String^ codePostal;
-		}adressePersonnel;
+		}adresseClient;
 		array<int>^ dateEmbauche;
 		/*/
 	public:
-		personnel(void);
+		client(void);
 		System::Data::DataSet^ afficherTout(System::String^);
-		void creer(System::String^, System::String^, int, System::String^, System::String^, System::String^, System::String^, System::String^);
+		void creer(System::String^, System::String^, System::String^);
 		void modifier(int, System::String^, System::String^, int, System::String^, System::String^, System::String^, System::String^, int, int, int);
 		void supprimer(int);
 		System::Data::DataSet^ afficherUn(System::String^, int);
 		//System::Data::DataSet^ afficher(int, System::String^, System::String^, int, System::String^, System::String^, System::String^, System::String^, int, int, int);
-		
+
 
 		/*/
 		void setNom(System::String^);
 		void setPrenom(System::String^);
-		void setIdPersonnel(int);
+		void setIdClient(int);
 		void setSuperieur(int);
-		void setAdressePersonnel(System::String^, System::String^, System::String^, System::String^);
+		void setAdresseClient(System::String^, System::String^, System::String^, System::String^);
 		void setDateEmbauche(int, int, int);/*/
 	};
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MyFormPersoSelecMod.h"
+#include "personnel.h"
 
 namespace ProjetAPP {
 
@@ -20,10 +21,13 @@ namespace ProjetAPP {
 		MyFormPersoSelec(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: ajoutez ici le code du constructeur
-			//
 		}
+
+	MyFormPersoSelec(System::String^ idPerso)
+	{
+		InitializeComponent();
+		this->idPerso = idPerso;
+	}
 
 	protected:
 		/// <summary>
@@ -42,10 +46,16 @@ namespace ProjetAPP {
 	private: System::Windows::Forms::Button^ btnModPerso;
 	private: System::Windows::Forms::DataGridView^ PersoView;
 	protected:
+	private: NS_Comp_Personnel::personnel^ oPersonnel;
+	private: System::Data::DataSet^ oDs;
+
+	private: System::String^ idPerso;
 
 
 	private: System::Windows::Forms::Button^ btnReturn;
 
+
+		   //private: MyFormPersoSelec();
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -68,9 +78,10 @@ namespace ProjetAPP {
 			// 
 			// btnSupPerso
 			// 
-			this->btnSupPerso->Location = System::Drawing::Point(93, 96);
+			this->btnSupPerso->Location = System::Drawing::Point(125, 163);
+			this->btnSupPerso->Margin = System::Windows::Forms::Padding(4);
 			this->btnSupPerso->Name = L"btnSupPerso";
-			this->btnSupPerso->Size = System::Drawing::Size(75, 23);
+			this->btnSupPerso->Size = System::Drawing::Size(100, 28);
 			this->btnSupPerso->TabIndex = 44;
 			this->btnSupPerso->Text = L"Supprimer";
 			this->btnSupPerso->UseVisualStyleBackColor = true;
@@ -78,9 +89,10 @@ namespace ProjetAPP {
 			// 
 			// btnModPerso
 			// 
-			this->btnModPerso->Location = System::Drawing::Point(12, 96);
+			this->btnModPerso->Location = System::Drawing::Point(17, 163);
+			this->btnModPerso->Margin = System::Windows::Forms::Padding(4);
 			this->btnModPerso->Name = L"btnModPerso";
-			this->btnModPerso->Size = System::Drawing::Size(75, 23);
+			this->btnModPerso->Size = System::Drawing::Size(100, 28);
 			this->btnModPerso->TabIndex = 43;
 			this->btnModPerso->Text = L"Modifier";
 			this->btnModPerso->UseVisualStyleBackColor = true;
@@ -89,17 +101,20 @@ namespace ProjetAPP {
 			// PersoView
 			// 
 			this->PersoView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->PersoView->Location = System::Drawing::Point(12, 41);
+			this->PersoView->Location = System::Drawing::Point(16, 50);
+			this->PersoView->Margin = System::Windows::Forms::Padding(4);
 			this->PersoView->Name = L"PersoView";
-			this->PersoView->Size = System::Drawing::Size(758, 49);
+			this->PersoView->RowHeadersWidth = 51;
+			this->PersoView->Size = System::Drawing::Size(1011, 91);
 			this->PersoView->TabIndex = 42;
 			this->PersoView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormPersoSelec::PersoView_Click);
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(12, 12);
+			this->btnReturn->Location = System::Drawing::Point(16, 15);
+			this->btnReturn->Margin = System::Windows::Forms::Padding(4);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(75, 23);
+			this->btnReturn->Size = System::Drawing::Size(100, 28);
 			this->btnReturn->TabIndex = 41;
 			this->btnReturn->Text = L"retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
@@ -107,13 +122,14 @@ namespace ProjetAPP {
 			// 
 			// MyFormPersoSelec
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(792, 142);
+			this->ClientSize = System::Drawing::Size(1056, 212);
 			this->Controls->Add(this->btnSupPerso);
 			this->Controls->Add(this->btnModPerso);
 			this->Controls->Add(this->PersoView);
 			this->Controls->Add(this->btnReturn);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyFormPersoSelec";
 			this->Text = L"MyFormPersoSelec";
 			this->Load += gcnew System::EventHandler(this, &MyFormPersoSelec::MyFormPersoSelec_Load);
@@ -121,23 +137,52 @@ namespace ProjetAPP {
 			this->ResumeLayout(false);
 
 		}
+
+
 #pragma endregion
 	private: System::Void MyFormPersoSelec_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->oPersonnel = gcnew NS_Comp_Personnel::personnel();
+		refreshTable();
 	}
 private: System::Void Return_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
 private: System::Void ModPerso_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->Hide();
-	MyFormPersoSelecMod^ Form = gcnew MyFormPersoSelecMod;
-	Form->ShowDialog();
-	this->Show();
+	if (this->PersoView->Rows[0]->Cells[1]->Value->ToString() == "False") {
+		MessageBox::Show(L"Un personnel inactif ne peut être modifié !", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+	else {
+		this->Hide();
+		MyFormPersoSelecMod^ Form = gcnew MyFormPersoSelecMod(this->idPerso);
+		Form->ShowDialog();
+		refreshTable();
+		this->Show();
+	}
 }
 private: System::Void SupPerso_Click(System::Object^ sender, System::EventArgs^ e) {	
+
 	//Requette de Supression Tu Connais
-	this->Close();
+	
+	this->oPersonnel->supprimer(System::Convert::ToInt64(this->idPerso));
+	if (this->PersoView->Rows[0]->Cells[1]->Value->ToString() == "False") {
+		MessageBox::Show(L"Ce personnel est déjà supprimé !", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+	else {
+		MessageBox::Show(L"Personnel supprimé !", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		this->Close();
+	}
+	
 }
 private: System::Void PersoView_Click(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
+	   public: void MyFormPersoSelec::refreshTable(void) {
+		   this->PersoView->Refresh();
+		   this->oDs = this->oPersonnel->afficherUn("fu", System::Convert::ToInt64(this->idPerso));
+		   this->PersoView->DataSource = this->oDs;
+		   this->PersoView->DataMember = "fu";
+	   }
 };
 }

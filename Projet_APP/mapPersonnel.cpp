@@ -3,13 +3,13 @@
 
 NS_Comp_Mappage_Personnel::mapPersonnel::mapPersonnel()
 {
-	this->dateEmbauche = gcnew array<int>(3);
+	//this->dateEmbauche = gcnew array<int>(3);
 }
 
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::creerPersonnel(void)
 {
-		return "INSERT INTO [test2].[dbo].[personnel] (personnelActif, nomPersonnel, prenomPersonnel, supHierarchique, adressePersonnel, dateEmbauche) SELECT 'true', '" + this->nom + "', '" + this->prenom + "', " + this->superieur + ", adresse.idAdresse, dates.idDate FROM adresse, dates, ville WHERE adresse.numeroRue = '" + this->adressePersonnel.numero + "' AND adresse.nomRue = '" + this->adressePersonnel.voie + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->adressePersonnel.ville + "' AND ville.codePostal = '" + this->adressePersonnel.codePostal + "' AND dates.date = '" + this->dateEmbauche[2] + "-" + this->dateEmbauche[1] + "-" + this->dateEmbauche[0] + "'; ";
+		return "INSERT INTO [test2].[dbo].[personnel] (personnelActif, nomPersonnel, prenomPersonnel, supHierarchique, adressePersonnel, dateEmbauche) SELECT 'true', '" + this->nom + "', '" + this->prenom + "', " + this->superieur + ", adresse.idAdresse, dates.idDate FROM adresse, dates, ville WHERE adresse.numeroRue = '" + this->adressePersonnel.numero + "' AND adresse.nomRue = '" + this->adressePersonnel.voie + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->adressePersonnel.ville + "' AND ville.codePostal = '" + this->adressePersonnel.codePostal + "' AND dates.date = '" + this->dateEmbauche +"'; ";
 }
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::modifierPersonnel(void)
@@ -19,12 +19,17 @@ System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::modifierPersonnel(void)
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::supprimerPersonnel(void)
 {
-	return "";
+	return "UPDATE personnel SET personnelActif = 'False' WHERE idPersonnel = " + this->idPersonnel + "; ";
 }
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::afficherPersonnel(void)
 {
 	return "";
+}
+
+System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::afficherUnPersonnel(void)
+{
+	return "SELECT * FROM personnel WHERE idPersonnel = "+ this->idPersonnel + "; ";
 }
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::afficherToutPersonnel(void)
@@ -58,10 +63,16 @@ void NS_Comp_Mappage_Personnel::mapPersonnel::setAdressePersonnel(System::String
 	this->adressePersonnel.codePostal = codePostal;
 }
 
-void NS_Comp_Mappage_Personnel::mapPersonnel::setDateEmbauche(int jour, int mois, int annee)
+void NS_Comp_Mappage_Personnel::mapPersonnel::setDateEmbauche(System::String^ dateEmbauche)
+{
+	this->dateEmbauche = dateEmbauche;
+}
+
+
+/*/void NS_Comp_Mappage_Personnel::mapPersonnel::setDateEmbauche(int jour, int mois, int annee)
 {
 	this->dateEmbauche[0] = jour;
 	this->dateEmbauche[1] = mois;
 	this->dateEmbauche[2] = annee;
 }
-
+/*/

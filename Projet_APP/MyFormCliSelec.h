@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MyFormCliSelecMod.h"
+#include "client.h"
 
 namespace ProjetAPP {
 
@@ -20,9 +21,12 @@ namespace ProjetAPP {
 		MyFormCliSelec(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: ajoutez ici le code du constructeur
-			//
+		}
+
+		MyFormCliSelec(System::String^ idClient)
+		{
+			InitializeComponent();
+			this->idClient = idClient;
 		}
 
 	protected:
@@ -42,6 +46,11 @@ namespace ProjetAPP {
 	private: System::Windows::Forms::Button^ btnSupCli;
 	private: System::Windows::Forms::Button^ btnModCli;
 	protected:
+
+	private: NS_Comp_Client::client^ oClient;
+	private: System::Data::DataSet^ oDs;
+
+	private: System::String^ idClient;
 
 	private:
 		/// <summary>
@@ -65,28 +74,32 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(12, 12);
+			this->btnReturn->Location = System::Drawing::Point(16, 15);
+			this->btnReturn->Margin = System::Windows::Forms::Padding(4);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(75, 23);
+			this->btnReturn->Size = System::Drawing::Size(100, 28);
 			this->btnReturn->TabIndex = 1;
-			this->btnReturn->Text = L"retour";
+			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormCliSelec::Return_Click);
 			// 
 			// CliView
 			// 
 			this->CliView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CliView->Location = System::Drawing::Point(12, 41);
+			this->CliView->Location = System::Drawing::Point(16, 50);
+			this->CliView->Margin = System::Windows::Forms::Padding(4);
 			this->CliView->Name = L"CliView";
-			this->CliView->Size = System::Drawing::Size(758, 49);
+			this->CliView->RowHeadersWidth = 51;
+			this->CliView->Size = System::Drawing::Size(1011, 94);
 			this->CliView->TabIndex = 2;
 			this->CliView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormCliSelec::CliView_Click);
 			// 
 			// btnSupCli
 			// 
-			this->btnSupCli->Location = System::Drawing::Point(93, 96);
+			this->btnSupCli->Location = System::Drawing::Point(124, 152);
+			this->btnSupCli->Margin = System::Windows::Forms::Padding(4);
 			this->btnSupCli->Name = L"btnSupCli";
-			this->btnSupCli->Size = System::Drawing::Size(75, 23);
+			this->btnSupCli->Size = System::Drawing::Size(100, 28);
 			this->btnSupCli->TabIndex = 40;
 			this->btnSupCli->Text = L"Supprimer";
 			this->btnSupCli->UseVisualStyleBackColor = true;
@@ -94,9 +107,10 @@ namespace ProjetAPP {
 			// 
 			// btnModCli
 			// 
-			this->btnModCli->Location = System::Drawing::Point(12, 96);
+			this->btnModCli->Location = System::Drawing::Point(16, 152);
+			this->btnModCli->Margin = System::Windows::Forms::Padding(4);
 			this->btnModCli->Name = L"btnModCli";
-			this->btnModCli->Size = System::Drawing::Size(75, 23);
+			this->btnModCli->Size = System::Drawing::Size(100, 28);
 			this->btnModCli->TabIndex = 39;
 			this->btnModCli->Text = L"Modifier";
 			this->btnModCli->UseVisualStyleBackColor = true;
@@ -104,13 +118,14 @@ namespace ProjetAPP {
 			// 
 			// MyFormCliSelec
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(782, 133);
+			this->ClientSize = System::Drawing::Size(1043, 193);
 			this->Controls->Add(this->btnSupCli);
 			this->Controls->Add(this->btnModCli);
 			this->Controls->Add(this->CliView);
 			this->Controls->Add(this->btnReturn);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyFormCliSelec";
 			this->Text = L"MyFormCliSelec";
 			this->Load += gcnew System::EventHandler(this, &MyFormCliSelec::MyFormCliSelec_Load);
@@ -120,21 +135,45 @@ namespace ProjetAPP {
 		}
 #pragma endregion
 	private: System::Void MyFormCliSelec_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->oClient = gcnew NS_Comp_Client::client();
+		refreshTable();
 	}
 	private: System::Void Return_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 	private: System::Void SupCli_Click(System::Object^ sender, System::EventArgs^ e) {
 		//Requette de Supression Tu Connais
-		this->Close();
+		if (this->CliView->Rows[0]->Cells[1]->Value->ToString() == "False") {
+			MessageBox::Show(L"Ce client est déjà supprimé !", L"Message",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+		else {
+			this->oClient->supprimer(System::Convert::ToInt64(this->idClient));
+			MessageBox::Show(L"Client supprimé !", L"Message",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			this->Close();
+		}
 	}
 	private: System::Void ModCli_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Hide();
-		MyFormCliSelecMod^ Form = gcnew MyFormCliSelecMod;
-		Form->ShowDialog();
-		this->Show();
+		if (this->CliView->Rows[0]->Cells[1]->Value->ToString() == "False") {
+			MessageBox::Show(L"Un client inactif ne peut être modifié !", L"Message",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+		else {
+			this->Hide();
+			MyFormCliSelecMod^ Form = gcnew MyFormCliSelecMod(this->idClient);
+			Form->ShowDialog();
+			refreshTable();
+			this->Show();
+		}
 	}
 	private: System::Void CliView_Click(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	}
+	public: void MyFormCliSelec::refreshTable(void) {
+		this->CliView->Refresh();
+		this->oDs = this->oClient->afficherUn("fu", System::Convert::ToInt64(this->idClient));
+		this->CliView->DataSource = this->oDs;
+		this->CliView->DataMember = "fu";
 	}
 
 };

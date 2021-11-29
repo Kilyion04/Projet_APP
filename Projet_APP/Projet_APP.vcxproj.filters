@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\client">
+      <UniqueIdentifier>{9b37ec1c-8d45-47ab-ab77-a2b1c7dc969b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\personnel">
+      <UniqueIdentifier>{668368a8-ed78-46e4-80db-d1b70cabafe4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\client">
+      <UniqueIdentifier>{fc2af3ee-ab9c-4b1f-a4f9-d7d68ee07437}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\personnel">
+      <UniqueIdentifier>{8b693ac1-e76a-4581-9cc5-435cf0e5dba4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\commande">
+      <UniqueIdentifier>{a9f980bf-a98c-418b-bd9e-b7cdad6dcd09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\stock">
+      <UniqueIdentifier>{47a393f0-2396-4f9b-9f2e-72de62f95822}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -26,52 +44,136 @@
     <ClInclude Include="pch.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="MyFormCreerPersonnel.h">
+    <ClInclude Include="MyForm.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormCli.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormCliSelec.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormCliSelecMod.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormCom.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormComSelec.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormComSelecMod.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormPerso.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormPersoSelec.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormPersoSelecMod.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormStat.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormSto.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormStoSelec.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormStoSelecMod.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="actualiserVilles.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="cad.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="personne.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="client.h">
+      <Filter>Fichiers d%27en-tête\client</Filter>
     </ClInclude>
-    <ClInclude Include="personnel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="mapClient.h">
+      <Filter>Fichiers d%27en-tête\client</Filter>
     </ClInclude>
     <ClInclude Include="mapPersonnel.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+      <Filter>Fichiers d%27en-tête\personnel</Filter>
     </ClInclude>
-    <ClInclude Include="actualiserVilles.h">
-      <Filter>Fichiers d%27en-tête</Filter>
+    <ClInclude Include="personnel.h">
+      <Filter>Fichiers d%27en-tête\personnel</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projet_APP.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="AssemblyInfom.cpp">
-      <Filter>Fichiers sources</Filter>
-    </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="MyFormCreerPersonnel.cpp">
+    <ClCompile Include="AssemblyInfo.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormStat.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="actualiserVilles.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="cad.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="personne.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="client.cpp">
+      <Filter>Fichiers sources\client</Filter>
     </ClCompile>
-    <ClCompile Include="personnel.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="mapClient.cpp">
+      <Filter>Fichiers sources\client</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormCli.cpp">
+      <Filter>Fichiers sources\client</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormCliSelec.cpp">
+      <Filter>Fichiers sources\client</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormCliSelecMod.cpp">
+      <Filter>Fichiers sources\client</Filter>
     </ClCompile>
     <ClCompile Include="mapPersonnel.cpp">
-      <Filter>Fichiers sources</Filter>
+      <Filter>Fichiers sources\personnel</Filter>
     </ClCompile>
-    <ClCompile Include="actualiserVilles.cpp">
-      <Filter>Fichiers sources</Filter>
+    <ClCompile Include="MyFormPerso.cpp">
+      <Filter>Fichiers sources\personnel</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormPersoSelec.cpp">
+      <Filter>Fichiers sources\personnel</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormPersoSelecMod.cpp">
+      <Filter>Fichiers sources\personnel</Filter>
+    </ClCompile>
+    <ClCompile Include="personnel.cpp">
+      <Filter>Fichiers sources\personnel</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormCom.cpp">
+      <Filter>Fichiers sources\commande</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormComSelec.cpp">
+      <Filter>Fichiers sources\commande</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormComSelecMod.cpp">
+      <Filter>Fichiers sources\commande</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormSto.cpp">
+      <Filter>Fichiers sources\stock</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormStoSelec.cpp">
+      <Filter>Fichiers sources\stock</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormStoSelecMod.cpp">
+      <Filter>Fichiers sources\stock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

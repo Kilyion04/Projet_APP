@@ -15,7 +15,7 @@ NS_Comp_Personnel::personnel::personnel(void)
 	
 }
 
-System::String^ NS_Comp_Personnel::personnel::creer(System::String^ nom, System::String^ prenom, int superieur, System::String^ numero, System::String^ voie, System::String^ ville, System::String^ codePostal , int jour, int mois, int annee)
+void NS_Comp_Personnel::personnel::creer(System::String^ nom, System::String^ prenom, int superieur, System::String^ numero, System::String^ voie, System::String^ ville, System::String^ codePostal ,System::String^ dateEmbauche)
 {
 	
 	System::String^ sql;
@@ -23,10 +23,10 @@ System::String^ NS_Comp_Personnel::personnel::creer(System::String^ nom, System:
 	this->oMapPersonnel->setPrenom(prenom);
 	this->oMapPersonnel->setSuperieur(superieur);
 	this->oMapPersonnel->setAdressePersonnel(numero, voie, ville, codePostal);
-	this->oMapPersonnel->setDateEmbauche(jour, mois, annee);
+	this->oMapPersonnel->setDateEmbauche(dateEmbauche);
 	sql = this->oMapPersonnel->creerPersonnel();
 	this->oCad->actionRows(sql);
-	return sql;
+	
 	
 }
 
@@ -37,7 +37,21 @@ void NS_Comp_Personnel::personnel::modifier(int idPersonnel,System::String^ nom,
 
 void NS_Comp_Personnel::personnel::supprimer(int idPersonnel)
 {
+	System::String^ sql;
 
+	this->oMapPersonnel->setIdPersonnel(idPersonnel);
+	sql = this->oMapPersonnel->supprimerPersonnel();
+	this->oCad->actionRows(sql);
+	
+}
+
+System::Data::DataSet^ NS_Comp_Personnel::personnel::afficherUn(System::String^ dataTableName, int idPerso)
+{
+	System::String^ sql;
+
+	this->oMapPersonnel->setIdPersonnel(idPerso);
+	sql = this->oMapPersonnel->afficherUnPersonnel();
+	return this->oCad->getRows(sql, dataTableName);
 }
 /*/
 System::Data::DataSet^ NS_Comp_Personnel::personnel::afficher(int idPersonnel, System::String^ nom, System::String^ prenom, int superieur, System::String^ numero, System::String^ voie, System::String^ ville, System::String^ codePostal, int jour, int mois, int annee)
