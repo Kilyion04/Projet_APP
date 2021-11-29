@@ -9,7 +9,7 @@ NS_Comp_Mappage_Personnel::mapPersonnel::mapPersonnel()
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::creerPersonnel(void)
 {
-		return "INSERT INTO [test2].[dbo].[personnel] (personnelActif, nomPersonnel, prenomPersonnel, supHierarchique, adressePersonnel, dateEmbauche) SELECT 'true', '" + this->nom + "', '" + this->prenom + "', " + this->superieur + ", adresse.idAdresse, dates.idDate FROM adresse, dates, ville WHERE adresse.numeroRue = '" + this->adressePersonnel.numero + "' AND adresse.nomRue = '" + this->adressePersonnel.voie + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->adressePersonnel.ville + "' AND ville.codePostal = '" + this->adressePersonnel.codePostal + "' AND dates.date = '" + this->dateEmbauche +"'; ";
+		return "IF ('"+ this->dateEmbauche+"' NOT IN (SELECT date FROM dates)) BEGIN INSERT INTO dates(date) VALUES('" + this->dateEmbauche + "'); END IF NOT EXISTS((SELECT nomRue, numeroRue, ville, codePostal FROM adresse, ville WHERE adresse.idVille = ville.idVille AND nomRue = '"+ this->adressePersonnel.voie +"' AND numeroRue = '"+ this->adressePersonnel.numero +"' AND ville = '"+ this->adressePersonnel.ville+"' AND codePostal = '"+ this->adressePersonnel.codePostal+"')) BEGIN INSERT INTO adresse(idVille, nomRue, numeroRue) SELECT idVille, '"+ this->adressePersonnel.voie+"', '"+ this->adressePersonnel.numero+"' FROM ville WHERE codePostal = '"+ this->adressePersonnel.codePostal+"' AND ville = '"+ this->adressePersonnel.ville+"'; END INSERT INTO[test2].[dbo].[personnel](personnelActif, nomPersonnel, prenomPersonnel, supHierarchique, adressePersonnel, dateEmbauche) SELECT 'true', '"+ this->nom+"', '"+ this->prenom+"', "+ this->superieur+", adresse.idAdresse, dates.idDate FROM adresse, dates, ville WHERE adresse.numeroRue = '"+ this->adressePersonnel.numero+"' AND adresse.nomRue = '"+ this->adressePersonnel.voie+"' AND adresse.iDville = ville.idVille AND ville.ville = '"+ this->adressePersonnel.ville+"' AND ville.codePostal = '"+ this->adressePersonnel.codePostal+"' AND dates.date = '"+ this->dateEmbauche+"';";
 }
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::modifierPersonnel(void)
@@ -34,7 +34,7 @@ System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::afficherUnPersonnel(voi
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::afficherToutPersonnel(void)
 {
-	return "SELECT * FROM [test2].[dbo].[personnel]";
+	return "SELECT idPersonnel, personnelActif, nomPersonnel, prenomPersonnel, supHierarchique, adresse.numeroRue, adresse.nomRue, ville.ville, ville.codePostal, dates.date AS dateEmbauche FROM [test2].[dbo].[personnel],adresse, ville, dates WHERE personnel.adressePersonnel = adresse.idAdresse AND adresse.idVille = ville.idVille AND personnel.dateEmbauche = dates.idDate; ";
 }
 
 void NS_Comp_Mappage_Personnel::mapPersonnel::setIdPersonnel(int idPersonnel)

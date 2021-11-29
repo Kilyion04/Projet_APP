@@ -17,4 +17,3 @@ namespace NS_Comp_Data
 		void actionRows(System::String^);
 	};
 }
-#pragma once

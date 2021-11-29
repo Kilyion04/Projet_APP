@@ -172,7 +172,7 @@ private: System::Void SupPerso_Click(System::Object^ sender, System::EventArgs^ 
 	else {
 		MessageBox::Show(L"Personnel supprimé !", L"Message",
 		MessageBoxButtons::OK, MessageBoxIcon::Warning);
-		this->Close();
+		refreshTable();
 	}
 	
 }

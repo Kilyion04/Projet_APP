@@ -216,7 +216,7 @@ namespace ProjetAPP {
 			// 
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(376, 391);
+			this->dateTimePicker1->Location = System::Drawing::Point(656, 243);
 			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(100, 22);
@@ -313,12 +313,12 @@ namespace ProjetAPP {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(372, 372);
+			this->label9->Location = System::Drawing::Point(653, 223);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(36, 16);
+			this->label9->Size = System::Drawing::Size(120, 16);
 			this->label9->TabIndex = 25;
-			this->label9->Text = L"Date";
+			this->label9->Text = L"Date de naissance";
 			// 
 			// groupBox1
 			// 
@@ -374,9 +374,9 @@ namespace ProjetAPP {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(705, 362);
+			this->button2->Location = System::Drawing::Point(694, 366);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(105, 51);
+			this->button2->Size = System::Drawing::Size(120, 26);
 			this->button2->TabIndex = 29;
 			this->button2->Text = L"Actualiser villes";
 			this->button2->UseVisualStyleBackColor = true;
@@ -385,7 +385,7 @@ namespace ProjetAPP {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(490, 392);
+			this->checkBox1->Location = System::Drawing::Point(763, 245);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(18, 17);
 			this->checkBox1->TabIndex = 30;
@@ -521,7 +521,7 @@ private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^
 	if (this->dataGridView1->Rows->Count == 1)
 	{
 		MessageBox::Show(L"Code postal incorrect !", L"Message",
-			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 	else
 	{

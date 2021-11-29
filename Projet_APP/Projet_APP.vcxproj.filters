@@ -104,6 +104,12 @@
     <ClInclude Include="personnel.h">
       <Filter>Fichiers d%27en-tête\personnel</Filter>
     </ClInclude>
+    <ClInclude Include="MyFormCliAdrLiv.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormCliAdrFac.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projet_APP.cpp">
@@ -174,6 +180,12 @@
     </ClCompile>
     <ClCompile Include="MyFormStoSelecMod.cpp">
       <Filter>Fichiers sources\stock</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormCliAdrFac.cpp">
+      <Filter>Fichiers sources\client</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormCliAdrLiv.cpp">
+      <Filter>Fichiers sources\client</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

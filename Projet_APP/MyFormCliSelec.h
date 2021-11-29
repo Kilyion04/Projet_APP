@@ -2,6 +2,8 @@
 
 #include "MyFormCliSelecMod.h"
 #include "client.h"
+#include "MyFormCliAdrLiv.h"
+#include "MyFormCliAdrFac.h"
 
 namespace ProjetAPP {
 
@@ -51,6 +53,8 @@ namespace ProjetAPP {
 	private: System::Data::DataSet^ oDs;
 
 	private: System::String^ idClient;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button1;
 
 	private:
 		/// <summary>
@@ -69,6 +73,8 @@ namespace ProjetAPP {
 			this->CliView = (gcnew System::Windows::Forms::DataGridView());
 			this->btnSupCli = (gcnew System::Windows::Forms::Button());
 			this->btnModCli = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CliView))->BeginInit();
 			this->SuspendLayout();
 			// 
@@ -116,11 +122,35 @@ namespace ProjetAPP {
 			this->btnModCli->UseVisualStyleBackColor = true;
 			this->btnModCli->Click += gcnew System::EventHandler(this, &MyFormCliSelec::ModCli_Click);
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(232, 152);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(175, 28);
+			this->button2->TabIndex = 42;
+			this->button2->Text = L"Adresse(s) de livraison";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &MyFormCliSelec::button2_Click);
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(415, 152);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(199, 28);
+			this->button1->TabIndex = 43;
+			this->button1->Text = L"Adresse(s) de facturation";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyFormCliSelec::button1_Click);
+			// 
 			// MyFormCliSelec
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1043, 193);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->button2);
 			this->Controls->Add(this->btnSupCli);
 			this->Controls->Add(this->btnModCli);
 			this->Controls->Add(this->CliView);
@@ -151,7 +181,7 @@ namespace ProjetAPP {
 			this->oClient->supprimer(System::Convert::ToInt64(this->idClient));
 			MessageBox::Show(L"Client supprimé !", L"Message",
 			MessageBoxButtons::OK, MessageBoxIcon::Warning);
-			this->Close();
+			refreshTable();
 		}
 	}
 	private: System::Void ModCli_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -169,12 +199,40 @@ namespace ProjetAPP {
 	}
 	private: System::Void CliView_Click(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
-	public: void MyFormCliSelec::refreshTable(void) {
+	private: void MyFormCliSelec::refreshTable(void) {
 		this->CliView->Refresh();
 		this->oDs = this->oClient->afficherUn("fu", System::Convert::ToInt64(this->idClient));
 		this->CliView->DataSource = this->oDs;
 		this->CliView->DataMember = "fu";
 	}
 
+private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->CliView->Rows[0]->Cells[1]->Value->ToString() == "False") {
+		MessageBox::Show(L"Un client inactif ne peut être modifié !", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+	else
+	{
+		this->Hide();
+		MyFormCliAdrLiv^ Form = gcnew MyFormCliAdrLiv(this->idClient);
+		Form->ShowDialog();
+		refreshTable();
+		this->Show();
+	}
+}
+private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->CliView->Rows[0]->Cells[1]->Value->ToString() == "False") {
+		MessageBox::Show(L"Un client inactif ne peut être modifié !", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+	else
+	{
+		this->Hide();
+		MyFormCliAdrFac^ Form = gcnew MyFormCliAdrFac(this->idClient);
+		Form->ShowDialog();
+		refreshTable();
+		this->Show();
+	}
+}
 };
 }

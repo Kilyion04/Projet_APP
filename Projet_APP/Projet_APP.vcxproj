@@ -138,6 +138,12 @@
     <ClInclude Include="MyFormCli.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyFormCliAdrFac.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormCliAdrLiv.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyFormCliSelec.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -183,6 +189,8 @@
     <ClCompile Include="cad.cpp" />
     <ClCompile Include="client.cpp" />
     <ClCompile Include="mapPersonnel.cpp" />
+    <ClCompile Include="MyFormCliAdrFac.cpp" />
+    <ClCompile Include="MyFormCliAdrLiv.cpp" />
     <ClCompile Include="personnel.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -225,6 +233,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyFormCli.resx">
       <DependentUpon>MyFormCli.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCliAdrFac.resx">
+      <DependentUpon>MyFormCliAdrFac.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormCliAdrLiv.resx">
+      <DependentUpon>MyFormCliAdrLiv.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyFormCliSelec.resx">
       <DependentUpon>MyFormCliSelec.h</DependentUpon>

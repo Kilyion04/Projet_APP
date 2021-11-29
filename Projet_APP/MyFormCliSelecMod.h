@@ -116,7 +116,6 @@ namespace ProjetAPP {
 			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->textBox5);
 			this->groupBox1->Controls->Add(this->label5);
-			this->groupBox1->Controls->Add(this->label8);
 			this->groupBox1->Controls->Add(this->textBox6);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label6);
@@ -159,7 +158,7 @@ namespace ProjetAPP {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(461, 20);
+			this->label8->Location = System::Drawing::Point(226, 166);
 			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(80, 16);
@@ -320,6 +319,7 @@ namespace ProjetAPP {
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->checkBox1);
+			this->Controls->Add(this->label8);
 			this->Controls->Add(this->btnReturn);
 			this->Controls->Add(this->btnModCli);
 			this->Controls->Add(this->groupBox1);
@@ -359,10 +359,15 @@ private: System::Void ModCli_Click(System::Object^ sender, System::EventArgs^ e)
 	//la requete SQL tu connais
 	System::String^ sql;
 
-	sql = "UPDATE client SET ";
+	if (this->checkBox1->Checked == true)
+	{
+		sql = "IF ('" + this->dateTimePicker1->Text + "' NOT IN (SELECT date FROM dates)) BEGIN INSERT INTO dates(date) VALUES('" + this->dateTimePicker1->Text + "'); END ";
+	}
+
+	sql += "UPDATE client SET ";
 	if (this->textBox2->Text != "") { sql += "nomClient = '" + this->textBox2->Text + "', "; }
 	if (this->textBox3->Text != "") { sql += "prenomClient = '" + this->textBox3->Text + "', "; }
-	if (this->checkBox1->Checked == true){sql += "dates.date = '" + this->dateTimePicker1->Text + "', ";}
+	if (this->checkBox1->Checked == true){sql += "dateNaissance = (SELECT idDate FROM dates WHERE date = '" + this->dateTimePicker1->Text + "'), ";}
 	sql += "clientActif = 'True' WHERE idClient = " + this->idClient +"; ";
 
 	this->oCad->actionRows(sql);

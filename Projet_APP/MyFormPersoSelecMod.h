@@ -330,6 +330,7 @@ namespace ProjetAPP {
 			this->checkBox1->Size = System::Drawing::Size(18, 17);
 			this->checkBox1->TabIndex = 47;
 			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyFormPersoSelecMod::checkBox1_CheckedChanged);
 			// 
 			// MyFormPersoSelecMod
 			// 
@@ -372,6 +373,9 @@ namespace ProjetAPP {
 		this->oDs = this->oPersonnel->afficherUn("fu", System::Convert::ToInt64(this->idPerso));
 		this->dataGridView1->DataSource = this->oDs;
 		this->dataGridView1->DataMember = "fu";
+
+		MessageBox::Show(L"N'oubliez pas d'entrer l'adresse complète pour la modifier.", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 
 	private: System::Void Return_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -380,16 +384,25 @@ namespace ProjetAPP {
 	private: System::Void ModCli_Click(System::Object^ sender, System::EventArgs^ e) {
 		//la requete SQL tu connais
 		System::String^ sql;
-
-		sql = "UPDATE personnel SET ";
+		
+		if(this->checkBox1->Checked == true)
+		{
+			sql = "IF ('" + this->dateTimePicker1->Text + "' NOT IN (SELECT date FROM dates)) BEGIN INSERT INTO dates(date) VALUES('" + this->dateTimePicker1->Text + "'); END ";
+		}
+		if (this->textBox5->Text != "" && this->textBox6->Text != "" && this->comboBox1->Text != "" && this->textBox7->Text != "")
+		{
+			sql += "IF NOT EXISTS((SELECT nomRue, numeroRue, ville, codePostal FROM adresse, ville WHERE adresse.idVille = ville.idVille AND nomRue = '" + this->textBox6->Text + "' AND numeroRue = '" + this->textBox5->Text + "' AND ville = '" + this->comboBox1->Text + "' AND codePostal = '" + this->textBox7->Text + "')) BEGIN INSERT INTO adresse(idVille, nomRue, numeroRue) SELECT idVille, '" + this->textBox6->Text + "', '" + this->textBox5->Text + "' FROM ville WHERE codePostal = '" + this->textBox7->Text + "' AND ville = '" + this->comboBox1->Text + "'; END ";
+		}
+		sql += "UPDATE personnel SET ";
 		if (this->textBox2->Text != "") { sql += "nomPersonnel = '" + this->textBox2->Text + "', "; }
 		if (this->textBox3->Text != "") { sql += "prenomPersonnel = '" + this->textBox3->Text + "', "; }
 		if (this->textBox4->Text != "") { sql += "supHierarchique = '" + this->textBox4->Text + "', "; }
-		if (this->textBox5->Text != "") { sql += "adresse.numeroRue = '" + this->textBox5->Text + "', "; }
-		if (this->textBox6->Text != "") { sql += "adresse.nomRue = '" + this->textBox6->Text + "', "; }
-		if (this->comboBox1->Text != "") { sql += "ville.ville = '" + this->comboBox1->Text + "', "; }
-		if (this->textBox7->Text != "") { sql += "ville.codePostal = '" + this->textBox7->Text + "', "; }
-		if (this->checkBox1->Checked == true){sql += "dates.date = '" + this->dateTimePicker1->Text + "', ";}
+		if (this->textBox5->Text != "" && this->textBox6->Text != "" && this->comboBox1->Text != "" && this->textBox7->Text != "")
+		{
+			sql += "adressePersonnel = (SELECT idAdresse FROM adresse, ville WHERE adresse.numeroRue = '" + this->textBox5->Text + "' AND adresse.nomRue = '" + this->textBox6->Text + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->comboBox1->Text + "' AND ville.codePostal = '" + this->textBox7->Text + "' ), ";
+		}
+		
+		if (this->checkBox1->Checked == true){sql += "dateEmbauche = (SELECT idDate FROM dates WHERE date = '" + this->dateTimePicker1->Text + "'), ";}
 		sql += "personnelActif = 'True' WHERE idPersonnel = " +this->idPerso+"; ";
 
 		this->oCad->actionRows(sql);
@@ -397,6 +410,7 @@ namespace ProjetAPP {
 		
 			MessageBox::Show(L"Information(s) modifiée(s) !", L"Message",
 			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			//this->label2->Text = sql;
 			this->Close();
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -425,6 +439,8 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	}
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

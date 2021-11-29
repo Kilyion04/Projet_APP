@@ -9,7 +9,7 @@ NS_Comp_Mappage_Client::mapClient::mapClient()
 
 System::String^ NS_Comp_Mappage_Client::mapClient::creerClient(void)
 {
-	return "INSERT INTO [test2].[dbo].[client] (clientActif, nomClient, prenomClient, dateNaissance) SELECT 'true', '" + this->nom + "', '" + this->prenom + "' , dates.idDate FROM dates WHERE dates.date = '" + this->dateNaissance + "'; ";
+	return "IF ('" + this->dateNaissance + "' NOT IN (SELECT date FROM dates)) BEGIN INSERT INTO dates(date) VALUES('" + this->dateNaissance + "'); END INSERT INTO[test2].[dbo].[client](clientActif, nomClient, prenomClient, dateNaissance) SELECT 'true', '" + this->nom + "', '" + this->prenom + "', dates.idDate FROM dates WHERE dates.date = '" + this->dateNaissance + "';";
 }
 
 System::String^ NS_Comp_Mappage_Client::mapClient::modifierClient(void)
@@ -34,7 +34,7 @@ System::String^ NS_Comp_Mappage_Client::mapClient::afficherUnClient(void)
 
 System::String^ NS_Comp_Mappage_Client::mapClient::afficherToutClient(void)
 {
-	return "SELECT * FROM [test2].[dbo].[client]";
+	return "SELECT idClient, clientActif, nomClient, prenomClient, dates.date AS dateNaissance FROM [test2].[dbo].[client], dates WHERE client.dateNaissance = dates.idDate;";
 }
 
 void NS_Comp_Mappage_Client::mapClient::setIdClient(int idClient)
