@@ -31,6 +31,12 @@
     <Filter Include="Fichiers sources\stock">
       <UniqueIdentifier>{47a393f0-2396-4f9b-9f2e-72de62f95822}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fichiers d%27en-tête\commande">
+      <UniqueIdentifier>{89f5f5f9-382b-4cc2-a222-26fcb17048cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\stock">
+      <UniqueIdentifier>{9e17efc9-141f-4330-bbc0-bb0811b0caa3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -110,6 +116,24 @@
     <ClInclude Include="MyFormCliAdrFac.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+    <ClInclude Include="commande.h">
+      <Filter>Fichiers d%27en-tête\commande</Filter>
+    </ClInclude>
+    <ClInclude Include="mapCommande.h">
+      <Filter>Fichiers d%27en-tête\commande</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormDateLiv.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFormDateEm.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="mapStock.h">
+      <Filter>Fichiers d%27en-tête\stock</Filter>
+    </ClInclude>
+    <ClInclude Include="stock.h">
+      <Filter>Fichiers d%27en-tête\stock</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Projet_APP.cpp">
@@ -186,6 +210,24 @@
     </ClCompile>
     <ClCompile Include="MyFormCliAdrLiv.cpp">
       <Filter>Fichiers sources\client</Filter>
+    </ClCompile>
+    <ClCompile Include="mapCommande.cpp">
+      <Filter>Fichiers sources\commande</Filter>
+    </ClCompile>
+    <ClCompile Include="commande.cpp">
+      <Filter>Fichiers sources\commande</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormDateEm.cpp">
+      <Filter>Fichiers sources\commande</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFormDateLiv.cpp">
+      <Filter>Fichiers sources\commande</Filter>
+    </ClCompile>
+    <ClCompile Include="mapStock.cpp">
+      <Filter>Fichiers sources\stock</Filter>
+    </ClCompile>
+    <ClCompile Include="Stock.cpp">
+      <Filter>Fichiers sources\stock</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

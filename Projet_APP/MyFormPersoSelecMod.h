@@ -44,7 +44,7 @@ namespace ProjetAPP {
 	private: System::Windows::Forms::Button^ btnModCli;
 	private: System::Windows::Forms::Button^ btnReturn;
 	private: System::Windows::Forms::Button^ button2;
-	private: System::Windows::Forms::TextBox^ textBox4;
+
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::TextBox^ textBox7;
 	private: System::Windows::Forms::TextBox^ textBox5;
@@ -70,6 +70,7 @@ namespace ProjetAPP {
 
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 
 
 	protected:
@@ -90,7 +91,6 @@ namespace ProjetAPP {
 			this->btnModCli = (gcnew System::Windows::Forms::Button());
 			this->btnReturn = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
@@ -109,8 +109,10 @@ namespace ProjetAPP {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->groupBox2->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnModCli
@@ -131,7 +133,7 @@ namespace ProjetAPP {
 			this->btnReturn->Name = L"btnReturn";
 			this->btnReturn->Size = System::Drawing::Size(100, 28);
 			this->btnReturn->TabIndex = 47;
-			this->btnReturn->Text = L"retour";
+			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormPersoSelecMod::Return_Click);
 			// 
@@ -144,14 +146,6 @@ namespace ProjetAPP {
 			this->button2->Text = L"Actualiser villes";
 			this->button2->UseVisualStyleBackColor = true;
 			this->button2->Click += gcnew System::EventHandler(this, &MyFormPersoSelecMod::button2_Click);
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(327, 219);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(49, 22);
-			this->textBox4->TabIndex = 62;
 			// 
 			// groupBox2
 			// 
@@ -244,6 +238,8 @@ namespace ProjetAPP {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(132, 24);
 			this->comboBox1->TabIndex = 45;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormPersoSelecMod::comboBox1_SelectedIndexChanged);
+			this->comboBox1->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyFormPersoSelecMod::comboBox1_KeyUp);
 			// 
 			// label9
 			// 
@@ -332,14 +328,22 @@ namespace ProjetAPP {
 			this->checkBox1->UseVisualStyleBackColor = true;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyFormPersoSelecMod::checkBox1_CheckedChanged);
 			// 
+			// numericUpDown3
+			// 
+			this->numericUpDown3->Location = System::Drawing::Point(327, 218);
+			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown3->TabIndex = 72;
+			// 
 			// MyFormPersoSelecMod
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(637, 416);
+			this->Controls->Add(this->numericUpDown3);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label4);
@@ -358,6 +362,7 @@ namespace ProjetAPP {
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -396,7 +401,7 @@ namespace ProjetAPP {
 		sql += "UPDATE personnel SET ";
 		if (this->textBox2->Text != "") { sql += "nomPersonnel = '" + this->textBox2->Text + "', "; }
 		if (this->textBox3->Text != "") { sql += "prenomPersonnel = '" + this->textBox3->Text + "', "; }
-		if (this->textBox4->Text != "") { sql += "supHierarchique = '" + this->textBox4->Text + "', "; }
+		if (this->numericUpDown3->Text != "") { sql += "supHierarchique = '" + this->numericUpDown3->Text + "', "; }
 		if (this->textBox5->Text != "" && this->textBox6->Text != "" && this->comboBox1->Text != "" && this->textBox7->Text != "")
 		{
 			sql += "adressePersonnel = (SELECT idAdresse FROM adresse, ville WHERE adresse.numeroRue = '" + this->textBox5->Text + "' AND adresse.nomRue = '" + this->textBox6->Text + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->comboBox1->Text + "' AND ville.codePostal = '" + this->textBox7->Text + "' ), ";
@@ -441,6 +446,11 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void checkBox1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void comboBox1_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	this->comboBox1->Text = "";
 }
 };
 }

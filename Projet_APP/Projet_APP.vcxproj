@@ -76,7 +76,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -130,8 +130,11 @@
     <ClInclude Include="actualiserVilles.h" />
     <ClInclude Include="cad.h" />
     <ClInclude Include="client.h" />
+    <ClInclude Include="commande.h" />
     <ClInclude Include="mapClient.h" />
+    <ClInclude Include="mapCommande.h" />
     <ClInclude Include="mapPersonnel.h" />
+    <ClInclude Include="mapStock.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -159,6 +162,12 @@
     <ClInclude Include="MyFormComSelecMod.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyFormDateEm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="MyFormDateLiv.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyFormPerso.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -183,14 +192,20 @@
     <ClInclude Include="pch.h" />
     <ClInclude Include="personnel.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="stock.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="actualiserVilles.cpp" />
     <ClCompile Include="cad.cpp" />
     <ClCompile Include="client.cpp" />
+    <ClCompile Include="commande.cpp" />
+    <ClCompile Include="mapCommande.cpp" />
     <ClCompile Include="mapPersonnel.cpp" />
+    <ClCompile Include="mapStock.cpp" />
     <ClCompile Include="MyFormCliAdrFac.cpp" />
     <ClCompile Include="MyFormCliAdrLiv.cpp" />
+    <ClCompile Include="MyFormDateEm.cpp" />
+    <ClCompile Include="MyFormDateLiv.cpp" />
     <ClCompile Include="personnel.cpp" />
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="MyForm.cpp" />
@@ -215,6 +230,7 @@
     </ClCompile>
     <ClCompile Include="Projet_APP.cpp" />
     <ClCompile Include="mapClient.cpp" />
+    <ClCompile Include="Stock.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="app.ico" />
@@ -254,6 +270,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MyFormComSelecMod.resx">
       <DependentUpon>MyFormComSelecMod.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormDateEm.resx">
+      <DependentUpon>MyFormDateEm.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MyFormDateLiv.resx">
+      <DependentUpon>MyFormDateLiv.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyFormPerso.resx">
       <DependentUpon>MyFormPerso.h</DependentUpon>

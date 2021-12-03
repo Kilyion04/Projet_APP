@@ -116,7 +116,7 @@ namespace ProjetAPP {
 			this->btnReturn->Name = L"btnReturn";
 			this->btnReturn->Size = System::Drawing::Size(100, 28);
 			this->btnReturn->TabIndex = 41;
-			this->btnReturn->Text = L"retour";
+			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormPersoSelec::Return_Click);
 			// 
@@ -132,6 +132,8 @@ namespace ProjetAPP {
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"MyFormPersoSelec";
 			this->Text = L"MyFormPersoSelec";
+			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyFormPersoSelec::MyFormPersoSelec_FormClosing);
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &MyFormPersoSelec::MyFormPersoSelec_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &MyFormPersoSelec::MyFormPersoSelec_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->PersoView))->EndInit();
 			this->ResumeLayout(false);
@@ -184,5 +186,12 @@ private: System::Void PersoView_Click(System::Object^ sender, System::Windows::F
 		   this->PersoView->DataSource = this->oDs;
 		   this->PersoView->DataMember = "fu";
 	   }
+private: System::Void MyFormPersoSelec_FormClosing(System::Object^ sender, System::Windows::Forms::FormClosingEventArgs^ e) {
+	
+	
+}
+private: System::Void MyFormPersoSelec_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+	
+}
 };
 }

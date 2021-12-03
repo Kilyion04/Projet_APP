@@ -34,7 +34,7 @@ namespace ProjetAPP {
 	private: System::Windows::Forms::Button^ btnReturn;
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
 	private: System::Windows::Forms::Button^ btnAffPerso;
 	private: System::Windows::Forms::Button^ btnCrePerso;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
@@ -55,7 +55,7 @@ namespace ProjetAPP {
 	private: System::Windows::Forms::DateTimePicker^ dateTimePicker1;
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::TextBox^ textBox4;
+
 	private: System::Windows::Forms::TextBox^ textBox7;
 
 	private: NS_Comp_Personnel::personnel^ oPersonnel;
@@ -65,6 +65,9 @@ namespace ProjetAPP {
 
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::CheckBox^ checkBox1;
+	private: System::Windows::Forms::CheckBox^ checkBox2;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
 	private: System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
@@ -75,7 +78,6 @@ namespace ProjetAPP {
 			this->btnReturn = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->btnAffPerso = (gcnew System::Windows::Forms::Button());
 			this->btnCrePerso = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -97,12 +99,16 @@ namespace ProjetAPP {
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
+			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
+			this->numericUpDown3 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnReturn
@@ -118,12 +124,12 @@ namespace ProjetAPP {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(735, 16);
+			this->button1->Location = System::Drawing::Point(13, 531);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(224, 28);
+			this->button1->Size = System::Drawing::Size(168, 28);
 			this->button1->TabIndex = 41;
-			this->button1->Text = L"Actualiser la Base de Données";
+			this->button1->Text = L"Afficher personnel";
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &MyFormPerso::button1_Click);
 			// 
@@ -136,15 +142,6 @@ namespace ProjetAPP {
 			this->label1->Size = System::Drawing::Size(20, 16);
 			this->label1->TabIndex = 40;
 			this->label1->Text = L"ID";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(8, 96);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(132, 22);
-			this->textBox1->TabIndex = 39;
-			this->textBox1->TextChanged += gcnew System::EventHandler(this, &MyFormPerso::textBox1_TextChanged);
 			// 
 			// btnAffPerso
 			// 
@@ -159,7 +156,7 @@ namespace ProjetAPP {
 			// 
 			// btnCrePerso
 			// 
-			this->btnCrePerso->Location = System::Drawing::Point(375, 95);
+			this->btnCrePerso->Location = System::Drawing::Point(414, 16);
 			this->btnCrePerso->Margin = System::Windows::Forms::Padding(4);
 			this->btnCrePerso->Name = L"btnCrePerso";
 			this->btnCrePerso->Size = System::Drawing::Size(100, 28);
@@ -171,20 +168,20 @@ namespace ProjetAPP {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(17, 52);
+			this->dataGridView1->Location = System::Drawing::Point(13, 248);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(337, 439);
+			this->dataGridView1->Size = System::Drawing::Size(934, 275);
 			this->dataGridView1->TabIndex = 36;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormPerso::dataGridView1_CellContentClick);
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->numericUpDown1);
 			this->groupBox1->Controls->Add(this->btnAffPerso);
-			this->groupBox1->Controls->Add(this->textBox1);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(806, 66);
+			this->groupBox1->Location = System::Drawing::Point(808, 34);
 			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
@@ -195,7 +192,7 @@ namespace ProjetAPP {
 			// 
 			// btnRecPerso
 			// 
-			this->btnRecPerso->Location = System::Drawing::Point(375, 52);
+			this->btnRecPerso->Location = System::Drawing::Point(292, 16);
 			this->btnRecPerso->Margin = System::Windows::Forms::Padding(4);
 			this->btnRecPerso->Name = L"btnRecPerso";
 			this->btnRecPerso->Size = System::Drawing::Size(100, 28);
@@ -214,7 +211,7 @@ namespace ProjetAPP {
 			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Controls->Add(this->comboBox1);
-			this->groupBox2->Location = System::Drawing::Point(362, 317);
+			this->groupBox2->Location = System::Drawing::Point(13, 142);
 			this->groupBox2->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
@@ -299,21 +296,22 @@ namespace ProjetAPP {
 			this->comboBox1->Size = System::Drawing::Size(132, 24);
 			this->comboBox1->TabIndex = 45;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormPerso::comboBox1_SelectedIndexChanged);
+			this->comboBox1->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyFormPerso::comboBox1_KeyUp);
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(371, 411);
+			this->label9->Location = System::Drawing::Point(342, 106);
 			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(36, 16);
+			this->label9->Size = System::Drawing::Size(114, 16);
 			this->label9->TabIndex = 51;
-			this->label9->Text = L"Date";
+			this->label9->Text = L"Date d\'embauche";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(682, 264);
+			this->label4->Location = System::Drawing::Point(392, 69);
 			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(65, 16);
@@ -323,7 +321,7 @@ namespace ProjetAPP {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(371, 264);
+			this->label3->Location = System::Drawing::Point(14, 109);
 			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(54, 16);
@@ -333,7 +331,7 @@ namespace ProjetAPP {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(371, 204);
+			this->label2->Location = System::Drawing::Point(26, 66);
 			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(36, 16);
@@ -344,7 +342,7 @@ namespace ProjetAPP {
 			// 
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(375, 430);
+			this->dateTimePicker1->Location = System::Drawing::Point(465, 101);
 			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(139, 22);
@@ -353,7 +351,7 @@ namespace ProjetAPP {
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(375, 284);
+			this->textBox3->Location = System::Drawing::Point(70, 106);
 			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(243, 22);
@@ -362,25 +360,16 @@ namespace ProjetAPP {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(375, 224);
+			this->textBox2->Location = System::Drawing::Point(70, 66);
 			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(243, 22);
 			this->textBox2->TabIndex = 40;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyFormPerso::textBox2_TextChanged);
 			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(686, 284);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(49, 22);
-			this->textBox4->TabIndex = 42;
-			this->textBox4->TextChanged += gcnew System::EventHandler(this, &MyFormPerso::textBox4_TextChanged);
-			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(686, 405);
+			this->button2->Location = System::Drawing::Point(631, 167);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(117, 41);
 			this->button2->TabIndex = 54;
@@ -391,20 +380,47 @@ namespace ProjetAPP {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(523, 432);
+			this->checkBox1->Location = System::Drawing::Point(611, 105);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(18, 17);
 			this->checkBox1->TabIndex = 55;
 			this->checkBox1->UseVisualStyleBackColor = true;
 			// 
+			// checkBox2
+			// 
+			this->checkBox2->AutoSize = true;
+			this->checkBox2->Location = System::Drawing::Point(188, 536);
+			this->checkBox2->Name = L"checkBox2";
+			this->checkBox2->Size = System::Drawing::Size(63, 20);
+			this->checkBox2->TabIndex = 56;
+			this->checkBox2->Text = L"Inactif";
+			this->checkBox2->UseVisualStyleBackColor = true;
+			// 
+			// numericUpDown3
+			// 
+			this->numericUpDown3->Location = System::Drawing::Point(464, 67);
+			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
+			this->numericUpDown3->Name = L"numericUpDown3";
+			this->numericUpDown3->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown3->TabIndex = 57;
+			// 
+			// numericUpDown1
+			// 
+			this->numericUpDown1->Location = System::Drawing::Point(7, 95);
+			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown1->TabIndex = 58;
+			// 
 			// MyFormPerso
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(997, 775);
+			this->ClientSize = System::Drawing::Size(997, 578);
+			this->Controls->Add(this->numericUpDown3);
+			this->Controls->Add(this->checkBox2);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->button2);
-			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label4);
@@ -429,6 +445,8 @@ namespace ProjetAPP {
 			this->groupBox1->PerformLayout();
 			this->groupBox2->ResumeLayout(false);
 			this->groupBox2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown3))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -437,43 +455,60 @@ namespace ProjetAPP {
 	private: System::Void return_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
+	private: void clearPerso() {
+		this->textBox2->Text = "";
+		this->textBox3->Text = "";
+		this->textBox5->Text = "";
+		this->textBox6->Text = "";
+		this->textBox7->Text = "";
+		this->numericUpDown1->Text = "";
+		this->numericUpDown3->Text = "";
+		this->comboBox1->Text = "";
+		
+	}
 	private: System::Void MyFormPerso_Load(System::Object^ sender, System::EventArgs^ e) {
 		this->oPersonnel = gcnew NS_Comp_Personnel::personnel();
 		this->oActualiserVilles = gcnew NS_Comp_Actualiser_Villes::actualiserVilles();
+		refreshPersonnel();
+		clearPerso();
 	}
 	private: System::Void CrePerso_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->textBox2->Text == "" || this->textBox3->Text == "" || this->textBox4->Text == "" || this->textBox5->Text == "" || this->textBox6->Text == "" || this->comboBox1->Text == "")
+		if (this->textBox2->Text == "" || this->textBox3->Text == "" || this->numericUpDown3->Text == "" || this->textBox5->Text == "" || this->textBox6->Text == "" || this->comboBox1->Text == "")
 		{
 			MessageBox::Show(L"Un ou plusieurs champs ne sont pas remplis !", L"Message",
 			MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 		else {
-			this->oPersonnel->creer(this->textBox2->Text, this->textBox3->Text, System::Convert::ToInt64(this->textBox4->Text), this->textBox5->Text, this->textBox6->Text, this->comboBox1->Text, this->textBox7->Text, this->dateTimePicker1->Text);
+			this->oPersonnel->creer(this->textBox2->Text, this->textBox3->Text, System::Convert::ToInt64(this->numericUpDown3->Text), this->textBox5->Text, this->textBox6->Text, this->comboBox1->Text, this->textBox7->Text, this->dateTimePicker1->Text);
 			MessageBox::Show(L"Personnel créé !", L"Message",
 			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			refreshPersonnel();
+			clearPerso();
 		}
 		//this->label1->Text = this->dateTimePicker1->Text;
 	}
 	private: System::Void AffPerso_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->textBox1->Text == "")
+		if (this->numericUpDown1->Text == "")
 		{
 			MessageBox::Show(L"ID manquant.", L"Message",
 			MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 		else {
 			this->dataGridView1->Refresh();
-			this->oDs = this->oPersonnel->afficherUn("fu", System::Convert::ToInt64(this->textBox1->Text));
+			this->oDs = this->oPersonnel->afficherUn("fu", System::Convert::ToInt64(this->numericUpDown1->Text));
 			this->dataGridView1->DataSource = this->oDs;
 			this->dataGridView1->DataMember = "fu";
 			if (this->dataGridView1->Rows->Count == 1)
 			{
 				MessageBox::Show(L"ID inconnu.", L"Message",
 				MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				refreshPersonnel();
 			}
 			else {
 				this->Hide();
-				MyFormPersoSelec^ Form = gcnew MyFormPersoSelec(this->textBox1->Text);
-				Form->ShowDialog();
+				MyFormPersoSelec^ Forma = gcnew MyFormPersoSelec(this->numericUpDown1->Text);
+				Forma->ShowDialog();
+				refreshPersonnel();
 				this->Show();
 			}
 		}
@@ -484,7 +519,7 @@ namespace ProjetAPP {
 	}
 	private: System::Void textBox3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void numericUpDown3_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox5_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -497,8 +532,11 @@ namespace ProjetAPP {
 	private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		refreshPersonnel();
+	}
+	private: void refreshPersonnel() {
 		this->dataGridView1->Refresh();
-		this->oDs = this->oPersonnel->afficherTout("Rsl");
+		this->oDs = this->oPersonnel->afficherTout("Rsl", this->checkBox2->Checked);
 		this->dataGridView1->DataSource = this->oDs;
 		this->dataGridView1->DataMember = "Rsl";
 	}
@@ -514,6 +552,7 @@ namespace ProjetAPP {
 		{
 			MessageBox::Show(L"Code postal incorrect !", L"Message",
 			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			refreshPersonnel();
 		}
 		else
 		{
@@ -524,7 +563,7 @@ namespace ProjetAPP {
 			}
 		}
 	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void numericUpDown1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void btnRecPerso_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->oCad = gcnew NS_Comp_Data::cad();
@@ -536,7 +575,7 @@ namespace ProjetAPP {
 		sql = "SELECT * FROM personnel, adresse, ville, dates WHERE adresse.idVille = ville.idVille AND adresse.idAdresse = personnel.adressePersonnel AND personnel.dateEmbauche = idDate ";
 		if (this->textBox2->Text != "") {sql += "AND nomPersonnel = '" + this->textBox2->Text + "' ";}
 		if (this->textBox3->Text != "") {sql += "AND prenomPersonnel = '" + this->textBox3->Text + "' ";}
-		if (this->textBox4->Text != "") {sql += "AND supHierarchique = '" + this->textBox4->Text + "' ";}
+		if (this->numericUpDown3->Text != "") {sql += "AND supHierarchique = '" + this->numericUpDown3->Text + "' ";}
 		if (this->textBox5->Text != "") {sql += "AND adresse.numeroRue = '" + this->textBox5->Text + "' ";}
 		if (this->textBox6->Text != "") {sql += "AND adresse.nomRue = '" + this->textBox6->Text + "' ";}
 		if (this->comboBox1->Text != "") {sql += "AND ville.ville = '" + this->comboBox1->Text + "' ";}
@@ -557,5 +596,10 @@ namespace ProjetAPP {
 			MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 	}
+
+
+private: System::Void comboBox1_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	this->comboBox1->Text = "";
+}
 };
 }

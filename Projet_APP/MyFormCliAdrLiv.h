@@ -60,7 +60,8 @@ namespace ProjetAPP {
 	private: NS_Comp_Actualiser_Villes::actualiserVilles^ oActualiserVilles;
 	private: NS_Comp_Data::cad^ oCad;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
 
 
 	private:
@@ -92,14 +93,15 @@ namespace ProjetAPP {
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->groupBox1->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(357, 221);
+			this->button2->Location = System::Drawing::Point(355, 216);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(120, 26);
 			this->button2->TabIndex = 31;
@@ -198,6 +200,8 @@ namespace ProjetAPP {
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(132, 24);
 			this->comboBox1->TabIndex = 16;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormCliAdrLiv::comboBox1_SelectedIndexChanged);
+			this->comboBox1->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyFormCliAdrLiv::comboBox1_KeyUp);
 			// 
 			// button1
 			// 
@@ -211,7 +215,7 @@ namespace ProjetAPP {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(39, 280);
+			this->button3->Location = System::Drawing::Point(26, 92);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(81, 29);
 			this->button3->TabIndex = 33;
@@ -221,7 +225,7 @@ namespace ProjetAPP {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(331, 265);
+			this->button4->Location = System::Drawing::Point(217, 243);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(81, 29);
 			this->button4->TabIndex = 34;
@@ -231,7 +235,7 @@ namespace ProjetAPP {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(331, 312);
+			this->button5->Location = System::Drawing::Point(120, 243);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(81, 29);
 			this->button5->TabIndex = 35;
@@ -253,26 +257,27 @@ namespace ProjetAPP {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(232, 271);
+			this->label1->Location = System::Drawing::Point(23, 226);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(71, 16);
 			this->label1->TabIndex = 37;
 			this->label1->Text = L"Id adresse";
 			// 
-			// textBox1
+			// numericUpDown5
 			// 
-			this->textBox1->Location = System::Drawing::Point(235, 290);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(68, 22);
-			this->textBox1->TabIndex = 38;
+			this->numericUpDown5->Location = System::Drawing::Point(26, 250);
+			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
+			this->numericUpDown5->Name = L"numericUpDown5";
+			this->numericUpDown5->Size = System::Drawing::Size(82, 22);
+			this->numericUpDown5->TabIndex = 58;
 			// 
 			// MyFormCliAdrLiv
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(679, 382);
-			this->Controls->Add(this->textBox1);
+			this->ClientSize = System::Drawing::Size(679, 291);
+			this->Controls->Add(this->numericUpDown5);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button5);
@@ -287,6 +292,7 @@ namespace ProjetAPP {
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown5))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -296,74 +302,101 @@ namespace ProjetAPP {
 		this->oActualiserVilles = gcnew NS_Comp_Actualiser_Villes::actualiserVilles();
 		this->oCad = gcnew NS_Comp_Data::cad();
 		refreshTable();
+		this->numericUpDown5->Text = "";
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Close();
 	}
 private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->dataGridView1->Refresh();
-	this->oDs = this->oCad->getRows("SELECT * FROM resider WHERE idClient  = " + this->idClient + " AND resider.idAdresse = " + this->textBox1->Text + ";", "fu");
-	this->dataGridView1->DataSource = this->oDs;
-	this->dataGridView1->DataMember = "fu";
-	if (this->dataGridView1->Rows->Count == 1)
+	if (this->numericUpDown5->Text == "")
 	{
-		MessageBox::Show(L"Aucune adresse correspondante !", L"Message",
+		MessageBox::Show(L"ID manquant.", L"Message",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+	else {
+		this->dataGridView1->Refresh();
+		this->oDs = this->oCad->getRows("SELECT * FROM resider WHERE idClient  = " + this->idClient + " AND resider.idAdresse = " + this->numericUpDown5->Text + ";", "fu");
+		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataMember = "fu";
+		if (this->dataGridView1->Rows->Count == 1)
+		{
+			MessageBox::Show(L"Aucune adresse correspondante !", L"Message",
+				MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+		else {
+			if (this->textBox5->Text != "" && this->textBox6->Text != "" && this->comboBox1->Text != "" && this->textBox4->Text != "")
+			{
+				System::String^ sql;
+
+				sql += "IF NOT EXISTS((SELECT nomRue, numeroRue, ville, codePostal FROM adresse, ville WHERE adresse.idVille = ville.idVille AND nomRue = '" + this->textBox6->Text + "' AND numeroRue = '" + this->textBox5->Text + "' AND ville = '" + this->comboBox1->Text + "' AND codePostal = '" + this->textBox4->Text + "')) BEGIN INSERT INTO adresse(idVille, nomRue, numeroRue) SELECT idVille, '" + this->textBox6->Text + "', '" + this->textBox5->Text + "' FROM ville WHERE codePostal = '" + this->textBox4->Text + "' AND ville = '" + this->comboBox1->Text + "'; END ";
+				sql += "UPDATE resider SET idAdresse = (SELECT idAdresse FROM adresse, ville WHERE adresse.numeroRue = '" + this->textBox5->Text + "' AND adresse.nomRue = '" + this->textBox6->Text + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->comboBox1->Text + "' AND ville.codePostal = '" + this->textBox4->Text + "' ) WHERE idAdresse = " + this->numericUpDown5->Text + " AND idClient = " + this->idClient + ";";
+				this->oCad->actionRows(sql);
+				MessageBox::Show(L"Adresse modifiée !", L"Message",
+					MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			}
+			else
+			{
+				MessageBox::Show(L"Vous n'avez pas entré toutes les informations.", L"Message",
+				MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			}
+		}
+		refreshTable();
+	}
+	}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->numericUpDown5->Text == "")
+	{
+		MessageBox::Show(L"ID manquant.", L"Message",
 		MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 	else {
+		this->dataGridView1->Refresh();
+		this->oDs = this->oCad->getRows("SELECT * FROM resider WHERE idClient  = " + this->idClient + " AND resider.idAdresse = " + this->numericUpDown5->Text + ";", "fu");
+		this->dataGridView1->DataSource = this->oDs;
+		this->dataGridView1->DataMember = "fu";
+		if (this->dataGridView1->Rows->Count == 1)
+		{
+			MessageBox::Show(L"Aucune adresse correspondante !", L"Message",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+		else {
+			this->oCad->actionRows("DELETE FROM resider WHERE idAdresse = " + this->numericUpDown5->Text + " AND idClient = " + this->idClient + ";");
+			MessageBox::Show(L"Adresse supprimée !", L"Message",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		}
+		refreshTable();
+	}
+	}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	System::String^ sql;
+	this->dataGridView1->Refresh();
+	this->oDs = this->oCad->getRows("SELECT * FROM resider, adresse, ville WHERE adresseFacturation = 'False' AND idClient  = " + this->idClient + " AND resider.idAdresse = adresse.idAdresse AND adresse.numeroRue = '" + this->textBox5->Text + "' AND adresse.nomRue = '" + this->textBox6->Text + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->comboBox1->Text + "' AND ville.codePostal = '" + this->textBox4->Text + "' ;", "fu");
+	this->dataGridView1->DataSource = this->oDs;
+	this->dataGridView1->DataMember = "fu";
+	if (this->dataGridView1->Rows->Count == 2)
+	{
+		MessageBox::Show(L"Adresse déjà existante !", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+
+	}
+	else
+	{
 		if (this->textBox5->Text != "" && this->textBox6->Text != "" && this->comboBox1->Text != "" && this->textBox4->Text != "")
 		{
-			System::String^ sql;
-
 			sql += "IF NOT EXISTS((SELECT nomRue, numeroRue, ville, codePostal FROM adresse, ville WHERE adresse.idVille = ville.idVille AND nomRue = '" + this->textBox6->Text + "' AND numeroRue = '" + this->textBox5->Text + "' AND ville = '" + this->comboBox1->Text + "' AND codePostal = '" + this->textBox4->Text + "')) BEGIN INSERT INTO adresse(idVille, nomRue, numeroRue) SELECT idVille, '" + this->textBox6->Text + "', '" + this->textBox5->Text + "' FROM ville WHERE codePostal = '" + this->textBox4->Text + "' AND ville = '" + this->comboBox1->Text + "'; END ";
-			sql += "UPDATE resider SET idAdresse = (SELECT idAdresse FROM adresse, ville WHERE adresse.numeroRue = '" + this->textBox5->Text + "' AND adresse.nomRue = '" + this->textBox6->Text + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->comboBox1->Text + "' AND ville.codePostal = '" + this->textBox4->Text + "' ) WHERE idAdresse = " + this->textBox1->Text + " AND idClient = " + this->idClient + ";";
+			sql += "INSERT INTO[test2].[dbo].[resider](idClient, idAdresse, adresseFacturation) SELECT " + this->idClient + ", adresse.idAdresse, 'False' FROM adresse, ville WHERE adresse.numeroRue = '" + this->textBox5->Text + "' AND adresse.nomRue = '" + this->textBox6->Text + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->comboBox1->Text + "' AND ville.codePostal = '" + this->textBox4->Text + "' ; ";
 			this->oCad->actionRows(sql);
-			MessageBox::Show(L"Adresse modifiée !", L"Message",
-			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+			MessageBox::Show(L"Adresse de livraison créée !", L"Message",
+				MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 		else
 		{
 			MessageBox::Show(L"Vous n'avez pas entré toutes les informations.", L"Message",
-			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
-	}
-	refreshTable();
-	}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->dataGridView1->Refresh();
-	this->oDs = this->oCad->getRows("SELECT * FROM resider WHERE idClient  = " + this->idClient + " AND resider.idAdresse = "+this->textBox1->Text+";", "fu");
-	this->dataGridView1->DataSource = this->oDs;
-	this->dataGridView1->DataMember = "fu";
-	if (this->dataGridView1->Rows->Count == 1) 
-	{
-		MessageBox::Show(L"Aucune adresse correspondante !", L"Message",
-		MessageBoxButtons::OK, MessageBoxIcon::Warning);
-	}
-	else {
-		this->oCad->actionRows("DELETE FROM resider WHERE idAdresse = " + this->textBox1->Text + " AND idClient = " + this->idClient + ";");
-		MessageBox::Show(L"Adresse supprimée !", L"Message",
-		MessageBoxButtons::OK, MessageBoxIcon::Warning);
-	}
-	refreshTable();
-	}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	System::String^ sql;
 
-	if (this->textBox5->Text != "" && this->textBox6->Text != "" && this->comboBox1->Text != "" && this->textBox4->Text != "")
-	{
-		sql += "IF NOT EXISTS((SELECT nomRue, numeroRue, ville, codePostal FROM adresse, ville WHERE adresse.idVille = ville.idVille AND nomRue = '" + this->textBox6->Text + "' AND numeroRue = '" + this->textBox5->Text + "' AND ville = '" + this->comboBox1->Text + "' AND codePostal = '" + this->textBox4->Text + "')) BEGIN INSERT INTO adresse(idVille, nomRue, numeroRue) SELECT idVille, '" + this->textBox6->Text + "', '" + this->textBox5->Text + "' FROM ville WHERE codePostal = '" + this->textBox4->Text + "' AND ville = '" + this->comboBox1->Text + "'; END ";
-		sql += "INSERT INTO[test2].[dbo].[resider](idClient, idAdresse, adresseFacturation) SELECT " + this->idClient + ", adresse.idAdresse, 'False' FROM adresse, ville WHERE adresse.numeroRue = '" + this->textBox5->Text + "' AND adresse.nomRue = '" + this->textBox6->Text + "' AND adresse.iDville = ville.idVille AND ville.ville = '" + this->comboBox1->Text + "' AND ville.codePostal = '" + this->textBox4->Text + "' ; ";
-		this->oCad->actionRows(sql);
-		MessageBox::Show(L"Adresse de livraison créée !", L"Message",
-		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		refreshTable();
 	}
-	else
-	{
-		MessageBox::Show(L"Vous n'avez pas entré toutes les informations.", L"Message",
-		MessageBoxButtons::OK, MessageBoxIcon::Warning);
-	}
-	
-	refreshTable();
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 	}
@@ -379,6 +412,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	{
 		MessageBox::Show(L"Code postal incorrect !", L"Message",
 		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		refreshTable();
 	}
 	else
 	{
@@ -398,5 +432,10 @@ private: System::Void groupBox1_Enter(System::Object^ sender, System::EventArgs^
 		this->dataGridView1->DataSource = this->oDs;
 		this->dataGridView1->DataMember = "fu";
 	}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void comboBox1_KeyUp(System::Object^ sender, System::Windows::Forms::KeyEventArgs^ e) {
+	this->comboBox1->Text = "";
+}
 };
 }

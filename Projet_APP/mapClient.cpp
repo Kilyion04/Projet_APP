@@ -32,9 +32,19 @@ System::String^ NS_Comp_Mappage_Client::mapClient::afficherUnClient(void)
 	return "SELECT * FROM client WHERE idClient = " + this->idClient + "; ";
 }
 
+System::String^ NS_Comp_Mappage_Client::mapClient::afficherAdresseLivraison(void)
+{
+	return "SELECT * FROM resider WHERE idClient = " + this->idClient + " AND idAdresse = "+this->adresseLivraison+";";
+}
+
+System::String^ NS_Comp_Mappage_Client::mapClient::afficherAdresseFacturation(void)
+{
+	return "SELECT * FROM resider WHERE idClient = " + this->idClient + " AND idAdresse = " + this->adresseFacturation + ";";
+}
+
 System::String^ NS_Comp_Mappage_Client::mapClient::afficherToutClient(void)
 {
-	return "SELECT idClient, clientActif, nomClient, prenomClient, dates.date AS dateNaissance FROM [test2].[dbo].[client], dates WHERE client.dateNaissance = dates.idDate;";
+	return "SELECT idClient, clientActif, nomClient, prenomClient, dates.date AS dateNaissance FROM [test2].[dbo].[client], dates WHERE client.dateNaissance = dates.idDate AND clientActif = '"+this->clientEtat+"' ; ";
 }
 
 void NS_Comp_Mappage_Client::mapClient::setIdClient(int idClient)
@@ -50,17 +60,23 @@ void NS_Comp_Mappage_Client::mapClient::setPrenom(System::String^ prenom) {
 	this->prenom = prenom;
 }
 
-/*/void NS_Comp_Mappage_Client::mapClient::setAdresseClient(System::String^ numero, System::String^ voie, System::String^ ville, System::String^ codePostal)
-{
-	this->adresseClient.numero = numero;
-	this->adresseClient.voie = voie;
-	this->adresseClient.ville = ville;
-	this->adresseClient.codePostal = codePostal;
-}/*/
+void NS_Comp_Mappage_Client::mapClient::setClientEtat(bool clientEtat) {
+	this->clientEtat = !clientEtat;
+}
 
 void NS_Comp_Mappage_Client::mapClient::setDateNaissance(System::String^ dateNaissance)
 {
 	this->dateNaissance = dateNaissance;
+}
+
+void NS_Comp_Mappage_Client::mapClient::setAdresseLivraison(int adresseLivraison)
+{
+	this->adresseLivraison = adresseLivraison;
+}
+
+void NS_Comp_Mappage_Client::mapClient::setAdresseFacturation(int adresseFacturation)
+{
+	this->adresseFacturation = adresseFacturation;
 }
 
 

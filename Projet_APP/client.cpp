@@ -1,7 +1,6 @@
 // include
 #include "pch.h"
 #include "Client.h"
-#include <iostream>
 
 /*/NS_Comp_Client::Client::Client()
 {
@@ -21,7 +20,6 @@ void NS_Comp_Client::client::creer(System::String^ nom, System::String^ prenom, 
 	System::String^ sql;
 	this->oMapClient->setNom(nom);
 	this->oMapClient->setPrenom(prenom);
-	
 	//this->oMapClient->setAdresseClient(numero, voie, ville, codePostal);
 	this->oMapClient->setDateNaissance(dateNaissance);
 	sql = this->oMapClient->creerClient();
@@ -53,6 +51,26 @@ System::Data::DataSet^ NS_Comp_Client::client::afficherUn(System::String^ dataTa
 	sql = this->oMapClient->afficherUnClient();
 	return this->oCad->getRows(sql, dataTableName);
 }
+
+System::Data::DataSet^ NS_Comp_Client::client::afficherAdresseLivraison(System::String^ dataTableName, int idPerso, int adresseLivraison)
+{
+	System::String^ sql;
+
+	this->oMapClient->setIdClient(idPerso);
+	this->oMapClient->setAdresseLivraison(adresseLivraison);
+	sql = this->oMapClient->afficherAdresseLivraison();
+	return this->oCad->getRows(sql, dataTableName);
+}
+
+System::Data::DataSet^ NS_Comp_Client::client::afficherAdresseFacturation(System::String^ dataTableName, int idPerso, int adresseFacturation)
+{
+	System::String^ sql;
+
+	this->oMapClient->setIdClient(idPerso);
+	this->oMapClient->setAdresseFacturation(adresseFacturation);
+	sql = this->oMapClient->afficherAdresseFacturation();
+	return this->oCad->getRows(sql, dataTableName);
+}
 /*/
 System::Data::DataSet^ NS_Comp_Client::Client::afficher(int idClient, System::String^ nom, System::String^ prenom, int superieur, System::String^ numero, System::String^ voie, System::String^ ville, System::String^ codePostal, int jour, int mois, int annee)
 {
@@ -60,11 +78,11 @@ System::Data::DataSet^ NS_Comp_Client::Client::afficher(int idClient, System::St
 }
 /*/
 
-System::Data::DataSet^ NS_Comp_Client::client::afficherTout(System::String^ dataTableName)
+System::Data::DataSet^ NS_Comp_Client::client::afficherTout(System::String^ dataTableName, bool clientEtat)
 {
 	System::String^ sql;
 
-
+	this->oMapClient->setClientEtat(clientEtat);
 	sql = this->oMapClient->afficherToutClient();
 	return this->oCad->getRows(sql, dataTableName);
 }

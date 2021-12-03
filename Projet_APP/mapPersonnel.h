@@ -18,7 +18,7 @@ namespace NS_Comp_Mappage_Personnel
 			System::String^ codePostal;
 		}adressePersonnel;
 		System::String^ dateEmbauche;
-		
+		bool personnelEtat;
 
 	public:
 		mapPersonnel(void);
@@ -36,6 +36,6 @@ namespace NS_Comp_Mappage_Personnel
 		void setSuperieur(int);
 		void setAdressePersonnel(System::String^, System::String^, System::String^, System::String^);
 		void setDateEmbauche(System::String^);
-		
+		void setPersonnelEtat(bool);
 	};
 }

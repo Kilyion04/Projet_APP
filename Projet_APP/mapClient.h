@@ -18,6 +18,9 @@ namespace NS_Comp_Mappage_Client
 			System::String^ codePostal;
 		}adresseClient;
 		System::String^ dateNaissance;
+		int adresseLivraison;
+		int adresseFacturation;
+		bool clientEtat;
 
 
 	public:
@@ -28,13 +31,18 @@ namespace NS_Comp_Mappage_Client
 		System::String^ afficherClient(void);
 		System::String^ afficherToutClient(void);
 		System::String^ afficherUnClient(void);
+		System::String^ afficherAdresseLivraison(void);
+		System::String^ afficherAdresseFacturation(void);
+
 
 
 		void setNom(System::String^);
 		void setPrenom(System::String^);
 		void setIdClient(int);
-		//void setAdresseClient(System::String^, System::String^, System::String^, System::String^);
+		void setClientEtat(bool);
 		void setDateNaissance(System::String^);
+		void setAdresseLivraison(int);
+		void setAdresseFacturation(int);
 
 	};
 }

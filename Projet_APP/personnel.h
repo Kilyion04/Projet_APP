@@ -25,7 +25,7 @@ namespace NS_Comp_Personnel{
 		/*/
 	public:
 		personnel(void);
-		System::Data::DataSet^ afficherTout(System::String^);
+		System::Data::DataSet^ afficherTout(System::String^, bool);
 		void creer(System::String^, System::String^, int, System::String^, System::String^, System::String^, System::String^, System::String^);
 		void modifier(int, System::String^, System::String^, int, System::String^, System::String^, System::String^, System::String^, int, int, int);
 		void supprimer(int);

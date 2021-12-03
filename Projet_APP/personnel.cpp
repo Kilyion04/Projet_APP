@@ -1,12 +1,6 @@
 // include
 #include "pch.h"
 #include "personnel.h"
-#include <iostream>
-
-/*/NS_Comp_Personnel::personnel::personnel()
-{
-	this->oMapPersonnel->dateEmbauche = gcnew array<int>(3);
-}/*/
 
 NS_Comp_Personnel::personnel::personnel(void)
 {
@@ -60,11 +54,11 @@ System::Data::DataSet^ NS_Comp_Personnel::personnel::afficher(int idPersonnel, S
 }
 /*/
 
-System::Data::DataSet^ NS_Comp_Personnel::personnel::afficherTout(System::String^ dataTableName)
+System::Data::DataSet^ NS_Comp_Personnel::personnel::afficherTout(System::String^ dataTableName, bool personnelEtat)
 {
 	System::String^ sql;
 
-
+	this->oMapPersonnel->setPersonnelEtat(personnelEtat);
 	sql = this->oMapPersonnel->afficherToutPersonnel();
 	return this->oCad->getRows(sql, dataTableName);
 }

@@ -24,12 +24,15 @@ namespace NS_Comp_Client {
 		array<int>^ dateEmbauche;
 		/*/
 	public:
+		int y = 78;
 		client(void);
-		System::Data::DataSet^ afficherTout(System::String^);
+		System::Data::DataSet^ afficherTout(System::String^, bool);
 		void creer(System::String^, System::String^, System::String^);
 		void modifier(int, System::String^, System::String^, int, System::String^, System::String^, System::String^, System::String^, int, int, int);
 		void supprimer(int);
 		System::Data::DataSet^ afficherUn(System::String^, int);
+		System::Data::DataSet^ afficherAdresseLivraison(System::String^, int, int);
+		System::Data::DataSet^ afficherAdresseFacturation(System::String^, int, int);
 		//System::Data::DataSet^ afficher(int, System::String^, System::String^, int, System::String^, System::String^, System::String^, System::String^, int, int, int);
 
 

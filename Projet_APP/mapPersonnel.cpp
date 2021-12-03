@@ -34,7 +34,7 @@ System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::afficherUnPersonnel(voi
 
 System::String^ NS_Comp_Mappage_Personnel::mapPersonnel::afficherToutPersonnel(void)
 {
-	return "SELECT idPersonnel, personnelActif, nomPersonnel, prenomPersonnel, supHierarchique, adresse.numeroRue, adresse.nomRue, ville.ville, ville.codePostal, dates.date AS dateEmbauche FROM [test2].[dbo].[personnel],adresse, ville, dates WHERE personnel.adressePersonnel = adresse.idAdresse AND adresse.idVille = ville.idVille AND personnel.dateEmbauche = dates.idDate; ";
+	return "SELECT idPersonnel, personnelActif, nomPersonnel, prenomPersonnel, supHierarchique, adresse.numeroRue, adresse.nomRue, ville.ville, ville.codePostal, dates.date AS dateEmbauche FROM [test2].[dbo].[personnel],adresse, ville, dates WHERE personnel.adressePersonnel = adresse.idAdresse AND adresse.idVille = ville.idVille AND personnel.dateEmbauche = dates.idDate AND personnelActif = '"+this->personnelEtat+"' ; ";
 }
 
 void NS_Comp_Mappage_Personnel::mapPersonnel::setIdPersonnel(int idPersonnel)
@@ -66,6 +66,11 @@ void NS_Comp_Mappage_Personnel::mapPersonnel::setAdressePersonnel(System::String
 void NS_Comp_Mappage_Personnel::mapPersonnel::setDateEmbauche(System::String^ dateEmbauche)
 {
 	this->dateEmbauche = dateEmbauche;
+}
+
+void NS_Comp_Mappage_Personnel::mapPersonnel::setPersonnelEtat(bool personnelEtat)
+{
+	this->personnelEtat = !personnelEtat;
 }
 
 

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "MyFormStoSelecMod.h"
+#include "stock.h"
 
 namespace ProjetAPP {
 
@@ -20,11 +21,12 @@ namespace ProjetAPP {
 		MyFormStoSelec(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: ajoutez ici le code du constructeur
-			//
 		}
-
+	MyFormStoSelec(System::String^ idArticle)
+	{
+		InitializeComponent();
+		this->idArticle = idArticle;
+	}
 	protected:
 		/// <summary>
 		/// Nettoyage des ressources utilisées.
@@ -36,21 +38,22 @@ namespace ProjetAPP {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^ btnSupSto;
-	protected:
-
-	private: System::Windows::Forms::Button^ btnModSto;
-	private: System::Windows::Forms::DataGridView^ StoView;
-	protected:
-
-
 	private: System::Windows::Forms::Button^ btnReturn;
+	private: System::Windows::Forms::DataGridView^ StoView;
+
+	private: System::Windows::Forms::Button^ btnSupSto;
+	private: System::Windows::Forms::Button^ btnModSto;
+	protected:
+
+	private: NS_Comp_Stock::stock^ oStock;
+	private: System::Data::DataSet^ oDs;
+
+	private: System::String^ idArticle;
+	private: System::Windows::Forms::Button^ button2;
+	private: System::Windows::Forms::Button^ button1;
 
 	private:
-		/// <summary>
-		/// Variable nécessaire au concepteur.
-		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -123,21 +126,34 @@ namespace ProjetAPP {
 		}
 #pragma endregion
 	private: System::Void MyFormStoSelec_Load(System::Object^ sender, System::EventArgs^ e) {
+		this->oStock = gcnew NS_Comp_Stock::stock();
+		refreshTable();
 	}
 private: System::Void Return_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Close();
 }
 private: System::Void ModSto_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->Hide();
-	MyFormStoSelecMod^ Form = gcnew MyFormStoSelecMod;
+	MyFormStoSelecMod^ Form = gcnew MyFormStoSelecMod(this->idArticle);
 	Form->ShowDialog();
+	refreshTable();
 	this->Show();
 }
 private: System::Void SupSto_Click(System::Object^ sender, System::EventArgs^ e) {	
-	//Requette de Supression Tu Connais
-	this->Close();
+	
+		this->oStock->supprimer(System::Convert::ToInt64(this->idArticle));
+		MessageBox::Show(L"Article supprimé !", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		this->Close();
+	
 }
 private: System::Void StoView_Click(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: void MyFormStoSelec::refreshTable(void) {
+	this->StoView->Refresh();
+	this->oDs = this->oStock->afficherUnArticle("fu", System::Convert::ToInt64(this->idArticle));
+	this->StoView->DataSource = this->oDs;
+	this->StoView->DataMember = "fu";
 }
 };
 }
