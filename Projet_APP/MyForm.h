@@ -88,62 +88,74 @@ namespace ProjetAPP {
 			// 
 			// btnGestPerso
 			// 
+			this->btnGestPerso->BackColor = System::Drawing::Color::Transparent;
+			this->btnGestPerso->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnGestPerso->Location = System::Drawing::Point(12, 226);
 			this->btnGestPerso->Name = L"btnGestPerso";
 			this->btnGestPerso->Size = System::Drawing::Size(201, 23);
 			this->btnGestPerso->TabIndex = 0;
 			this->btnGestPerso->Text = L"Gestion Personnel";
-			this->btnGestPerso->UseVisualStyleBackColor = true;
+			this->btnGestPerso->UseVisualStyleBackColor = false;
 			this->btnGestPerso->Click += gcnew System::EventHandler(this, &MyForm::Perso_Click);
 			// 
 			// btnExit
 			// 
+			this->btnExit->BackColor = System::Drawing::Color::Transparent;
+			this->btnExit->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnExit->Location = System::Drawing::Point(12, 12);
 			this->btnExit->Name = L"btnExit";
 			this->btnExit->Size = System::Drawing::Size(117, 23);
 			this->btnExit->TabIndex = 1;
 			this->btnExit->Text = L"Quitter l\'application ";
-			this->btnExit->UseVisualStyleBackColor = true;
+			this->btnExit->UseVisualStyleBackColor = false;
 			this->btnExit->Click += gcnew System::EventHandler(this, &MyForm::Exit_Click);
 			// 
 			// btnSto
 			// 
+			this->btnSto->BackColor = System::Drawing::Color::Transparent;
+			this->btnSto->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnSto->Location = System::Drawing::Point(12, 197);
 			this->btnSto->Name = L"btnSto";
 			this->btnSto->Size = System::Drawing::Size(201, 23);
 			this->btnSto->TabIndex = 2;
 			this->btnSto->Text = L"Gestion Stock";
-			this->btnSto->UseVisualStyleBackColor = true;
+			this->btnSto->UseVisualStyleBackColor = false;
 			this->btnSto->Click += gcnew System::EventHandler(this, &MyForm::Sto_Click);
 			// 
 			// btnCom
 			// 
+			this->btnCom->BackColor = System::Drawing::Color::Transparent;
+			this->btnCom->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnCom->Location = System::Drawing::Point(12, 168);
 			this->btnCom->Name = L"btnCom";
 			this->btnCom->Size = System::Drawing::Size(201, 23);
 			this->btnCom->TabIndex = 3;
 			this->btnCom->Text = L"Gestion Commandes";
-			this->btnCom->UseVisualStyleBackColor = true;
+			this->btnCom->UseVisualStyleBackColor = false;
 			this->btnCom->Click += gcnew System::EventHandler(this, &MyForm::Com_Click);
 			// 
 			// btnCli
 			// 
+			this->btnCli->BackColor = System::Drawing::Color::Transparent;
+			this->btnCli->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnCli->Location = System::Drawing::Point(12, 139);
 			this->btnCli->Name = L"btnCli";
 			this->btnCli->Size = System::Drawing::Size(201, 23);
 			this->btnCli->TabIndex = 4;
 			this->btnCli->Text = L"Gestion Clients";
-			this->btnCli->UseVisualStyleBackColor = true;
+			this->btnCli->UseVisualStyleBackColor = false;
 			this->btnCli->Click += gcnew System::EventHandler(this, &MyForm::Cli_Click);
 			// 
 			// btnStat
 			// 
+			this->btnStat->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnStat->Location = System::Drawing::Point(402, 12);
 			this->btnStat->Name = L"btnStat";
 			this->btnStat->Size = System::Drawing::Size(116, 23);
 			this->btnStat->TabIndex = 5;
 			this->btnStat->Text = L"Statistiques";
-			this->btnStat->UseVisualStyleBackColor = true;
+			this->btnStat->UseVisualStyleBackColor = false;
 			this->btnStat->Click += gcnew System::EventHandler(this, &MyForm::Stat_Click);
 			// 
 			// pictureBox1
@@ -172,6 +184,7 @@ namespace ProjetAPP {
 			this->Controls->Add(this->btnSto);
 			this->Controls->Add(this->btnExit);
 			this->Controls->Add(this->btnGestPerso);
+			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyForm";
 			this->Text = L"Acceuil";

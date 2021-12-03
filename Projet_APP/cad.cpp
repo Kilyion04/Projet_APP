@@ -4,7 +4,7 @@
 
 NS_Comp_Data::cad::cad(void)
 {
-	this->sCnx = "Data Source=MSI;Initial Catalog=test2 ;User ID=CNX_TEST;Password=test";
+	this->sCnx = "Data Source=MSI;Initial Catalog=test2 ;User ID=CNX_POO;Password=kanapp";
 
 	this->sSql = "Rie";
 

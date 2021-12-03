@@ -59,7 +59,8 @@ namespace ProjetAPP {
 	private: System::String^ idCommande;
 	private: System::Data::DataSet^ oDs;
 	private: NS_Comp_Commande::commande^ oCommande;
-	
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 	private:
 		/// <summary>
 		/// Variable nécessaire au concepteur.
@@ -84,32 +85,39 @@ namespace ProjetAPP {
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnReturn
 			// 
+			this->btnReturn->BackColor = System::Drawing::Color::Transparent;
+			this->btnReturn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
 			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 44;
 			this->btnReturn->Text = L"Retour";
-			this->btnReturn->UseVisualStyleBackColor = true;
+			this->btnReturn->UseVisualStyleBackColor = false;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormComSelecMod::Return_Click);
 			// 
 			// btnModCli
 			// 
-			this->btnModCli->Location = System::Drawing::Point(388, 249);
+			this->btnModCli->BackColor = System::Drawing::Color::Transparent;
+			this->btnModCli->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->btnModCli->Location = System::Drawing::Point(12, 248);
 			this->btnModCli->Name = L"btnModCli";
 			this->btnModCli->Size = System::Drawing::Size(75, 23);
 			this->btnModCli->TabIndex = 45;
 			this->btnModCli->Text = L"Modifier";
-			this->btnModCli->UseVisualStyleBackColor = true;
+			this->btnModCli->UseVisualStyleBackColor = false;
 			this->btnModCli->Click += gcnew System::EventHandler(this, &MyFormComSelecMod::ModCli_Click);
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::Color::Transparent;
 			this->label11->Location = System::Drawing::Point(14, 177);
 			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label11->Name = L"label11";
@@ -127,6 +135,7 @@ namespace ProjetAPP {
 			// label10
 			// 
 			this->label10->AutoSize = true;
+			this->label10->BackColor = System::Drawing::Color::Transparent;
 			this->label10->Location = System::Drawing::Point(15, 121);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
@@ -145,7 +154,7 @@ namespace ProjetAPP {
 			// 
 			this->checkBox2->AutoSize = true;
 			this->checkBox2->Location = System::Drawing::Point(100, 84);
-			this->checkBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->checkBox2->Margin = System::Windows::Forms::Padding(2);
 			this->checkBox2->Name = L"checkBox2";
 			this->checkBox2->Size = System::Drawing::Size(15, 14);
 			this->checkBox2->TabIndex = 66;
@@ -157,7 +166,7 @@ namespace ProjetAPP {
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->ImeMode = System::Windows::Forms::ImeMode::NoControl;
 			this->dateTimePicker1->Location = System::Drawing::Point(14, 83);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(2);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(76, 20);
 			this->dateTimePicker1->TabIndex = 65;
@@ -167,6 +176,7 @@ namespace ProjetAPP {
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->BackColor = System::Drawing::Color::Transparent;
 			this->label3->Location = System::Drawing::Point(12, 67);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
@@ -176,15 +186,29 @@ namespace ProjetAPP {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->dataGridView1->Location = System::Drawing::Point(160, 12);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(302, 222);
 			this->dataGridView1->TabIndex = 71;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormComSelecMod::dataGridView1_CellContentClick);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(327, 239);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(135, 41);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 72;
+			this->pictureBox1->TabStop = false;
 			// 
 			// MyFormComSelecMod
 			// 
@@ -193,6 +217,7 @@ namespace ProjetAPP {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(475, 283);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->textBox8);
@@ -209,6 +234,7 @@ namespace ProjetAPP {
 			this->Text = L"MyFormComSelecMod";
 			this->Load += gcnew System::EventHandler(this, &MyFormComSelecMod::MyFormComSelecMod_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 

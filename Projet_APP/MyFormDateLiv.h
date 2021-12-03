@@ -49,6 +49,7 @@ namespace ProjetAPP {
 	private: System::Windows::Forms::Button^ button5;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 		   /// <summary>
 		/// Required designer variable.
 		/// </summary>
@@ -70,14 +71,18 @@ namespace ProjetAPP {
 			   this->button5 = (gcnew System::Windows::Forms::Button());
 			   this->button4 = (gcnew System::Windows::Forms::Button());
 			   this->button3 = (gcnew System::Windows::Forms::Button());
+			   this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			   this->SuspendLayout();
 			   // 
 			   // dataGridView1
 			   // 
+			   this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
+			   this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			   this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			   this->dataGridView1->Location = System::Drawing::Point(120, 10);
-			   this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			   this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			   this->dataGridView1->Name = L"dataGridView1";
 			   this->dataGridView1->RowHeadersWidth = 51;
 			   this->dataGridView1->RowTemplate->Height = 24;
@@ -87,13 +92,15 @@ namespace ProjetAPP {
 			   // 
 			   // button1
 			   // 
+			   this->button1->BackColor = System::Drawing::Color::Transparent;
+			   this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->button1->Location = System::Drawing::Point(9, 10);
-			   this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			   this->button1->Margin = System::Windows::Forms::Padding(2);
 			   this->button1->Name = L"button1";
 			   this->button1->Size = System::Drawing::Size(61, 24);
 			   this->button1->TabIndex = 38;
 			   this->button1->Text = L"Retour";
-			   this->button1->UseVisualStyleBackColor = true;
+			   this->button1->UseVisualStyleBackColor = false;
 			   this->button1->Click += gcnew System::EventHandler(this, &MyFormDateLiv::button1_Click);
 			   // 
 			   // dateTimePicker1
@@ -108,7 +115,7 @@ namespace ProjetAPP {
 			   // textBox1
 			   // 
 			   this->textBox1->Location = System::Drawing::Point(312, 136);
-			   this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			   this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			   this->textBox1->Name = L"textBox1";
 			   this->textBox1->Size = System::Drawing::Size(52, 20);
 			   this->textBox1->TabIndex = 44;
@@ -116,6 +123,8 @@ namespace ProjetAPP {
 			   // label1
 			   // 
 			   this->label1->AutoSize = true;
+			   this->label1->BackColor = System::Drawing::Color::Transparent;
+			   this->label1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->label1->Location = System::Drawing::Point(310, 120);
 			   this->label1->Name = L"label1";
 			   this->label1->Size = System::Drawing::Size(40, 13);
@@ -124,36 +133,54 @@ namespace ProjetAPP {
 			   // 
 			   // button5
 			   // 
+			   this->button5->BackColor = System::Drawing::Color::Transparent;
+			   this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->button5->Location = System::Drawing::Point(384, 154);
-			   this->button5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			   this->button5->Margin = System::Windows::Forms::Padding(2);
 			   this->button5->Name = L"button5";
 			   this->button5->Size = System::Drawing::Size(61, 24);
 			   this->button5->TabIndex = 42;
 			   this->button5->Text = L"Modifier";
-			   this->button5->UseVisualStyleBackColor = true;
+			   this->button5->UseVisualStyleBackColor = false;
 			   this->button5->Click += gcnew System::EventHandler(this, &MyFormDateLiv::button5_Click);
 			   // 
 			   // button4
 			   // 
+			   this->button4->BackColor = System::Drawing::Color::Transparent;
+			   this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->button4->Location = System::Drawing::Point(384, 115);
-			   this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			   this->button4->Margin = System::Windows::Forms::Padding(2);
 			   this->button4->Name = L"button4";
 			   this->button4->Size = System::Drawing::Size(61, 24);
 			   this->button4->TabIndex = 41;
 			   this->button4->Text = L"Supprimer";
-			   this->button4->UseVisualStyleBackColor = true;
+			   this->button4->UseVisualStyleBackColor = false;
 			   this->button4->Click += gcnew System::EventHandler(this, &MyFormDateLiv::button4_Click);
 			   // 
 			   // button3
 			   // 
+			   this->button3->BackColor = System::Drawing::Color::Transparent;
+			   this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			   this->button3->Location = System::Drawing::Point(165, 128);
-			   this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			   this->button3->Margin = System::Windows::Forms::Padding(2);
 			   this->button3->Name = L"button3";
 			   this->button3->Size = System::Drawing::Size(61, 24);
 			   this->button3->TabIndex = 40;
 			   this->button3->Text = L"Ajouter";
-			   this->button3->UseVisualStyleBackColor = true;
+			   this->button3->UseVisualStyleBackColor = false;
 			   this->button3->Click += gcnew System::EventHandler(this, &MyFormDateLiv::button3_Click);
+			   // 
+			   // pictureBox1
+			   // 
+			   this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			   this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			   this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			   this->pictureBox1->Location = System::Drawing::Point(9, 156);
+			   this->pictureBox1->Name = L"pictureBox1";
+			   this->pictureBox1->Size = System::Drawing::Size(135, 41);
+			   this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			   this->pictureBox1->TabIndex = 73;
+			   this->pictureBox1->TabStop = false;
 			   // 
 			   // MyFormDateLiv
 			   // 
@@ -162,6 +189,7 @@ namespace ProjetAPP {
 			   this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			   this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			   this->ClientSize = System::Drawing::Size(470, 209);
+			   this->Controls->Add(this->pictureBox1);
 			   this->Controls->Add(this->textBox1);
 			   this->Controls->Add(this->label1);
 			   this->Controls->Add(this->button5);
@@ -172,11 +200,12 @@ namespace ProjetAPP {
 			   this->Controls->Add(this->dataGridView1);
 			   this->DoubleBuffered = true;
 			   this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
-			   this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			   this->Margin = System::Windows::Forms::Padding(2);
 			   this->Name = L"MyFormDateLiv";
 			   this->Text = L"MyFormDateLiv";
 			   this->Load += gcnew System::EventHandler(this, &MyFormDateLiv::MyFormDateLiv_Load);
 			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			   (cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			   this->ResumeLayout(false);
 			   this->PerformLayout();
 
