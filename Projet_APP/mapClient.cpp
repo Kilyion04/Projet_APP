@@ -29,7 +29,7 @@ System::String^ NS_Comp_Mappage_Client::mapClient::afficherClient(void)
 
 System::String^ NS_Comp_Mappage_Client::mapClient::afficherUnClient(void)
 {
-	return "SELECT * FROM client WHERE idClient = " + this->idClient + "; ";
+	return "SELECT clientActif, nomClient, prenomClient, date AS dateNaissance FROM client, dates WHERE idClient = " + this->idClient + " AND dateNaissance = dates.idDate;";
 }
 
 System::String^ NS_Comp_Mappage_Client::mapClient::afficherAdresseLivraison(void)

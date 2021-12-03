@@ -51,6 +51,7 @@ namespace ProjetAPP {
 	private: System::String^ idArticle;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private:
 		System::ComponentModel::Container^ components;
@@ -67,65 +68,94 @@ namespace ProjetAPP {
 			this->btnModSto = (gcnew System::Windows::Forms::Button());
 			this->StoView = (gcnew System::Windows::Forms::DataGridView());
 			this->btnReturn = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->StoView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnSupSto
 			// 
-			this->btnSupSto->Location = System::Drawing::Point(93, 96);
+			this->btnSupSto->BackColor = System::Drawing::Color::Transparent;
+			this->btnSupSto->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnSupSto->Location = System::Drawing::Point(150, 174);
+			this->btnSupSto->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnSupSto->Name = L"btnSupSto";
-			this->btnSupSto->Size = System::Drawing::Size(75, 23);
+			this->btnSupSto->Size = System::Drawing::Size(100, 28);
 			this->btnSupSto->TabIndex = 44;
 			this->btnSupSto->Text = L"Supprimer";
-			this->btnSupSto->UseVisualStyleBackColor = true;
+			this->btnSupSto->UseVisualStyleBackColor = false;
 			this->btnSupSto->Click += gcnew System::EventHandler(this, &MyFormStoSelec::SupSto_Click);
 			// 
 			// btnModSto
 			// 
-			this->btnModSto->Location = System::Drawing::Point(12, 96);
+			this->btnModSto->BackColor = System::Drawing::Color::Transparent;
+			this->btnModSto->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnModSto->Location = System::Drawing::Point(16, 174);
+			this->btnModSto->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnModSto->Name = L"btnModSto";
-			this->btnModSto->Size = System::Drawing::Size(75, 23);
+			this->btnModSto->Size = System::Drawing::Size(100, 28);
 			this->btnModSto->TabIndex = 43;
 			this->btnModSto->Text = L"Modifier";
-			this->btnModSto->UseVisualStyleBackColor = true;
+			this->btnModSto->UseVisualStyleBackColor = false;
 			this->btnModSto->Click += gcnew System::EventHandler(this, &MyFormStoSelec::ModSto_Click);
 			// 
 			// StoView
 			// 
 			this->StoView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->StoView->Location = System::Drawing::Point(12, 41);
+			this->StoView->Location = System::Drawing::Point(16, 50);
+			this->StoView->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->StoView->Name = L"StoView";
-			this->StoView->Size = System::Drawing::Size(758, 49);
+			this->StoView->RowHeadersWidth = 51;
+			this->StoView->Size = System::Drawing::Size(1011, 94);
 			this->StoView->TabIndex = 42;
 			this->StoView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormStoSelec::StoView_Click);
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(12, 12);
+			this->btnReturn->BackColor = System::Drawing::Color::Transparent;
+			this->btnReturn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnReturn->Location = System::Drawing::Point(16, 15);
+			this->btnReturn->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(75, 23);
+			this->btnReturn->Size = System::Drawing::Size(100, 28);
 			this->btnReturn->TabIndex = 41;
-			this->btnReturn->Text = L"retour";
-			this->btnReturn->UseVisualStyleBackColor = true;
+			this->btnReturn->Text = L"Retour";
+			this->btnReturn->UseVisualStyleBackColor = false;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormStoSelec::Return_Click);
+			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(786, 152);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(259, 91);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 45;
+			this->pictureBox1->TabStop = false;
 			// 
 			// MyFormStoSelec
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(793, 137);
+			this->ClientSize = System::Drawing::Size(1075, 256);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->btnSupSto);
 			this->Controls->Add(this->btnModSto);
 			this->Controls->Add(this->StoView);
 			this->Controls->Add(this->btnReturn);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyFormStoSelec";
 			this->Text = L"MyFormStoSelec";
 			this->Load += gcnew System::EventHandler(this, &MyFormStoSelec::MyFormStoSelec_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->StoView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}

@@ -89,9 +89,10 @@ namespace ProjetAPP {
 			// 
 			this->btnSupCom->BackColor = System::Drawing::Color::Transparent;
 			this->btnSupCom->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnSupCom->Location = System::Drawing::Point(100, 116);
+			this->btnSupCom->Location = System::Drawing::Point(133, 143);
+			this->btnSupCom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnSupCom->Name = L"btnSupCom";
-			this->btnSupCom->Size = System::Drawing::Size(75, 23);
+			this->btnSupCom->Size = System::Drawing::Size(100, 28);
 			this->btnSupCom->TabIndex = 44;
 			this->btnSupCom->Text = L"Supprimer";
 			this->btnSupCom->UseVisualStyleBackColor = false;
@@ -101,9 +102,10 @@ namespace ProjetAPP {
 			// 
 			this->btnModCom->BackColor = System::Drawing::Color::Transparent;
 			this->btnModCom->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnModCom->Location = System::Drawing::Point(19, 116);
+			this->btnModCom->Location = System::Drawing::Point(25, 143);
+			this->btnModCom->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnModCom->Name = L"btnModCom";
-			this->btnModCom->Size = System::Drawing::Size(75, 23);
+			this->btnModCom->Size = System::Drawing::Size(100, 28);
 			this->btnModCom->TabIndex = 43;
 			this->btnModCom->Text = L"Modifier";
 			this->btnModCom->UseVisualStyleBackColor = false;
@@ -114,10 +116,11 @@ namespace ProjetAPP {
 			this->ComView->BackgroundColor = System::Drawing::Color::White;
 			this->ComView->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->ComView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->ComView->Location = System::Drawing::Point(12, 41);
+			this->ComView->Location = System::Drawing::Point(16, 50);
+			this->ComView->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->ComView->Name = L"ComView";
 			this->ComView->RowHeadersWidth = 51;
-			this->ComView->Size = System::Drawing::Size(758, 69);
+			this->ComView->Size = System::Drawing::Size(1011, 85);
 			this->ComView->TabIndex = 42;
 			this->ComView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormComSelec::ComView_Click);
 			// 
@@ -125,11 +128,12 @@ namespace ProjetAPP {
 			// 
 			this->btnReturn->BackColor = System::Drawing::Color::Transparent;
 			this->btnReturn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->btnReturn->Location = System::Drawing::Point(12, 12);
+			this->btnReturn->Location = System::Drawing::Point(16, 15);
+			this->btnReturn->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(75, 23);
+			this->btnReturn->Size = System::Drawing::Size(100, 28);
 			this->btnReturn->TabIndex = 41;
-			this->btnReturn->Text = L"retour";
+			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = false;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormComSelec::Return_Click);
 			// 
@@ -137,9 +141,10 @@ namespace ProjetAPP {
 			// 
 			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button1->Location = System::Drawing::Point(181, 116);
+			this->button1->Location = System::Drawing::Point(241, 143);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(102, 23);
+			this->button1->Size = System::Drawing::Size(136, 28);
 			this->button1->TabIndex = 45;
 			this->button1->Text = L"Date d\'émission";
 			this->button1->UseVisualStyleBackColor = false;
@@ -149,9 +154,10 @@ namespace ProjetAPP {
 			// 
 			this->button2->BackColor = System::Drawing::Color::Transparent;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->button2->Location = System::Drawing::Point(289, 116);
+			this->button2->Location = System::Drawing::Point(385, 143);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(105, 23);
+			this->button2->Size = System::Drawing::Size(140, 28);
 			this->button2->TabIndex = 46;
 			this->button2->Text = L"Date de livraison";
 			this->button2->UseVisualStyleBackColor = false;
@@ -162,20 +168,21 @@ namespace ProjetAPP {
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
 			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(678, 116);
+			this->pictureBox1->Location = System::Drawing::Point(904, 143);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(108, 35);
+			this->pictureBox1->Size = System::Drawing::Size(144, 43);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 73;
 			this->pictureBox1->TabStop = false;
 			// 
 			// MyFormComSelec
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(785, 150);
+			this->ClientSize = System::Drawing::Size(1047, 185);
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
@@ -185,6 +192,7 @@ namespace ProjetAPP {
 			this->Controls->Add(this->btnReturn);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyFormComSelec";
 			this->Text = L"MyFormComSelec";
 			this->Load += gcnew System::EventHandler(this, &MyFormComSelec::MyFormComSelec_Load);
