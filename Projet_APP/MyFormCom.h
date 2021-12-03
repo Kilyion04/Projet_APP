@@ -855,6 +855,11 @@ int m = 0;
 int nbArticles = 0;
 int quantiteDeBase;
 private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->numericUpDown5->Text == "") {
+			MessageBox::Show(L"N'oubliez pas de préciser <ID client> pour appliquer la remise.", L"Message",
+			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
+	else{
 	if (this->comboBox1->Text == "")
 	{
 		MessageBox::Show(L"Choisissez un article.", L"Message",
@@ -863,17 +868,17 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 	else {
 		if (this->nbArticles == size) {
 			MessageBox::Show(L"Nombre d'articles maximum atteint.", L"Message",
-			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+				MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		}
 		else {
 			if (System::Convert::ToInt64(this->numericUpDown1->Text) > 0) {
-				this->f =0;
-				this-> m = 0;
+				this->f = 0;
+				this->m = 0;
 				int actuel = 0;
-				while (f < System::Convert::ToInt64(this->numericUpDown1->Text) && m <= size){
+				while (f < System::Convert::ToInt64(this->numericUpDown1->Text) && m <= size) {
 					if (this->nbArticles == size) {
 						MessageBox::Show(L"Nombre d'articles maximum atteint.", L"Message",
-						MessageBoxButtons::OK, MessageBoxIcon::Warning);
+							MessageBoxButtons::OK, MessageBoxIcon::Warning);
 						m = size + 1;
 					}
 					else {
@@ -897,17 +902,17 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 							ajoutArticles(i);
 							i++;
 						}
-						
-						
+
 					}
 				}
-				
+
 			}
 			else {
 				MessageBox::Show(L"Quantité non précisée.", L"Message",
-				MessageBoxButtons::OK, MessageBoxIcon::Warning);
+					MessageBoxButtons::OK, MessageBoxIcon::Warning);
 			}
 		}
+	}
 	}
 }
 	   private: void ajoutArticles(int indice)
@@ -946,7 +951,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 			   this->dataGridView1->DataMember = "Rsl";
 
 			   this->textBox6->Text = System::Convert::ToString(float::Parse(this->textBox6->Text) + (float::Parse(this->dataGridView1->Rows[0]->Cells[5]->Value->ToString()) * montantHT));
-			   //Remise(s)/*/
+			   //Remise(s)
 			   if (this->numericUpDown5->Text == "") {
 				   if (f == 0) {
 					   MessageBox::Show(L"N'oubliez pas de préciser <ID client> pour appliquer la remise.", L"Message",
@@ -958,24 +963,30 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 				   
 				   //Remise anniversaire
 				   this->dataGridView1->Refresh();
-				   this->oDs = this->oCad->getRows("IF(SELECT MONTH(dates.date) FROM client, dates WHERE idClient = " + this->numericUpDown5->Text + " AND idDate = dateNaissance) = MONTH('" + this->dateTimePicker1->Text + "') AND (SELECT DAY(dates.date) FROM client, dates WHERE idClient = " + this->numericUpDown5->Text + " AND idDate = dateNaissance) = DAY('" + this->dateTimePicker1->Text + "') BEGIN SELECT 0.1; END", "Rsl");
+				   this->oDs = this->oCad->getRows("IF(SELECT MONTH(dates.date) FROM client, dates WHERE idClient = " + this->numericUpDown5->Text + " AND idDate = dateNaissance) = MONTH('" + this->dateTimePicker1->Text + "') AND (SELECT DAY(dates.date) FROM client, dates WHERE idClient = " + this->numericUpDown5->Text + " AND idDate = dateNaissance) = DAY('" + this->dateTimePicker1->Text + "') BEGIN SELECT 0.1; END ;", "Rsl");
 				   this->dataGridView1->DataSource = this->oDs;
 				   this->dataGridView1->DataMember = "Rsl";
 				   
 				   if (this->dataGridView1->Rows->Count > 1)
 				   {
 					   remise = float::Parse(this->dataGridView1->Rows[0]->Cells[1]->Value->ToString());
+					   
+					   
 				   }
-				   //Remise première commande
-				   this->dataGridView1->Refresh();
-				   this->oDs = this->oCad->getRows("IF (SELECT MONTH(MIN(dateCommande)) FROM client, commande, paiement WHERE client.idClient = " + this->numericUpDown5->Text + " AND client.idClient = paiement.idClient AND paiement.idCommande = commande.idCommande) = MONTH('" + this->dateTimePicker1->Text + "') AND (SELECT DAY(MIN(dateCommande)) FROM client, commande, paiement WHERE client.idClient = " + this->numericUpDown5->Text + " AND client.idClient = paiement.idClient AND paiement.idCommande = commande.idCommande) = DAY('" + this->dateTimePicker1->Text + "') BEGIN SELECT 0.05; END" , "Rsl");
-				   this->dataGridView1->DataSource = this->oDs;
-				   this->dataGridView1->DataMember = "Rsl";
-				   
-				   if (this->dataGridView1->Rows->Count > 1)
-				   {
-					   remise = float::Parse(this->dataGridView1->Rows[0]->Cells[1]->Value->ToString());
-					  
+				   else {
+					   //Remise première commande
+					   this->dataGridView1->Refresh();
+					   this->oDs = this->oCad->getRows("IF (SELECT MONTH(MIN(dateCommande)) FROM client, commande, paiement WHERE client.idClient = " + this->numericUpDown5->Text + " AND client.idClient = paiement.idClient AND paiement.idCommande = commande.idCommande) = MONTH('" + this->dateTimePicker1->Text + "') AND (SELECT DAY(MIN(dateCommande)) FROM client, commande, paiement WHERE client.idClient = " + this->numericUpDown5->Text + " AND client.idClient = paiement.idClient AND paiement.idCommande = commande.idCommande) = DAY('" + this->dateTimePicker1->Text + "') BEGIN SELECT 0.05; END ;", "Rsl");
+					   this->dataGridView1->DataSource = this->oDs;
+					   this->dataGridView1->DataMember = "Rsl";
+
+					   if (this->dataGridView1->Rows->Count > 1)
+					   {
+						   remise += float::Parse(this->dataGridView1->Rows[0]->Cells[1]->Value->ToString());
+					   }
+					   else {
+						   remise = 0;
+					   }
 				   }
 				   this->textBox4->Text = System::Convert::ToString(remise*100);
 			   }
