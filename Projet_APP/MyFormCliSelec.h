@@ -81,16 +81,20 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
+			this->btnReturn->BackColor = System::Drawing::Color::Transparent;
+			this->btnReturn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
 			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 1;
 			this->btnReturn->Text = L"Retour";
-			this->btnReturn->UseVisualStyleBackColor = true;
+			this->btnReturn->UseVisualStyleBackColor = false;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormCliSelec::Return_Click);
 			// 
 			// CliView
 			// 
+			this->CliView->BackgroundColor = System::Drawing::Color::White;
+			this->CliView->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->CliView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
 			this->CliView->Location = System::Drawing::Point(12, 41);
 			this->CliView->Name = L"CliView";
@@ -101,42 +105,50 @@ namespace ProjetAPP {
 			// 
 			// btnSupCli
 			// 
+			this->btnSupCli->BackColor = System::Drawing::Color::Transparent;
+			this->btnSupCli->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnSupCli->Location = System::Drawing::Point(93, 124);
 			this->btnSupCli->Name = L"btnSupCli";
 			this->btnSupCli->Size = System::Drawing::Size(75, 23);
 			this->btnSupCli->TabIndex = 40;
 			this->btnSupCli->Text = L"Supprimer";
-			this->btnSupCli->UseVisualStyleBackColor = true;
+			this->btnSupCli->UseVisualStyleBackColor = false;
 			this->btnSupCli->Click += gcnew System::EventHandler(this, &MyFormCliSelec::SupCli_Click);
 			// 
 			// btnModCli
 			// 
+			this->btnModCli->BackColor = System::Drawing::Color::Transparent;
+			this->btnModCli->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnModCli->Location = System::Drawing::Point(12, 124);
 			this->btnModCli->Name = L"btnModCli";
 			this->btnModCli->Size = System::Drawing::Size(75, 23);
 			this->btnModCli->TabIndex = 39;
 			this->btnModCli->Text = L"Modifier";
-			this->btnModCli->UseVisualStyleBackColor = true;
+			this->btnModCli->UseVisualStyleBackColor = false;
 			this->btnModCli->Click += gcnew System::EventHandler(this, &MyFormCliSelec::ModCli_Click);
 			// 
 			// button2
 			// 
+			this->button2->BackColor = System::Drawing::Color::Transparent;
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button2->Location = System::Drawing::Point(174, 124);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(131, 23);
 			this->button2->TabIndex = 42;
 			this->button2->Text = L"Adresse(s) de livraison";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &MyFormCliSelec::button2_Click);
 			// 
 			// button1
 			// 
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button1->Location = System::Drawing::Point(311, 124);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(149, 23);
 			this->button1->TabIndex = 43;
 			this->button1->Text = L"Adresse(s) de facturation";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyFormCliSelec::button1_Click);
 			// 
 			// MyFormCliSelec
