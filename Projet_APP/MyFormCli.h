@@ -73,9 +73,10 @@ namespace ProjetAPP {
 
 
 	private: System::Windows::Forms::CheckBox^ checkBox1;
-	private: System::Windows::Forms::CheckBox^ checkBox2;
+
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
 	private: System::Windows::Forms::PictureBox^ pictureBox1;
+
 
 	protected:
 
@@ -109,7 +110,6 @@ namespace ProjetAPP {
 			this->numericUpDown5 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->btnRecCli = (gcnew System::Windows::Forms::Button());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
-			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->groupBox2->SuspendLayout();
@@ -119,74 +119,88 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(13, 13);
+			this->btnReturn->BackColor = System::Drawing::Color::Transparent;
+			this->btnReturn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
 			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 0;
 			this->btnReturn->Text = L"Retour";
-			this->btnReturn->UseVisualStyleBackColor = true;
+			this->btnReturn->UseVisualStyleBackColor = false;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormCli::return_Click);
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::White;
+			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(20, 158);
+			this->dataGridView1->Location = System::Drawing::Point(12, 109);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(680, 216);
+			this->dataGridView1->Size = System::Drawing::Size(680, 264);
 			this->dataGridView1->TabIndex = 1;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormCli::dataGridView1_CellContentClick);
 			// 
 			// btnCreCli
 			// 
-			this->btnCreCli->Location = System::Drawing::Point(339, 13);
+			this->btnCreCli->BackColor = System::Drawing::Color::Transparent;
+			this->btnCreCli->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnCreCli->Location = System::Drawing::Point(309, 12);
 			this->btnCreCli->Name = L"btnCreCli";
 			this->btnCreCli->Size = System::Drawing::Size(75, 23);
 			this->btnCreCli->TabIndex = 2;
 			this->btnCreCli->Text = L"Créer";
-			this->btnCreCli->UseVisualStyleBackColor = true;
+			this->btnCreCli->UseVisualStyleBackColor = false;
 			this->btnCreCli->Click += gcnew System::EventHandler(this, &MyFormCli::CreCli_Click);
 			// 
 			// btnAffCli
 			// 
+			this->btnAffCli->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnAffCli->Location = System::Drawing::Point(6, 19);
 			this->btnAffCli->Name = L"btnAffCli";
 			this->btnAffCli->Size = System::Drawing::Size(75, 23);
 			this->btnAffCli->TabIndex = 3;
 			this->btnAffCli->Text = L"Afficher";
 			this->btnAffCli->UseVisualStyleBackColor = true;
+			this->btnAffCli->UseWaitCursor = true;
 			this->btnAffCli->Click += gcnew System::EventHandler(this, &MyFormCli::AffCli_Click);
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(13, 399);
+			this->button1->BackColor = System::Drawing::Color::Transparent;
+			this->button1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button1->Location = System::Drawing::Point(12, 379);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(125, 23);
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Afficher Clients";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyFormCli::button1_Click);
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(50, 74);
+			this->textBox2->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox2->Location = System::Drawing::Point(12, 73);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(183, 20);
+			this->textBox2->Size = System::Drawing::Size(183, 13);
 			this->textBox2->TabIndex = 6;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyFormCli::textBox2_TextChanged);
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(302, 74);
+			this->textBox3->BackColor = System::Drawing::Color::White;
+			this->textBox3->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->textBox3->Location = System::Drawing::Point(201, 73);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(183, 20);
+			this->textBox3->Size = System::Drawing::Size(183, 13);
 			this->textBox3->TabIndex = 7;
 			// 
 			// dateTimePicker1
 			// 
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(113, 108);
+			this->dateTimePicker1->Location = System::Drawing::Point(394, 72);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(76, 20);
 			this->dateTimePicker1->TabIndex = 10;
@@ -200,11 +214,13 @@ namespace ProjetAPP {
 			this->label1->Size = System::Drawing::Size(18, 13);
 			this->label1->TabIndex = 14;
 			this->label1->Text = L"ID";
+			this->label1->UseWaitCursor = true;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(17, 74);
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Location = System::Drawing::Point(9, 57);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(29, 13);
 			this->label2->TabIndex = 15;
@@ -213,7 +229,8 @@ namespace ProjetAPP {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(256, 76);
+			this->label3->BackColor = System::Drawing::Color::Transparent;
+			this->label3->Location = System::Drawing::Point(198, 57);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(43, 13);
 			this->label3->TabIndex = 19;
@@ -222,7 +239,8 @@ namespace ProjetAPP {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(17, 108);
+			this->label9->BackColor = System::Drawing::Color::Transparent;
+			this->label9->Location = System::Drawing::Point(391, 56);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(96, 13);
 			this->label9->TabIndex = 25;
@@ -230,66 +248,67 @@ namespace ProjetAPP {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->BackColor = System::Drawing::Color::Transparent;
+			this->groupBox2->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->groupBox2->Controls->Add(this->numericUpDown5);
 			this->groupBox2->Controls->Add(this->btnAffCli);
 			this->groupBox2->Controls->Add(this->label1);
-			this->groupBox2->Location = System::Drawing::Point(606, 13);
+			this->groupBox2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->groupBox2->ForeColor = System::Drawing::Color::Black;
+			this->groupBox2->ImeMode = System::Windows::Forms::ImeMode::NoControl;
+			this->groupBox2->Location = System::Drawing::Point(574, 11);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(118, 92);
 			this->groupBox2->TabIndex = 27;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Afficher un client";
+			this->groupBox2->UseWaitCursor = true;
 			this->groupBox2->Enter += gcnew System::EventHandler(this, &MyFormCli::groupBox2_Enter);
 			// 
 			// numericUpDown5
 			// 
+			this->numericUpDown5->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->numericUpDown5->Location = System::Drawing::Point(5, 62);
 			this->numericUpDown5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown5->Name = L"numericUpDown5";
-			this->numericUpDown5->Size = System::Drawing::Size(90, 20);
+			this->numericUpDown5->Size = System::Drawing::Size(90, 16);
 			this->numericUpDown5->TabIndex = 58;
+			this->numericUpDown5->UseWaitCursor = true;
 			// 
 			// btnRecCli
 			// 
-			this->btnRecCli->Location = System::Drawing::Point(258, 13);
+			this->btnRecCli->BackColor = System::Drawing::Color::Transparent;
+			this->btnRecCli->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnRecCli->Location = System::Drawing::Point(228, 12);
 			this->btnRecCli->Name = L"btnRecCli";
 			this->btnRecCli->Size = System::Drawing::Size(75, 23);
 			this->btnRecCli->TabIndex = 28;
 			this->btnRecCli->Text = L"Rechercher";
-			this->btnRecCli->UseVisualStyleBackColor = true;
+			this->btnRecCli->UseVisualStyleBackColor = false;
 			this->btnRecCli->Click += gcnew System::EventHandler(this, &MyFormCli::button2_Click);
 			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(194, 113);
+			this->checkBox1->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox1->Location = System::Drawing::Point(475, 77);
 			this->checkBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(15, 14);
 			this->checkBox1->TabIndex = 30;
-			this->checkBox1->UseVisualStyleBackColor = true;
-			// 
-			// checkBox2
-			// 
-			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(143, 403);
-			this->checkBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
-			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(55, 17);
-			this->checkBox2->TabIndex = 31;
-			this->checkBox2->Text = L"Inactif";
-			this->checkBox2->UseVisualStyleBackColor = true;
+			this->checkBox1->UseVisualStyleBackColor = false;
 			// 
 			// pictureBox1
 			// 
 			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
 			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
-			this->pictureBox1->Location = System::Drawing::Point(487, 380);
+			this->pictureBox1->Location = System::Drawing::Point(498, 379);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(213, 71);
+			this->pictureBox1->Size = System::Drawing::Size(194, 74);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-			this->pictureBox1->TabIndex = 32;
+			this->pictureBox1->TabIndex = 31;
 			this->pictureBox1->TabStop = false;
 			// 
 			// MyFormCli
@@ -298,9 +317,8 @@ namespace ProjetAPP {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(742, 454);
+			this->ClientSize = System::Drawing::Size(705, 462);
 			this->Controls->Add(this->pictureBox1);
-			this->Controls->Add(this->checkBox2);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->btnRecCli);
 			this->Controls->Add(this->groupBox2);

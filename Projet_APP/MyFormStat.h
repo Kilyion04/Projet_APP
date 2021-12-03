@@ -93,6 +93,7 @@ namespace ProjetAPP {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown2;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown3;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown4;
+	private: System::Windows::Forms::GroupBox^ groupBox6;
 
 
 	protected:
@@ -157,6 +158,7 @@ namespace ProjetAPP {
 			this->comboBox3 = (gcnew System::Windows::Forms::ComboBox());
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->groupBox6 = (gcnew System::Windows::Forms::GroupBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->StatView))->BeginInit();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -167,6 +169,7 @@ namespace ProjetAPP {
 			this->groupBox3->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			this->groupBox6->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// comboBox1
@@ -186,111 +189,133 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
+			this->btnReturn->BackColor = System::Drawing::Color::Transparent;
+			this->btnReturn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
 			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 2;
 			this->btnReturn->Text = L"Retour";
-			this->btnReturn->UseVisualStyleBackColor = true;
+			this->btnReturn->UseVisualStyleBackColor = false;
 			this->btnReturn->Click += gcnew System::EventHandler(this, &MyFormStat::Return_Click);
 			// 
 			// btnStat1
 			// 
+			this->btnStat1->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnStat1->Location = System::Drawing::Point(18, 41);
 			this->btnStat1->Name = L"btnStat1";
 			this->btnStat1->Size = System::Drawing::Size(248, 23);
 			this->btnStat1->TabIndex = 4;
-			this->btnStat1->Text = L"Stat1";
-			this->btnStat1->UseVisualStyleBackColor = true;
+			this->btnStat1->Text = L"Panier Moyen";
+			this->btnStat1->UseVisualStyleBackColor = false;
 			this->btnStat1->Click += gcnew System::EventHandler(this, &MyFormStat::Stat1_Click);
 			// 
 			// btnStat2
 			// 
+			this->btnStat2->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnStat2->Location = System::Drawing::Point(6, 19);
 			this->btnStat2->Name = L"btnStat2";
 			this->btnStat2->Size = System::Drawing::Size(248, 23);
 			this->btnStat2->TabIndex = 5;
-			this->btnStat2->Text = L"Stat2";
-			this->btnStat2->UseVisualStyleBackColor = true;
+			this->btnStat2->Text = L"Chiffre d\'affaire par mois";
+			this->btnStat2->UseVisualStyleBackColor = false;
 			this->btnStat2->Click += gcnew System::EventHandler(this, &MyFormStat::Stat2_Click);
 			// 
 			// btnStat3
 			// 
+			this->btnStat3->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnStat3->Location = System::Drawing::Point(18, 179);
 			this->btnStat3->Name = L"btnStat3";
 			this->btnStat3->Size = System::Drawing::Size(248, 23);
 			this->btnStat3->TabIndex = 6;
-			this->btnStat3->Text = L"Stat3";
-			this->btnStat3->UseVisualStyleBackColor = true;
+			this->btnStat3->Text = L"Produits sous le seuil de réapprovisionnement";
+			this->btnStat3->UseVisualStyleBackColor = false;
 			this->btnStat3->Click += gcnew System::EventHandler(this, &MyFormStat::Stat3_Click);
 			// 
 			// btnStat4
 			// 
-			this->btnStat4->Location = System::Drawing::Point(18, 208);
+			this->btnStat4->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnStat4->Location = System::Drawing::Point(6, 19);
 			this->btnStat4->Name = L"btnStat4";
-			this->btnStat4->Size = System::Drawing::Size(93, 23);
+			this->btnStat4->Size = System::Drawing::Size(250, 23);
 			this->btnStat4->TabIndex = 7;
-			this->btnStat4->Text = L"Stat4";
-			this->btnStat4->UseVisualStyleBackColor = true;
+			this->btnStat4->Text = L"Total des achats d\'un client";
+			this->btnStat4->UseVisualStyleBackColor = false;
 			this->btnStat4->Click += gcnew System::EventHandler(this, &MyFormStat::Stat4_Click);
 			// 
 			// btnStat5
 			// 
-			this->btnStat5->Location = System::Drawing::Point(18, 237);
+			this->btnStat5->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnStat5->Location = System::Drawing::Point(20, 310);
 			this->btnStat5->Name = L"btnStat5";
 			this->btnStat5->Size = System::Drawing::Size(248, 23);
 			this->btnStat5->TabIndex = 8;
-			this->btnStat5->Text = L"Stat5";
-			this->btnStat5->UseVisualStyleBackColor = true;
+			this->btnStat5->Text = L"Les 10 articles les plus vendus";
+			this->btnStat5->UseVisualStyleBackColor = false;
 			this->btnStat5->Click += gcnew System::EventHandler(this, &MyFormStat::Stat5_Click);
 			// 
 			// btnStat6
 			// 
-			this->btnStat6->Location = System::Drawing::Point(18, 266);
+			this->btnStat6->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnStat6->Location = System::Drawing::Point(20, 339);
 			this->btnStat6->Name = L"btnStat6";
 			this->btnStat6->Size = System::Drawing::Size(248, 23);
 			this->btnStat6->TabIndex = 9;
-			this->btnStat6->Text = L"Stat6";
-			this->btnStat6->UseVisualStyleBackColor = true;
+			this->btnStat6->Text = L"Les 10 articles les moins vendus";
+			this->btnStat6->UseVisualStyleBackColor = false;
 			this->btnStat6->Click += gcnew System::EventHandler(this, &MyFormStat::Stat6_Click);
 			// 
 			// btnStat7
 			// 
-			this->btnStat7->Location = System::Drawing::Point(18, 295);
+			this->btnStat7->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnStat7->Location = System::Drawing::Point(20, 368);
 			this->btnStat7->Name = L"btnStat7";
 			this->btnStat7->Size = System::Drawing::Size(248, 23);
 			this->btnStat7->TabIndex = 10;
-			this->btnStat7->Text = L"Stat7";
-			this->btnStat7->UseVisualStyleBackColor = true;
+			this->btnStat7->Text = L"Valeur commerciale du stock";
+			this->btnStat7->UseVisualStyleBackColor = false;
 			this->btnStat7->Click += gcnew System::EventHandler(this, &MyFormStat::Stat7_Click);
 			// 
 			// btnStat8
 			// 
-			this->btnStat8->Location = System::Drawing::Point(18, 324);
+			this->btnStat8->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat8->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->btnStat8->Location = System::Drawing::Point(20, 397);
 			this->btnStat8->Name = L"btnStat8";
 			this->btnStat8->Size = System::Drawing::Size(248, 23);
 			this->btnStat8->TabIndex = 11;
-			this->btnStat8->Text = L"Stat8";
-			this->btnStat8->UseVisualStyleBackColor = true;
+			this->btnStat8->Text = L"Valeur d\'achat du stock";
+			this->btnStat8->UseVisualStyleBackColor = false;
 			this->btnStat8->Click += gcnew System::EventHandler(this, &MyFormStat::Stat8_Click);
 			// 
 			// btnStat9
 			// 
+			this->btnStat9->BackColor = System::Drawing::Color::Transparent;
+			this->btnStat9->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->btnStat9->Location = System::Drawing::Point(6, 19);
 			this->btnStat9->Name = L"btnStat9";
 			this->btnStat9->Size = System::Drawing::Size(248, 23);
 			this->btnStat9->TabIndex = 12;
-			this->btnStat9->Text = L"Stat9";
-			this->btnStat9->UseVisualStyleBackColor = true;
+			this->btnStat9->Text = L"Simulation des valeurs commerciales";
+			this->btnStat9->UseVisualStyleBackColor = false;
 			this->btnStat9->Click += gcnew System::EventHandler(this, &MyFormStat::Stat9_Click);
 			// 
 			// StatView
 			// 
+			this->StatView->BackgroundColor = System::Drawing::Color::White;
+			this->StatView->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->StatView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->StatView->Location = System::Drawing::Point(280, 12);
+			this->StatView->Location = System::Drawing::Point(285, 12);
 			this->StatView->Name = L"StatView";
 			this->StatView->RowHeadersWidth = 51;
-			this->StatView->Size = System::Drawing::Size(736, 335);
+			this->StatView->Size = System::Drawing::Size(736, 408);
 			this->StatView->TabIndex = 13;
 			this->StatView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormStat::StatView_Click);
 			// 
@@ -330,6 +355,7 @@ namespace ProjetAPP {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->BackColor = System::Drawing::Color::Transparent;
 			this->groupBox1->Controls->Add(this->btnStat2);
 			this->groupBox1->Controls->Add(this->comboBox1);
 			this->groupBox1->Controls->Add(this->comboBox2);
@@ -344,11 +370,12 @@ namespace ProjetAPP {
 			// 
 			// groupBox2
 			// 
+			this->groupBox2->BackColor = System::Drawing::Color::Transparent;
 			this->groupBox2->Controls->Add(this->groupBox5);
 			this->groupBox2->Controls->Add(this->groupBox4);
 			this->groupBox2->Controls->Add(this->groupBox3);
 			this->groupBox2->Controls->Add(this->btnStat9);
-			this->groupBox2->Location = System::Drawing::Point(12, 353);
+			this->groupBox2->Location = System::Drawing::Point(14, 426);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(499, 242);
 			this->groupBox2->TabIndex = 21;
@@ -374,13 +401,14 @@ namespace ProjetAPP {
 			// 
 			// numericUpDown4
 			// 
+			this->numericUpDown4->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->numericUpDown4->DecimalPlaces = 3;
 			this->numericUpDown4->Location = System::Drawing::Point(8, 31);
-			this->numericUpDown4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->numericUpDown4->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown4->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(84, 20);
+			this->numericUpDown4->Size = System::Drawing::Size(84, 16);
 			this->numericUpDown4->TabIndex = 26;
 			// 
 			// label10
@@ -468,13 +496,14 @@ namespace ProjetAPP {
 			// 
 			// numericUpDown3
 			// 
+			this->numericUpDown3->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->numericUpDown3->DecimalPlaces = 3;
 			this->numericUpDown3->Location = System::Drawing::Point(8, 31);
-			this->numericUpDown3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->numericUpDown3->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown3->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(84, 20);
+			this->numericUpDown3->Size = System::Drawing::Size(84, 16);
 			this->numericUpDown3->TabIndex = 26;
 			// 
 			// label9
@@ -562,13 +591,14 @@ namespace ProjetAPP {
 			// 
 			// numericUpDown2
 			// 
+			this->numericUpDown2->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->numericUpDown2->DecimalPlaces = 2;
 			this->numericUpDown2->Location = System::Drawing::Point(8, 30);
-			this->numericUpDown2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->numericUpDown2->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(84, 20);
+			this->numericUpDown2->Size = System::Drawing::Size(84, 16);
 			this->numericUpDown2->TabIndex = 25;
 			this->numericUpDown2->ValueChanged += gcnew System::EventHandler(this, &MyFormStat::numericUpDown2_ValueChanged);
 			// 
@@ -645,7 +675,8 @@ namespace ProjetAPP {
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(118, 210);
+			this->label15->BackColor = System::Drawing::Color::Transparent;
+			this->label15->Location = System::Drawing::Point(6, 47);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(47, 13);
 			this->label15->TabIndex = 23;
@@ -653,13 +684,26 @@ namespace ProjetAPP {
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(166, 209);
-			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->numericUpDown1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+			this->numericUpDown1->Location = System::Drawing::Point(9, 67);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(51, 20);
+			this->numericUpDown1->Size = System::Drawing::Size(51, 16);
 			this->numericUpDown1->TabIndex = 24;
+			// 
+			// groupBox6
+			// 
+			this->groupBox6->BackColor = System::Drawing::Color::Transparent;
+			this->groupBox6->Controls->Add(this->btnStat4);
+			this->groupBox6->Controls->Add(this->numericUpDown1);
+			this->groupBox6->Controls->Add(this->label15);
+			this->groupBox6->Location = System::Drawing::Point(12, 208);
+			this->groupBox6->Name = L"groupBox6";
+			this->groupBox6->Size = System::Drawing::Size(262, 96);
+			this->groupBox6->TabIndex = 25;
+			this->groupBox6->TabStop = false;
 			// 
 			// MyFormStat
 			// 
@@ -667,9 +711,8 @@ namespace ProjetAPP {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(1033, 603);
-			this->Controls->Add(this->numericUpDown1);
-			this->Controls->Add(this->label15);
+			this->ClientSize = System::Drawing::Size(1033, 676);
+			this->Controls->Add(this->groupBox6);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->StatView);
@@ -677,7 +720,6 @@ namespace ProjetAPP {
 			this->Controls->Add(this->btnStat7);
 			this->Controls->Add(this->btnStat6);
 			this->Controls->Add(this->btnStat5);
-			this->Controls->Add(this->btnStat4);
 			this->Controls->Add(this->btnStat3);
 			this->Controls->Add(this->btnStat1);
 			this->Controls->Add(this->btnReturn);
@@ -700,8 +742,9 @@ namespace ProjetAPP {
 			this->groupBox3->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			this->groupBox6->ResumeLayout(false);
+			this->groupBox6->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
