@@ -61,6 +61,7 @@ namespace ProjetAPP {
 		   /// </summary>
 		   void InitializeComponent(void)
 		   {
+			   System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormDateLiv::typeid));
 			   this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			   this->button1 = (gcnew System::Windows::Forms::Button());
 			   this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
@@ -75,19 +76,21 @@ namespace ProjetAPP {
 			   // dataGridView1
 			   // 
 			   this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			   this->dataGridView1->Location = System::Drawing::Point(160, 12);
+			   this->dataGridView1->Location = System::Drawing::Point(120, 10);
+			   this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			   this->dataGridView1->Name = L"dataGridView1";
 			   this->dataGridView1->RowHeadersWidth = 51;
 			   this->dataGridView1->RowTemplate->Height = 24;
-			   this->dataGridView1->Size = System::Drawing::Size(444, 101);
+			   this->dataGridView1->Size = System::Drawing::Size(333, 82);
 			   this->dataGridView1->TabIndex = 37;
 			   this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormDateLiv::dataGridView1_CellContentClick);
 			   // 
 			   // button1
 			   // 
-			   this->button1->Location = System::Drawing::Point(12, 12);
+			   this->button1->Location = System::Drawing::Point(9, 10);
+			   this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			   this->button1->Name = L"button1";
-			   this->button1->Size = System::Drawing::Size(81, 29);
+			   this->button1->Size = System::Drawing::Size(61, 24);
 			   this->button1->TabIndex = 38;
 			   this->button1->Text = L"Retour";
 			   this->button1->UseVisualStyleBackColor = true;
@@ -97,34 +100,34 @@ namespace ProjetAPP {
 			   // 
 			   this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
 			   this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			   this->dateTimePicker1->Location = System::Drawing::Point(49, 158);
-			   this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
+			   this->dateTimePicker1->Location = System::Drawing::Point(37, 128);
 			   this->dateTimePicker1->Name = L"dateTimePicker1";
-			   this->dateTimePicker1->Size = System::Drawing::Size(152, 22);
+			   this->dateTimePicker1->Size = System::Drawing::Size(115, 20);
 			   this->dateTimePicker1->TabIndex = 39;
 			   // 
 			   // textBox1
 			   // 
-			   this->textBox1->Location = System::Drawing::Point(416, 167);
+			   this->textBox1->Location = System::Drawing::Point(312, 136);
+			   this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			   this->textBox1->Name = L"textBox1";
-			   this->textBox1->Size = System::Drawing::Size(68, 22);
+			   this->textBox1->Size = System::Drawing::Size(52, 20);
 			   this->textBox1->TabIndex = 44;
 			   // 
 			   // label1
 			   // 
 			   this->label1->AutoSize = true;
-			   this->label1->Location = System::Drawing::Point(413, 148);
-			   this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			   this->label1->Location = System::Drawing::Point(310, 120);
 			   this->label1->Name = L"label1";
-			   this->label1->Size = System::Drawing::Size(48, 16);
+			   this->label1->Size = System::Drawing::Size(40, 13);
 			   this->label1->TabIndex = 43;
 			   this->label1->Text = L"Id date";
 			   // 
 			   // button5
 			   // 
-			   this->button5->Location = System::Drawing::Point(512, 189);
+			   this->button5->Location = System::Drawing::Point(384, 154);
+			   this->button5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			   this->button5->Name = L"button5";
-			   this->button5->Size = System::Drawing::Size(81, 29);
+			   this->button5->Size = System::Drawing::Size(61, 24);
 			   this->button5->TabIndex = 42;
 			   this->button5->Text = L"Modifier";
 			   this->button5->UseVisualStyleBackColor = true;
@@ -132,9 +135,10 @@ namespace ProjetAPP {
 			   // 
 			   // button4
 			   // 
-			   this->button4->Location = System::Drawing::Point(512, 142);
+			   this->button4->Location = System::Drawing::Point(384, 115);
+			   this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			   this->button4->Name = L"button4";
-			   this->button4->Size = System::Drawing::Size(81, 29);
+			   this->button4->Size = System::Drawing::Size(61, 24);
 			   this->button4->TabIndex = 41;
 			   this->button4->Text = L"Supprimer";
 			   this->button4->UseVisualStyleBackColor = true;
@@ -142,9 +146,10 @@ namespace ProjetAPP {
 			   // 
 			   // button3
 			   // 
-			   this->button3->Location = System::Drawing::Point(220, 157);
+			   this->button3->Location = System::Drawing::Point(165, 128);
+			   this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			   this->button3->Name = L"button3";
-			   this->button3->Size = System::Drawing::Size(81, 29);
+			   this->button3->Size = System::Drawing::Size(61, 24);
 			   this->button3->TabIndex = 40;
 			   this->button3->Text = L"Ajouter";
 			   this->button3->UseVisualStyleBackColor = true;
@@ -152,9 +157,11 @@ namespace ProjetAPP {
 			   // 
 			   // MyFormDateLiv
 			   // 
-			   this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			   this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			   this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			   this->ClientSize = System::Drawing::Size(627, 257);
+			   this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			   this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			   this->ClientSize = System::Drawing::Size(470, 209);
 			   this->Controls->Add(this->textBox1);
 			   this->Controls->Add(this->label1);
 			   this->Controls->Add(this->button5);
@@ -163,6 +170,9 @@ namespace ProjetAPP {
 			   this->Controls->Add(this->dateTimePicker1);
 			   this->Controls->Add(this->button1);
 			   this->Controls->Add(this->dataGridView1);
+			   this->DoubleBuffered = true;
+			   this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			   this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			   this->Name = L"MyFormDateLiv";
 			   this->Text = L"MyFormDateLiv";
 			   this->Load += gcnew System::EventHandler(this, &MyFormDateLiv::MyFormDateLiv_Load);

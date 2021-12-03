@@ -87,6 +87,7 @@ namespace ProjetAPP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormCliSelecMod::typeid));
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -103,30 +104,27 @@ namespace ProjetAPP {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(13, 106);
-			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label9->Location = System::Drawing::Point(10, 86);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(120, 16);
+			this->label9->Size = System::Drawing::Size(96, 13);
 			this->label9->TabIndex = 36;
 			this->label9->Text = L"Date de naissance";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(295, 60);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(221, 49);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(54, 16);
+			this->label3->Size = System::Drawing::Size(43, 13);
 			this->label3->TabIndex = 34;
 			this->label3->Text = L"Prénom";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 60);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(9, 49);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(36, 16);
+			this->label2->Size = System::Drawing::Size(29, 13);
 			this->label2->TabIndex = 32;
 			this->label2->Text = L"Nom";
 			// 
@@ -134,35 +132,31 @@ namespace ProjetAPP {
 			// 
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(16, 126);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
+			this->dateTimePicker1->Location = System::Drawing::Point(12, 102);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(152, 22);
+			this->dateTimePicker1->Size = System::Drawing::Size(115, 20);
 			this->dateTimePicker1->TabIndex = 30;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(298, 80);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4);
+			this->textBox3->Location = System::Drawing::Point(224, 65);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(243, 22);
+			this->textBox3->Size = System::Drawing::Size(183, 20);
 			this->textBox3->TabIndex = 29;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(16, 80);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
+			this->textBox2->Location = System::Drawing::Point(12, 65);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(243, 22);
+			this->textBox2->Size = System::Drawing::Size(183, 20);
 			this->textBox2->TabIndex = 28;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyFormCliSelecMod::textBox2_TextChanged);
 			// 
 			// btnModCli
 			// 
-			this->btnModCli->Location = System::Drawing::Point(441, 124);
-			this->btnModCli->Margin = System::Windows::Forms::Padding(4);
+			this->btnModCli->Location = System::Drawing::Point(331, 101);
 			this->btnModCli->Name = L"btnModCli";
-			this->btnModCli->Size = System::Drawing::Size(100, 28);
+			this->btnModCli->Size = System::Drawing::Size(75, 23);
 			this->btnModCli->TabIndex = 40;
 			this->btnModCli->Text = L"Modifier";
 			this->btnModCli->UseVisualStyleBackColor = true;
@@ -170,10 +164,9 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(16, 15);
-			this->btnReturn->Margin = System::Windows::Forms::Padding(4);
+			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(100, 28);
+			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 41;
 			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
@@ -182,28 +175,32 @@ namespace ProjetAPP {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(175, 131);
+			this->checkBox1->Location = System::Drawing::Point(131, 106);
+			this->checkBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(18, 17);
+			this->checkBox1->Size = System::Drawing::Size(15, 14);
 			this->checkBox1->TabIndex = 42;
 			this->checkBox1->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(12, 170);
+			this->dataGridView1->Location = System::Drawing::Point(9, 138);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(595, 121);
+			this->dataGridView1->Size = System::Drawing::Size(446, 98);
 			this->dataGridView1->TabIndex = 44;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormCliSelecMod::dataGridView1_CellContentClick);
 			// 
 			// MyFormCliSelecMod
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(623, 310);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(467, 252);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->btnReturn);
@@ -214,7 +211,8 @@ namespace ProjetAPP {
 			this->Controls->Add(this->dateTimePicker1);
 			this->Controls->Add(this->textBox3);
 			this->Controls->Add(this->textBox2);
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyFormCliSelecMod";
 			this->Text = L"MyFormCliSelecMod";
 			this->Load += gcnew System::EventHandler(this, &MyFormCliSelecMod::MyFormCliSelecMod_Load);

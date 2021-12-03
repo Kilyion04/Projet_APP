@@ -69,6 +69,7 @@ namespace ProjetAPP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormPersoSelec::typeid));
 			this->btnSupPerso = (gcnew System::Windows::Forms::Button());
 			this->btnModPerso = (gcnew System::Windows::Forms::Button());
 			this->PersoView = (gcnew System::Windows::Forms::DataGridView());
@@ -78,10 +79,9 @@ namespace ProjetAPP {
 			// 
 			// btnSupPerso
 			// 
-			this->btnSupPerso->Location = System::Drawing::Point(125, 163);
-			this->btnSupPerso->Margin = System::Windows::Forms::Padding(4);
+			this->btnSupPerso->Location = System::Drawing::Point(94, 132);
 			this->btnSupPerso->Name = L"btnSupPerso";
-			this->btnSupPerso->Size = System::Drawing::Size(100, 28);
+			this->btnSupPerso->Size = System::Drawing::Size(75, 23);
 			this->btnSupPerso->TabIndex = 44;
 			this->btnSupPerso->Text = L"Supprimer";
 			this->btnSupPerso->UseVisualStyleBackColor = true;
@@ -89,10 +89,9 @@ namespace ProjetAPP {
 			// 
 			// btnModPerso
 			// 
-			this->btnModPerso->Location = System::Drawing::Point(17, 163);
-			this->btnModPerso->Margin = System::Windows::Forms::Padding(4);
+			this->btnModPerso->Location = System::Drawing::Point(13, 132);
 			this->btnModPerso->Name = L"btnModPerso";
-			this->btnModPerso->Size = System::Drawing::Size(100, 28);
+			this->btnModPerso->Size = System::Drawing::Size(75, 23);
 			this->btnModPerso->TabIndex = 43;
 			this->btnModPerso->Text = L"Modifier";
 			this->btnModPerso->UseVisualStyleBackColor = true;
@@ -101,20 +100,18 @@ namespace ProjetAPP {
 			// PersoView
 			// 
 			this->PersoView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->PersoView->Location = System::Drawing::Point(16, 50);
-			this->PersoView->Margin = System::Windows::Forms::Padding(4);
+			this->PersoView->Location = System::Drawing::Point(12, 41);
 			this->PersoView->Name = L"PersoView";
 			this->PersoView->RowHeadersWidth = 51;
-			this->PersoView->Size = System::Drawing::Size(1011, 91);
+			this->PersoView->Size = System::Drawing::Size(758, 74);
 			this->PersoView->TabIndex = 42;
 			this->PersoView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormPersoSelec::PersoView_Click);
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(16, 15);
-			this->btnReturn->Margin = System::Windows::Forms::Padding(4);
+			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(100, 28);
+			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 41;
 			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
@@ -122,14 +119,17 @@ namespace ProjetAPP {
 			// 
 			// MyFormPersoSelec
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1056, 212);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(792, 172);
 			this->Controls->Add(this->btnSupPerso);
 			this->Controls->Add(this->btnModPerso);
 			this->Controls->Add(this->PersoView);
 			this->Controls->Add(this->btnReturn);
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyFormPersoSelec";
 			this->Text = L"MyFormPersoSelec";
 			this->FormClosing += gcnew System::Windows::Forms::FormClosingEventHandler(this, &MyFormPersoSelec::MyFormPersoSelec_FormClosing);

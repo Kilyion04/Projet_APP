@@ -109,6 +109,7 @@ namespace ProjetAPP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormSto::typeid));
 			this->btnReturn = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -139,10 +140,9 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(16, 15);
-			this->btnReturn->Margin = System::Windows::Forms::Padding(4);
+			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(100, 28);
+			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 1;
 			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
@@ -150,10 +150,9 @@ namespace ProjetAPP {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(36, 171);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Location = System::Drawing::Point(27, 139);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(224, 28);
+			this->button1->Size = System::Drawing::Size(168, 23);
 			this->button1->TabIndex = 41;
 			this->button1->Text = L"Actualiser le stock";
 			this->button1->UseVisualStyleBackColor = true;
@@ -162,19 +161,17 @@ namespace ProjetAPP {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(4, 71);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(3, 58);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(20, 16);
+			this->label1->Size = System::Drawing::Size(18, 13);
 			this->label1->TabIndex = 40;
 			this->label1->Text = L"ID";
 			// 
 			// btnAffSto
 			// 
-			this->btnAffSto->Location = System::Drawing::Point(28, 39);
-			this->btnAffSto->Margin = System::Windows::Forms::Padding(4);
+			this->btnAffSto->Location = System::Drawing::Point(21, 32);
 			this->btnAffSto->Name = L"btnAffSto";
-			this->btnAffSto->Size = System::Drawing::Size(100, 28);
+			this->btnAffSto->Size = System::Drawing::Size(75, 23);
 			this->btnAffSto->TabIndex = 38;
 			this->btnAffSto->Text = L"Afficher";
 			this->btnAffSto->UseVisualStyleBackColor = true;
@@ -182,10 +179,9 @@ namespace ProjetAPP {
 			// 
 			// btnCreSto
 			// 
-			this->btnCreSto->Location = System::Drawing::Point(405, 15);
-			this->btnCreSto->Margin = System::Windows::Forms::Padding(4);
+			this->btnCreSto->Location = System::Drawing::Point(304, 12);
 			this->btnCreSto->Name = L"btnCreSto";
-			this->btnCreSto->Size = System::Drawing::Size(100, 28);
+			this->btnCreSto->Size = System::Drawing::Size(75, 23);
 			this->btnCreSto->TabIndex = 37;
 			this->btnCreSto->Text = L"Créer";
 			this->btnCreSto->UseVisualStyleBackColor = true;
@@ -194,11 +190,10 @@ namespace ProjetAPP {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(25, 225);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
+			this->dataGridView1->Location = System::Drawing::Point(19, 183);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(877, 274);
+			this->dataGridView1->Size = System::Drawing::Size(658, 223);
 			this->dataGridView1->TabIndex = 36;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormSto::dataGridView1_CellContentClick);
 			// 
@@ -207,29 +202,27 @@ namespace ProjetAPP {
 			this->groupBox1->Controls->Add(this->numericUpDown5);
 			this->groupBox1->Controls->Add(this->btnAffSto);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(736, 18);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox1->Location = System::Drawing::Point(552, 15);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox1->Size = System::Drawing::Size(168, 128);
+			this->groupBox1->Size = System::Drawing::Size(126, 104);
 			this->groupBox1->TabIndex = 42;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Rechercher un article du stock";
 			// 
 			// numericUpDown5
 			// 
-			this->numericUpDown5->Location = System::Drawing::Point(8, 94);
+			this->numericUpDown5->Location = System::Drawing::Point(6, 76);
+			this->numericUpDown5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown5->Name = L"numericUpDown5";
-			this->numericUpDown5->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown5->Size = System::Drawing::Size(90, 20);
 			this->numericUpDown5->TabIndex = 57;
 			// 
 			// btnRecSto
 			// 
-			this->btnRecSto->Location = System::Drawing::Point(297, 15);
-			this->btnRecSto->Margin = System::Windows::Forms::Padding(4);
+			this->btnRecSto->Location = System::Drawing::Point(223, 12);
 			this->btnRecSto->Name = L"btnRecSto";
-			this->btnRecSto->Size = System::Drawing::Size(100, 28);
+			this->btnRecSto->Size = System::Drawing::Size(75, 23);
 			this->btnRecSto->TabIndex = 43;
 			this->btnRecSto->Text = L"Rechercher";
 			this->btnRecSto->UseVisualStyleBackColor = true;
@@ -237,30 +230,27 @@ namespace ProjetAPP {
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(106, 89);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
+			this->textBox2->Location = System::Drawing::Point(80, 72);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(132, 22);
+			this->textBox2->Size = System::Drawing::Size(100, 20);
 			this->textBox2->TabIndex = 44;
 			this->textBox2->TextChanged += gcnew System::EventHandler(this, &MyFormSto::textBox2_TextChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(22, 89);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(16, 72);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(76, 16);
+			this->label2->Size = System::Drawing::Size(61, 13);
 			this->label2->TabIndex = 48;
 			this->label2->Text = L"Nom Article";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(10, 130);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(8, 106);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(93, 16);
+			this->label3->Size = System::Drawing::Size(76, 13);
 			this->label3->TabIndex = 49;
 			this->label3->Text = L"Quantié Article";
 			this->label3->Click += gcnew System::EventHandler(this, &MyFormSto::label3_Click);
@@ -268,10 +258,9 @@ namespace ProjetAPP {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(452, 136);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(339, 110);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(29, 16);
+			this->label4->Size = System::Drawing::Size(24, 13);
 			this->label4->TabIndex = 50;
 			this->label4->Text = L"Prix";
 			this->label4->Click += gcnew System::EventHandler(this, &MyFormSto::label4_Click);
@@ -279,20 +268,18 @@ namespace ProjetAPP {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(289, 92);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(217, 75);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(192, 16);
+			this->label5->Size = System::Drawing::Size(151, 13);
 			this->label5->TabIndex = 51;
 			this->label5->Text = L"Seuil de Réapprovisionnement";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(381, 171);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Location = System::Drawing::Point(286, 139);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(100, 16);
+			this->label6->Size = System::Drawing::Size(81, 13);
 			this->label6->TabIndex = 52;
 			this->label6->Text = L"Taux de la TVA";
 			this->label6->Click += gcnew System::EventHandler(this, &MyFormSto::label6_Click);
@@ -300,44 +287,50 @@ namespace ProjetAPP {
 			// numericUpDown2
 			// 
 			this->numericUpDown2->DecimalPlaces = 2;
-			this->numericUpDown2->Location = System::Drawing::Point(488, 169);
+			this->numericUpDown2->Location = System::Drawing::Point(366, 137);
+			this->numericUpDown2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(112, 22);
+			this->numericUpDown2->Size = System::Drawing::Size(84, 20);
 			this->numericUpDown2->TabIndex = 53;
 			// 
 			// numericUpDown1
 			// 
 			this->numericUpDown1->DecimalPlaces = 2;
-			this->numericUpDown1->Location = System::Drawing::Point(488, 134);
+			this->numericUpDown1->Location = System::Drawing::Point(366, 109);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(112, 22);
+			this->numericUpDown1->Size = System::Drawing::Size(84, 20);
 			this->numericUpDown1->TabIndex = 54;
 			// 
 			// numericUpDown3
 			// 
-			this->numericUpDown3->Location = System::Drawing::Point(106, 128);
+			this->numericUpDown3->Location = System::Drawing::Point(80, 104);
+			this->numericUpDown3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown3->Size = System::Drawing::Size(90, 20);
 			this->numericUpDown3->TabIndex = 55;
 			// 
 			// numericUpDown4
 			// 
-			this->numericUpDown4->Location = System::Drawing::Point(488, 90);
+			this->numericUpDown4->Location = System::Drawing::Point(366, 73);
+			this->numericUpDown4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown4->Size = System::Drawing::Size(90, 20);
 			this->numericUpDown4->TabIndex = 56;
 			// 
 			// MyFormSto
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(917, 513);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(688, 417);
 			this->Controls->Add(this->numericUpDown4);
 			this->Controls->Add(this->numericUpDown3);
 			this->Controls->Add(this->numericUpDown1);
@@ -354,7 +347,8 @@ namespace ProjetAPP {
 			this->Controls->Add(this->btnCreSto);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->btnReturn);
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyFormSto";
 			this->Text = L"MyFormSto";
 			this->Load += gcnew System::EventHandler(this, &MyFormSto::MyFormSto_Load);

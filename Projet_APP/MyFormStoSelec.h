@@ -62,6 +62,7 @@ namespace ProjetAPP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormStoSelec::typeid));
 			this->btnSupSto = (gcnew System::Windows::Forms::Button());
 			this->btnModSto = (gcnew System::Windows::Forms::Button());
 			this->StoView = (gcnew System::Windows::Forms::DataGridView());
@@ -112,11 +113,15 @@ namespace ProjetAPP {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
 			this->ClientSize = System::Drawing::Size(793, 137);
 			this->Controls->Add(this->btnSupSto);
 			this->Controls->Add(this->btnModSto);
 			this->Controls->Add(this->StoView);
 			this->Controls->Add(this->btnReturn);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyFormStoSelec";
 			this->Text = L"MyFormStoSelec";
 			this->Load += gcnew System::EventHandler(this, &MyFormStoSelec::MyFormStoSelec_Load);

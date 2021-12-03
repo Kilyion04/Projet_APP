@@ -77,6 +77,7 @@ namespace ProjetAPP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormCliAdrLiv::typeid));
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
@@ -101,9 +102,10 @@ namespace ProjetAPP {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(355, 216);
+			this->button2->Location = System::Drawing::Point(266, 176);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(120, 26);
+			this->button2->Size = System::Drawing::Size(90, 21);
 			this->button2->TabIndex = 31;
 			this->button2->Text = L"Actualiser villes";
 			this->button2->UseVisualStyleBackColor = true;
@@ -119,11 +121,9 @@ namespace ProjetAPP {
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->comboBox1);
-			this->groupBox1->Location = System::Drawing::Point(26, 133);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox1->Location = System::Drawing::Point(20, 108);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox1->Size = System::Drawing::Size(611, 81);
+			this->groupBox1->Size = System::Drawing::Size(458, 66);
 			this->groupBox1->TabIndex = 30;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Adresse";
@@ -131,83 +131,78 @@ namespace ProjetAPP {
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(464, 42);
+			this->textBox4->Location = System::Drawing::Point(348, 34);
+			this->textBox4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(112, 22);
+			this->textBox4->Size = System::Drawing::Size(85, 20);
 			this->textBox4->TabIndex = 25;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(13, 43);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4);
+			this->textBox5->Location = System::Drawing::Point(10, 35);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(49, 22);
+			this->textBox5->Size = System::Drawing::Size(38, 20);
 			this->textBox5->TabIndex = 9;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(9, 20);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(7, 16);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(21, 16);
+			this->label5->Size = System::Drawing::Size(19, 13);
 			this->label5->TabIndex = 21;
 			this->label5->Text = L"N°";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(461, 20);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Location = System::Drawing::Point(346, 16);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(80, 16);
+			this->label8->Size = System::Drawing::Size(63, 13);
 			this->label8->TabIndex = 24;
 			this->label8->Text = L"Code postal";
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(72, 43);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4);
+			this->textBox6->Location = System::Drawing::Point(54, 35);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(243, 22);
+			this->textBox6->Size = System::Drawing::Size(183, 20);
 			this->textBox6->TabIndex = 11;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(320, 20);
-			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label7->Location = System::Drawing::Point(240, 16);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(33, 16);
+			this->label7->Size = System::Drawing::Size(26, 13);
 			this->label7->TabIndex = 23;
 			this->label7->Text = L"Ville";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(68, 20);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Location = System::Drawing::Point(51, 16);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(84, 16);
+			this->label6->Size = System::Drawing::Size(67, 13);
 			this->label6->TabIndex = 22;
 			this->label6->Text = L"Nom de voie";
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(324, 42);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox1->Location = System::Drawing::Point(243, 34);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(132, 24);
+			this->comboBox1->Size = System::Drawing::Size(100, 21);
 			this->comboBox1->TabIndex = 16;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormCliAdrLiv::comboBox1_SelectedIndexChanged);
 			this->comboBox1->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyFormCliAdrLiv::comboBox1_KeyUp);
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(26, 23);
+			this->button1->Location = System::Drawing::Point(20, 19);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(81, 29);
+			this->button1->Size = System::Drawing::Size(61, 24);
 			this->button1->TabIndex = 32;
 			this->button1->Text = L"Retour";
 			this->button1->UseVisualStyleBackColor = true;
@@ -215,9 +210,10 @@ namespace ProjetAPP {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(26, 92);
+			this->button3->Location = System::Drawing::Point(20, 75);
+			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(81, 29);
+			this->button3->Size = System::Drawing::Size(61, 24);
 			this->button3->TabIndex = 33;
 			this->button3->Text = L"Ajouter";
 			this->button3->UseVisualStyleBackColor = true;
@@ -225,9 +221,10 @@ namespace ProjetAPP {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(217, 243);
+			this->button4->Location = System::Drawing::Point(163, 197);
+			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(81, 29);
+			this->button4->Size = System::Drawing::Size(61, 24);
 			this->button4->TabIndex = 34;
 			this->button4->Text = L"Supprimer";
 			this->button4->UseVisualStyleBackColor = true;
@@ -235,9 +232,10 @@ namespace ProjetAPP {
 			// 
 			// button5
 			// 
-			this->button5->Location = System::Drawing::Point(120, 243);
+			this->button5->Location = System::Drawing::Point(90, 197);
+			this->button5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button5->Name = L"button5";
-			this->button5->Size = System::Drawing::Size(81, 29);
+			this->button5->Size = System::Drawing::Size(61, 24);
 			this->button5->TabIndex = 35;
 			this->button5->Text = L"Modifier";
 			this->button5->UseVisualStyleBackColor = true;
@@ -246,37 +244,40 @@ namespace ProjetAPP {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(177, 20);
+			this->dataGridView1->Location = System::Drawing::Point(133, 16);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(444, 101);
+			this->dataGridView1->Size = System::Drawing::Size(333, 82);
 			this->dataGridView1->TabIndex = 36;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormCliAdrLiv::dataGridView1_CellContentClick);
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(23, 226);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(17, 184);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(71, 16);
+			this->label1->Size = System::Drawing::Size(56, 13);
 			this->label1->TabIndex = 37;
 			this->label1->Text = L"Id adresse";
 			// 
 			// numericUpDown5
 			// 
-			this->numericUpDown5->Location = System::Drawing::Point(26, 250);
+			this->numericUpDown5->Location = System::Drawing::Point(20, 203);
+			this->numericUpDown5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown5->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown5->Name = L"numericUpDown5";
-			this->numericUpDown5->Size = System::Drawing::Size(82, 22);
+			this->numericUpDown5->Size = System::Drawing::Size(62, 20);
 			this->numericUpDown5->TabIndex = 58;
 			// 
 			// MyFormCliAdrLiv
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(679, 291);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(509, 236);
 			this->Controls->Add(this->numericUpDown5);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->dataGridView1);
@@ -286,6 +287,9 @@ namespace ProjetAPP {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->groupBox1);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"MyFormCliAdrLiv";
 			this->Text = L"MyFormCliAdrLiv";
 			this->Load += gcnew System::EventHandler(this, &MyFormCliAdrLiv::MyFormCliAdrLiv_Load);
