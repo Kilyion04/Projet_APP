@@ -115,6 +115,8 @@ namespace ProjetAPP {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDown5;
 
 
+
+
 	private:
 
 
@@ -673,9 +675,10 @@ namespace ProjetAPP {
 		this->numericUpDown4->Text = "";
 		this->numericUpDown5->Text = "";
 		this->numericUpDown2->Text = "";
-		this->textBox5->Text = "";
-		this->textBox6->Text = "";
-		this->textBox7->Text = "";
+		this->textBox5->Text = "0";
+		this->textBox5->Text = "0";
+		this->textBox6->Text = "0";
+		this->textBox7->Text = "0";
 		this->numericUpDown3->Text = "";
 		this->comboBox1->Text = "";
 		this->comboBox2->Text = "";
@@ -782,9 +785,10 @@ private: System::Void CreCom_Click(System::Object^ sender, System::EventArgs^ e)
 						int intervalle = 1;
 						sql += "DECLARE @counter INT, @dateDep DATETIME; SET @counter = 1 SET @dateDep = (SELECT dateCommande FROM commande WHERE idCommande = @idCommande); WHILE(@counter <= " + nbPaiements + ") BEGIN INSERT INTO paiement(datePaiement, montantPaiement, idClient, idMoyenPaiement, idCommande) VALUES (@dateDep, " + this->textBox7->Text + "/"+nbPaiements+", " + this->numericUpDown5->Text + ", (SELECT idMoyenPaiement FROM moyen_paiement WHERE modePaiement = '" + this->comboBox2->Text + "'), @idCommande) SET @dateDep = DATEADD(MONTH, " + intervalle + ", @dateDep) SET @counter = @counter + 1 END; ";
 					}
-					sql += " UPDATE commande SET nombreArticles = " + this->nbArticles + ", montantHT = "+this->textBox5->Text+", montantTVA = "+this->textBox6->Text+", montantTTC = "+this->textBox7->Text+" WHERE idCommande = @idCommande; ";
+					sql += " UPDATE commande SET nombreArticles = " + this->nbArticles + ", montantHT = "+this->textBox5->Text+", montantTVA = "+this->textBox6->Text+", montantTTC = "+this->textBox7->Text+", refCommande = (SELECT(UPPER(SUBSTRING(prenomClient, 1, 2) + SUBSTRING(nomClient, 1, 2) + CONVERT(varchar(5), YEAR('" + date + "')) + SUBSTRING(ville.ville, 1, 3) + CONVERT(varchar(10), @idCommande))) FROM client, ville, adresse WHERE idClient = " + this->numericUpDown5->Text + " AND adresse.idAdresse = " + this->numericUpDown3->Text + " AND adresse.idVille = ville.idVille) WHERE idCommande = @idCommande; ";
 					sql += "INSERT INTO facture (idClient, idCommande, idSociete) VALUES (" + this->numericUpDown5->Text + ", @idCommande, 1); ";
 					this->oCad->actionRows(sql);
+				
 					MessageBox::Show(L"Commande créée !", L"Message",
 					MessageBoxButtons::OK, MessageBoxIcon::Warning);
 
@@ -846,7 +850,33 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	this->Show();
 }
 private: System::Void btnRecCom_Click(System::Object^ sender, System::EventArgs^ e) {
-	
+	this->oCad = gcnew NS_Comp_Data::cad();
+	this->dataGridView1->Refresh();
+
+	System::String^ sql;
+
+	sql = "SELECT * FROM commande WHERE idCommande = idCommande ";
+	if (this->numericUpDown3->Text != "") { sql += "AND adresseLivraison = '" + this->numericUpDown3->Text + "' "; }
+	if (this->numericUpDown2->Text != "") { sql += "AND adresseFacturation = '" + this->numericUpDown2->Text + "' "; }
+	if (this->checkBox2->Checked == true)
+	{
+		sql += "AND dateCommande = '" + this->dateTimePicker1->Text + "' ";
+	}
+	if (this->checkBox1->Checked == true)
+	{
+		sql += "AND plusieursPaiments = '" + this->checkBox1->Checked + "' ";
+	}
+
+	sql += ";";
+	this->oDs = this->oCad->getRows(sql, "Rsl");
+	this->dataGridView1->DataSource = this->oDs;
+	this->dataGridView1->DataMember = "Rsl";
+
+	if (this->dataGridView1->Rows->Count == 1)
+	{
+		MessageBox::Show(L"Aucun résultat.", L"Message",
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
+	}
 	
 }
 int i = 0;
@@ -944,6 +974,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 			   this->dataGridView1->DataMember = "Rsl";
 			   float montantHT = float::Parse(this->dataGridView1->Rows[0]->Cells[2]->Value->ToString());
 			   this->textBox5->Text = System::Convert::ToString (float::Parse(this->textBox5->Text) + montantHT);
+
 			   //TVA
 			   this->dataGridView1->Refresh();
 			   this->oDs = this->oStock->afficherTVA("Rsl", this->panier[indice]->idArticle);
@@ -982,7 +1013,7 @@ private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e
 
 					   if (this->dataGridView1->Rows->Count > 1)
 					   {
-						   remise += float::Parse(this->dataGridView1->Rows[0]->Cells[1]->Value->ToString());
+						   remise = float::Parse(this->dataGridView1->Rows[0]->Cells[1]->Value->ToString());
 					   }
 					   else {
 						   remise = 0;

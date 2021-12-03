@@ -477,7 +477,7 @@ private: System::Void btnRecSto_Click(System::Object^ sender, System::EventArgs^
 	if (this->dataGridView1->Rows->Count == 1)
 	{
 		MessageBox::Show(L"Aucun résultat.", L"Message",
-			MessageBoxButtons::OK, MessageBoxIcon::Warning);
+		MessageBoxButtons::OK, MessageBoxIcon::Warning);
 	}
 }
 };

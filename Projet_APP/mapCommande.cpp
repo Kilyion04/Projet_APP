@@ -8,7 +8,7 @@ NS_Comp_Mappage_Commande::mapCommande::mapCommande()
 
 System::String^ NS_Comp_Mappage_Commande::mapCommande::creerCommande(void)
 {
-	return "INSERT INTO commande(dateCommande, refCommande, plusieursPaiments, adresseLivraison, adresseFacturation) SELECT '"+this->dateCommande+"', (SELECT(UPPER(SUBSTRING(prenomClient, 1, 2) + SUBSTRING(nomClient, 1, 2) + CONVERT(varchar(5), YEAR('"+this->dateCommande+"')) + SUBSTRING(ville.ville, 1, 3))) FROM client, ville, adresse WHERE idClient = "+this->idClient+" AND adresse.idAdresse = "+this->adresseLivraison+" AND adresse.idVille = ville.idVille), '"+this->plusieursFois+"', "+this->adresseLivraison+", "+this->adresseFacturation+";";
+	return "INSERT INTO commande(commandeActif, dateCommande, plusieursPaiments, adresseLivraison, adresseFacturation) SELECT 'True', '"+this->dateCommande+"', '"+this->plusieursFois+"', "+this->adresseLivraison+", "+this->adresseFacturation+";";
 }
 
 System::String^ NS_Comp_Mappage_Commande::mapCommande::modifierCommande(void)
@@ -18,7 +18,7 @@ System::String^ NS_Comp_Mappage_Commande::mapCommande::modifierCommande(void)
 
 System::String^ NS_Comp_Mappage_Commande::mapCommande::supprimerCommande(void)
 {
-	return "DELETE FROM commande WHERE idCommande = " + this->idCommande + ";";
+	return "UPDATE commande SET commandeActif = 'False' WHERE idCommande = " + this->idCommande + " ;";
 }
 
 System::String^ NS_Comp_Mappage_Commande::mapCommande::afficherCommande(void)

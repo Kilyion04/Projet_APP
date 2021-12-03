@@ -18,7 +18,7 @@ System::String^ NS_Comp_Commande::commande::creer(int idClient, System::String^ 
 	this->oMapCommande->setPlusieursFois(plusieursFois);
 	
 	sql = this->oMapCommande->creerCommande();
-	this->oCad->actionRows(sql);
+	
 	return sql;
 }
 
