@@ -69,6 +69,7 @@ namespace ProjetAPP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormCliSelec::typeid));
 			this->btnReturn = (gcnew System::Windows::Forms::Button());
 			this->CliView = (gcnew System::Windows::Forms::DataGridView());
 			this->btnSupCli = (gcnew System::Windows::Forms::Button());
@@ -80,10 +81,9 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(16, 15);
-			this->btnReturn->Margin = System::Windows::Forms::Padding(4);
+			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(100, 28);
+			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 1;
 			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
@@ -92,20 +92,18 @@ namespace ProjetAPP {
 			// CliView
 			// 
 			this->CliView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CliView->Location = System::Drawing::Point(16, 50);
-			this->CliView->Margin = System::Windows::Forms::Padding(4);
+			this->CliView->Location = System::Drawing::Point(12, 41);
 			this->CliView->Name = L"CliView";
 			this->CliView->RowHeadersWidth = 51;
-			this->CliView->Size = System::Drawing::Size(1011, 94);
+			this->CliView->Size = System::Drawing::Size(758, 76);
 			this->CliView->TabIndex = 2;
 			this->CliView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormCliSelec::CliView_Click);
 			// 
 			// btnSupCli
 			// 
-			this->btnSupCli->Location = System::Drawing::Point(124, 152);
-			this->btnSupCli->Margin = System::Windows::Forms::Padding(4);
+			this->btnSupCli->Location = System::Drawing::Point(93, 124);
 			this->btnSupCli->Name = L"btnSupCli";
-			this->btnSupCli->Size = System::Drawing::Size(100, 28);
+			this->btnSupCli->Size = System::Drawing::Size(75, 23);
 			this->btnSupCli->TabIndex = 40;
 			this->btnSupCli->Text = L"Supprimer";
 			this->btnSupCli->UseVisualStyleBackColor = true;
@@ -113,10 +111,9 @@ namespace ProjetAPP {
 			// 
 			// btnModCli
 			// 
-			this->btnModCli->Location = System::Drawing::Point(16, 152);
-			this->btnModCli->Margin = System::Windows::Forms::Padding(4);
+			this->btnModCli->Location = System::Drawing::Point(12, 124);
 			this->btnModCli->Name = L"btnModCli";
-			this->btnModCli->Size = System::Drawing::Size(100, 28);
+			this->btnModCli->Size = System::Drawing::Size(75, 23);
 			this->btnModCli->TabIndex = 39;
 			this->btnModCli->Text = L"Modifier";
 			this->btnModCli->UseVisualStyleBackColor = true;
@@ -124,10 +121,9 @@ namespace ProjetAPP {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(232, 152);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
+			this->button2->Location = System::Drawing::Point(174, 124);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(175, 28);
+			this->button2->Size = System::Drawing::Size(131, 23);
 			this->button2->TabIndex = 42;
 			this->button2->Text = L"Adresse(s) de livraison";
 			this->button2->UseVisualStyleBackColor = true;
@@ -135,10 +131,9 @@ namespace ProjetAPP {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(415, 152);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Location = System::Drawing::Point(311, 124);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(199, 28);
+			this->button1->Size = System::Drawing::Size(149, 23);
 			this->button1->TabIndex = 43;
 			this->button1->Text = L"Adresse(s) de facturation";
 			this->button1->UseVisualStyleBackColor = true;
@@ -146,16 +141,19 @@ namespace ProjetAPP {
 			// 
 			// MyFormCliSelec
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1043, 193);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(782, 157);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->btnSupCli);
 			this->Controls->Add(this->btnModCli);
 			this->Controls->Add(this->CliView);
 			this->Controls->Add(this->btnReturn);
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyFormCliSelec";
 			this->Text = L"MyFormCliSelec";
 			this->Load += gcnew System::EventHandler(this, &MyFormCliSelec::MyFormCliSelec_Load);

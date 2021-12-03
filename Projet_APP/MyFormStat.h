@@ -110,6 +110,7 @@ namespace ProjetAPP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormStat::typeid));
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->btnReturn = (gcnew System::Windows::Forms::Button());
 			this->btnStat1 = (gcnew System::Windows::Forms::Button());
@@ -175,10 +176,9 @@ namespace ProjetAPP {
 				L"01", L"02", L"03", L"04", L"05", L"06", L"07",
 					L"08", L"09", L"10", L"11", L"12"
 			});
-			this->comboBox1->Location = System::Drawing::Point(9, 78);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox1->Location = System::Drawing::Point(7, 63);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(151, 24);
+			this->comboBox1->Size = System::Drawing::Size(114, 21);
 			this->comboBox1->TabIndex = 14;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox1_SelectedIndexChanged);
 			this->comboBox1->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyFormStat::comboBox1_KeyDown);
@@ -186,10 +186,9 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(16, 15);
-			this->btnReturn->Margin = System::Windows::Forms::Padding(4);
+			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(100, 28);
+			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 2;
 			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
@@ -197,10 +196,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat1
 			// 
-			this->btnStat1->Location = System::Drawing::Point(24, 50);
-			this->btnStat1->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat1->Location = System::Drawing::Point(18, 41);
 			this->btnStat1->Name = L"btnStat1";
-			this->btnStat1->Size = System::Drawing::Size(331, 28);
+			this->btnStat1->Size = System::Drawing::Size(248, 23);
 			this->btnStat1->TabIndex = 4;
 			this->btnStat1->Text = L"Stat1";
 			this->btnStat1->UseVisualStyleBackColor = true;
@@ -208,10 +206,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat2
 			// 
-			this->btnStat2->Location = System::Drawing::Point(8, 23);
-			this->btnStat2->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat2->Location = System::Drawing::Point(6, 19);
 			this->btnStat2->Name = L"btnStat2";
-			this->btnStat2->Size = System::Drawing::Size(331, 28);
+			this->btnStat2->Size = System::Drawing::Size(248, 23);
 			this->btnStat2->TabIndex = 5;
 			this->btnStat2->Text = L"Stat2";
 			this->btnStat2->UseVisualStyleBackColor = true;
@@ -219,10 +216,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat3
 			// 
-			this->btnStat3->Location = System::Drawing::Point(24, 220);
-			this->btnStat3->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat3->Location = System::Drawing::Point(18, 179);
 			this->btnStat3->Name = L"btnStat3";
-			this->btnStat3->Size = System::Drawing::Size(331, 28);
+			this->btnStat3->Size = System::Drawing::Size(248, 23);
 			this->btnStat3->TabIndex = 6;
 			this->btnStat3->Text = L"Stat3";
 			this->btnStat3->UseVisualStyleBackColor = true;
@@ -230,10 +226,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat4
 			// 
-			this->btnStat4->Location = System::Drawing::Point(24, 256);
-			this->btnStat4->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat4->Location = System::Drawing::Point(18, 208);
 			this->btnStat4->Name = L"btnStat4";
-			this->btnStat4->Size = System::Drawing::Size(124, 28);
+			this->btnStat4->Size = System::Drawing::Size(93, 23);
 			this->btnStat4->TabIndex = 7;
 			this->btnStat4->Text = L"Stat4";
 			this->btnStat4->UseVisualStyleBackColor = true;
@@ -241,10 +236,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat5
 			// 
-			this->btnStat5->Location = System::Drawing::Point(24, 292);
-			this->btnStat5->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat5->Location = System::Drawing::Point(18, 237);
 			this->btnStat5->Name = L"btnStat5";
-			this->btnStat5->Size = System::Drawing::Size(331, 28);
+			this->btnStat5->Size = System::Drawing::Size(248, 23);
 			this->btnStat5->TabIndex = 8;
 			this->btnStat5->Text = L"Stat5";
 			this->btnStat5->UseVisualStyleBackColor = true;
@@ -252,10 +246,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat6
 			// 
-			this->btnStat6->Location = System::Drawing::Point(24, 327);
-			this->btnStat6->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat6->Location = System::Drawing::Point(18, 266);
 			this->btnStat6->Name = L"btnStat6";
-			this->btnStat6->Size = System::Drawing::Size(331, 28);
+			this->btnStat6->Size = System::Drawing::Size(248, 23);
 			this->btnStat6->TabIndex = 9;
 			this->btnStat6->Text = L"Stat6";
 			this->btnStat6->UseVisualStyleBackColor = true;
@@ -263,10 +256,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat7
 			// 
-			this->btnStat7->Location = System::Drawing::Point(24, 363);
-			this->btnStat7->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat7->Location = System::Drawing::Point(18, 295);
 			this->btnStat7->Name = L"btnStat7";
-			this->btnStat7->Size = System::Drawing::Size(331, 28);
+			this->btnStat7->Size = System::Drawing::Size(248, 23);
 			this->btnStat7->TabIndex = 10;
 			this->btnStat7->Text = L"Stat7";
 			this->btnStat7->UseVisualStyleBackColor = true;
@@ -274,10 +266,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat8
 			// 
-			this->btnStat8->Location = System::Drawing::Point(24, 399);
-			this->btnStat8->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat8->Location = System::Drawing::Point(18, 324);
 			this->btnStat8->Name = L"btnStat8";
-			this->btnStat8->Size = System::Drawing::Size(331, 28);
+			this->btnStat8->Size = System::Drawing::Size(248, 23);
 			this->btnStat8->TabIndex = 11;
 			this->btnStat8->Text = L"Stat8";
 			this->btnStat8->UseVisualStyleBackColor = true;
@@ -285,10 +276,9 @@ namespace ProjetAPP {
 			// 
 			// btnStat9
 			// 
-			this->btnStat9->Location = System::Drawing::Point(8, 23);
-			this->btnStat9->Margin = System::Windows::Forms::Padding(4);
+			this->btnStat9->Location = System::Drawing::Point(6, 19);
 			this->btnStat9->Name = L"btnStat9";
-			this->btnStat9->Size = System::Drawing::Size(331, 28);
+			this->btnStat9->Size = System::Drawing::Size(248, 23);
 			this->btnStat9->TabIndex = 12;
 			this->btnStat9->Text = L"Stat9";
 			this->btnStat9->UseVisualStyleBackColor = true;
@@ -297,11 +287,10 @@ namespace ProjetAPP {
 			// StatView
 			// 
 			this->StatView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->StatView->Location = System::Drawing::Point(373, 15);
-			this->StatView->Margin = System::Windows::Forms::Padding(4);
+			this->StatView->Location = System::Drawing::Point(280, 12);
 			this->StatView->Name = L"StatView";
 			this->StatView->RowHeadersWidth = 51;
-			this->StatView->Size = System::Drawing::Size(981, 412);
+			this->StatView->Size = System::Drawing::Size(736, 335);
 			this->StatView->TabIndex = 13;
 			this->StatView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormStat::StatView_Click);
 			// 
@@ -312,10 +301,9 @@ namespace ProjetAPP {
 				L"2019", L"2020", L"2021", L"2022", L"2023", L"2024",
 					L"2025", L"2026", L"2027", L"2028", L"2029", L"2030"
 			});
-			this->comboBox2->Location = System::Drawing::Point(187, 78);
-			this->comboBox2->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox2->Location = System::Drawing::Point(140, 63);
 			this->comboBox2->Name = L"comboBox2";
-			this->comboBox2->Size = System::Drawing::Size(151, 24);
+			this->comboBox2->Size = System::Drawing::Size(114, 21);
 			this->comboBox2->TabIndex = 15;
 			this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox2_SelectedIndexChanged);
 			this->comboBox2->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyFormStat::comboBox2_KeyUp);
@@ -323,10 +311,9 @@ namespace ProjetAPP {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(11, 54);
-			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label1->Location = System::Drawing::Point(8, 44);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(36, 16);
+			this->label1->Size = System::Drawing::Size(29, 13);
 			this->label1->TabIndex = 16;
 			this->label1->Text = L"Mois";
 			this->label1->Click += gcnew System::EventHandler(this, &MyFormStat::label1_Click);
@@ -334,10 +321,9 @@ namespace ProjetAPP {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(183, 54);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(137, 44);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(46, 16);
+			this->label2->Size = System::Drawing::Size(38, 13);
 			this->label2->TabIndex = 17;
 			this->label2->Text = L"Année";
 			this->label2->Click += gcnew System::EventHandler(this, &MyFormStat::label2_Click);
@@ -349,11 +335,9 @@ namespace ProjetAPP {
 			this->groupBox1->Controls->Add(this->comboBox2);
 			this->groupBox1->Controls->Add(this->label2);
 			this->groupBox1->Controls->Add(this->label1);
-			this->groupBox1->Location = System::Drawing::Point(16, 86);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox1->Location = System::Drawing::Point(12, 70);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox1->Size = System::Drawing::Size(349, 118);
+			this->groupBox1->Size = System::Drawing::Size(262, 96);
 			this->groupBox1->TabIndex = 20;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Enter += gcnew System::EventHandler(this, &MyFormStat::groupBox1_Enter);
@@ -364,11 +348,9 @@ namespace ProjetAPP {
 			this->groupBox2->Controls->Add(this->groupBox4);
 			this->groupBox2->Controls->Add(this->groupBox3);
 			this->groupBox2->Controls->Add(this->btnStat9);
-			this->groupBox2->Location = System::Drawing::Point(16, 434);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox2->Location = System::Drawing::Point(12, 353);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox2->Size = System::Drawing::Size(665, 298);
+			this->groupBox2->Size = System::Drawing::Size(499, 242);
 			this->groupBox2->TabIndex = 21;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Enter += gcnew System::EventHandler(this, &MyFormStat::groupBox2_Enter);
@@ -383,11 +365,9 @@ namespace ProjetAPP {
 			this->groupBox5->Controls->Add(this->comboBox9);
 			this->groupBox5->Controls->Add(this->comboBox10);
 			this->groupBox5->Controls->Add(this->comboBox11);
-			this->groupBox5->Location = System::Drawing::Point(9, 219);
-			this->groupBox5->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox5->Location = System::Drawing::Point(7, 178);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox5->Size = System::Drawing::Size(633, 71);
+			this->groupBox5->Size = System::Drawing::Size(475, 58);
 			this->groupBox5->TabIndex = 16;
 			this->groupBox5->TabStop = false;
 			this->groupBox5->Text = L"TVA test 3";
@@ -395,50 +375,47 @@ namespace ProjetAPP {
 			// numericUpDown4
 			// 
 			this->numericUpDown4->DecimalPlaces = 3;
-			this->numericUpDown4->Location = System::Drawing::Point(11, 38);
+			this->numericUpDown4->Location = System::Drawing::Point(8, 31);
+			this->numericUpDown4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown4->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown4->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown4->Name = L"numericUpDown4";
-			this->numericUpDown4->Size = System::Drawing::Size(112, 22);
+			this->numericUpDown4->Size = System::Drawing::Size(84, 20);
 			this->numericUpDown4->TabIndex = 26;
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(8, 17);
-			this->label10->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label10->Location = System::Drawing::Point(6, 14);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(67, 16);
+			this->label10->Size = System::Drawing::Size(55, 13);
 			this->label10->TabIndex = 18;
 			this->label10->Text = L"Taux TVA";
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(465, 17);
-			this->label11->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label11->Location = System::Drawing::Point(349, 14);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(128, 16);
+			this->label11->Size = System::Drawing::Size(104, 13);
 			this->label11->TabIndex = 19;
 			this->label11->Text = L"Démarque Inconnue";
 			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(305, 17);
-			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label12->Location = System::Drawing::Point(229, 14);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(127, 16);
+			this->label12->Size = System::Drawing::Size(98, 13);
 			this->label12->TabIndex = 18;
 			this->label12->Text = L"Remise commercial";
 			// 
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(145, 17);
-			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label13->Location = System::Drawing::Point(109, 14);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(119, 16);
+			this->label13->Size = System::Drawing::Size(93, 13);
 			this->label13->TabIndex = 17;
 			this->label13->Text = L"Marge commercial";
 			// 
@@ -446,10 +423,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox9->FormattingEnabled = true;
 			this->comboBox9->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"2%", L"3%", L"5%" });
-			this->comboBox9->Location = System::Drawing::Point(469, 38);
-			this->comboBox9->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox9->Location = System::Drawing::Point(352, 31);
 			this->comboBox9->Name = L"comboBox9";
-			this->comboBox9->Size = System::Drawing::Size(151, 24);
+			this->comboBox9->Size = System::Drawing::Size(114, 21);
 			this->comboBox9->TabIndex = 16;
 			this->comboBox9->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox9_SelectedIndexChanged);
 			// 
@@ -457,10 +433,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox10->FormattingEnabled = true;
 			this->comboBox10->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"5%", L"6%" });
-			this->comboBox10->Location = System::Drawing::Point(309, 37);
-			this->comboBox10->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox10->Location = System::Drawing::Point(232, 30);
 			this->comboBox10->Name = L"comboBox10";
-			this->comboBox10->Size = System::Drawing::Size(151, 24);
+			this->comboBox10->Size = System::Drawing::Size(114, 21);
 			this->comboBox10->TabIndex = 16;
 			this->comboBox10->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox10_SelectedIndexChanged);
 			// 
@@ -468,10 +443,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox11->FormattingEnabled = true;
 			this->comboBox11->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5%", L"10%", L"15%" });
-			this->comboBox11->Location = System::Drawing::Point(149, 37);
-			this->comboBox11->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox11->Location = System::Drawing::Point(112, 30);
 			this->comboBox11->Name = L"comboBox11";
-			this->comboBox11->Size = System::Drawing::Size(151, 24);
+			this->comboBox11->Size = System::Drawing::Size(114, 21);
 			this->comboBox11->TabIndex = 15;
 			this->comboBox11->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox11_SelectedIndexChanged);
 			// 
@@ -485,11 +459,9 @@ namespace ProjetAPP {
 			this->groupBox4->Controls->Add(this->comboBox6);
 			this->groupBox4->Controls->Add(this->comboBox7);
 			this->groupBox4->Controls->Add(this->comboBox8);
-			this->groupBox4->Location = System::Drawing::Point(9, 140);
-			this->groupBox4->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox4->Location = System::Drawing::Point(7, 114);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox4->Size = System::Drawing::Size(633, 71);
+			this->groupBox4->Size = System::Drawing::Size(475, 58);
 			this->groupBox4->TabIndex = 15;
 			this->groupBox4->TabStop = false;
 			this->groupBox4->Text = L"TVA test 2";
@@ -497,50 +469,47 @@ namespace ProjetAPP {
 			// numericUpDown3
 			// 
 			this->numericUpDown3->DecimalPlaces = 3;
-			this->numericUpDown3->Location = System::Drawing::Point(11, 38);
+			this->numericUpDown3->Location = System::Drawing::Point(8, 31);
+			this->numericUpDown3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown3->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(112, 22);
+			this->numericUpDown3->Size = System::Drawing::Size(84, 20);
 			this->numericUpDown3->TabIndex = 26;
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(8, 17);
-			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label9->Location = System::Drawing::Point(6, 14);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(67, 16);
+			this->label9->Size = System::Drawing::Size(55, 13);
 			this->label9->TabIndex = 18;
 			this->label9->Text = L"Taux TVA";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(465, 17);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Location = System::Drawing::Point(349, 14);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(128, 16);
+			this->label6->Size = System::Drawing::Size(104, 13);
 			this->label6->TabIndex = 19;
 			this->label6->Text = L"Démarque Inconnue";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(305, 17);
-			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label7->Location = System::Drawing::Point(229, 14);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(127, 16);
+			this->label7->Size = System::Drawing::Size(98, 13);
 			this->label7->TabIndex = 18;
 			this->label7->Text = L"Remise commercial";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(145, 17);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Location = System::Drawing::Point(109, 14);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(119, 16);
+			this->label8->Size = System::Drawing::Size(93, 13);
 			this->label8->TabIndex = 17;
 			this->label8->Text = L"Marge commercial";
 			// 
@@ -548,10 +517,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox6->FormattingEnabled = true;
 			this->comboBox6->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"2%", L"3%", L"5%" });
-			this->comboBox6->Location = System::Drawing::Point(469, 38);
-			this->comboBox6->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox6->Location = System::Drawing::Point(352, 31);
 			this->comboBox6->Name = L"comboBox6";
-			this->comboBox6->Size = System::Drawing::Size(151, 24);
+			this->comboBox6->Size = System::Drawing::Size(114, 21);
 			this->comboBox6->TabIndex = 16;
 			this->comboBox6->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox6_SelectedIndexChanged);
 			// 
@@ -559,10 +527,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox7->FormattingEnabled = true;
 			this->comboBox7->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"5%", L"6%" });
-			this->comboBox7->Location = System::Drawing::Point(309, 37);
-			this->comboBox7->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox7->Location = System::Drawing::Point(232, 30);
 			this->comboBox7->Name = L"comboBox7";
-			this->comboBox7->Size = System::Drawing::Size(151, 24);
+			this->comboBox7->Size = System::Drawing::Size(114, 21);
 			this->comboBox7->TabIndex = 16;
 			this->comboBox7->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox7_SelectedIndexChanged);
 			// 
@@ -570,10 +537,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox8->FormattingEnabled = true;
 			this->comboBox8->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5%", L"10%", L"15%" });
-			this->comboBox8->Location = System::Drawing::Point(149, 37);
-			this->comboBox8->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox8->Location = System::Drawing::Point(112, 30);
 			this->comboBox8->Name = L"comboBox8";
-			this->comboBox8->Size = System::Drawing::Size(151, 24);
+			this->comboBox8->Size = System::Drawing::Size(114, 21);
 			this->comboBox8->TabIndex = 15;
 			this->comboBox8->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox8_SelectedIndexChanged);
 			// 
@@ -587,11 +553,9 @@ namespace ProjetAPP {
 			this->groupBox3->Controls->Add(this->comboBox5);
 			this->groupBox3->Controls->Add(this->comboBox4);
 			this->groupBox3->Controls->Add(this->comboBox3);
-			this->groupBox3->Location = System::Drawing::Point(9, 62);
-			this->groupBox3->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox3->Location = System::Drawing::Point(7, 50);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox3->Size = System::Drawing::Size(633, 71);
+			this->groupBox3->Size = System::Drawing::Size(475, 58);
 			this->groupBox3->TabIndex = 14;
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"TVA test1";
@@ -599,31 +563,30 @@ namespace ProjetAPP {
 			// numericUpDown2
 			// 
 			this->numericUpDown2->DecimalPlaces = 2;
-			this->numericUpDown2->Location = System::Drawing::Point(11, 37);
+			this->numericUpDown2->Location = System::Drawing::Point(8, 30);
+			this->numericUpDown2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown2->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown2->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown2->Name = L"numericUpDown2";
-			this->numericUpDown2->Size = System::Drawing::Size(112, 22);
+			this->numericUpDown2->Size = System::Drawing::Size(84, 20);
 			this->numericUpDown2->TabIndex = 25;
 			this->numericUpDown2->ValueChanged += gcnew System::EventHandler(this, &MyFormStat::numericUpDown2_ValueChanged);
 			// 
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(8, 17);
-			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label14->Location = System::Drawing::Point(6, 14);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(67, 16);
+			this->label14->Size = System::Drawing::Size(55, 13);
 			this->label14->TabIndex = 22;
 			this->label14->Text = L"Taux TVA";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(465, 17);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(349, 14);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(128, 16);
+			this->label5->Size = System::Drawing::Size(104, 13);
 			this->label5->TabIndex = 19;
 			this->label5->Text = L"Démarque Inconnue";
 			this->label5->Click += gcnew System::EventHandler(this, &MyFormStat::label5_Click);
@@ -631,10 +594,9 @@ namespace ProjetAPP {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(305, 17);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(229, 14);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(127, 16);
+			this->label4->Size = System::Drawing::Size(98, 13);
 			this->label4->TabIndex = 18;
 			this->label4->Text = L"Remise commercial";
 			this->label4->Click += gcnew System::EventHandler(this, &MyFormStat::label4_Click);
@@ -642,10 +604,9 @@ namespace ProjetAPP {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(145, 17);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(109, 14);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(119, 16);
+			this->label3->Size = System::Drawing::Size(93, 13);
 			this->label3->TabIndex = 17;
 			this->label3->Text = L"Marge commercial";
 			this->label3->Click += gcnew System::EventHandler(this, &MyFormStat::label3_Click);
@@ -654,10 +615,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox5->FormattingEnabled = true;
 			this->comboBox5->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"2%", L"3%", L"5%" });
-			this->comboBox5->Location = System::Drawing::Point(469, 38);
-			this->comboBox5->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox5->Location = System::Drawing::Point(352, 31);
 			this->comboBox5->Name = L"comboBox5";
-			this->comboBox5->Size = System::Drawing::Size(151, 24);
+			this->comboBox5->Size = System::Drawing::Size(114, 21);
 			this->comboBox5->TabIndex = 16;
 			this->comboBox5->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox5_SelectedIndexChanged);
 			// 
@@ -665,10 +625,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox4->FormattingEnabled = true;
 			this->comboBox4->Items->AddRange(gcnew cli::array< System::Object^  >(2) { L"5%", L"6%" });
-			this->comboBox4->Location = System::Drawing::Point(309, 37);
-			this->comboBox4->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox4->Location = System::Drawing::Point(232, 30);
 			this->comboBox4->Name = L"comboBox4";
-			this->comboBox4->Size = System::Drawing::Size(151, 24);
+			this->comboBox4->Size = System::Drawing::Size(114, 21);
 			this->comboBox4->TabIndex = 16;
 			this->comboBox4->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox4_SelectedIndexChanged);
 			// 
@@ -676,10 +635,9 @@ namespace ProjetAPP {
 			// 
 			this->comboBox3->FormattingEnabled = true;
 			this->comboBox3->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"5%", L"10%", L"15%" });
-			this->comboBox3->Location = System::Drawing::Point(149, 37);
-			this->comboBox3->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox3->Location = System::Drawing::Point(112, 30);
 			this->comboBox3->Name = L"comboBox3";
-			this->comboBox3->Size = System::Drawing::Size(151, 24);
+			this->comboBox3->Size = System::Drawing::Size(114, 21);
 			this->comboBox3->TabIndex = 15;
 			this->comboBox3->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormStat::comboBox3_SelectedIndexChanged);
 			this->comboBox3->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyFormStat::comboBox3_KeyUp);
@@ -687,27 +645,29 @@ namespace ProjetAPP {
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(158, 259);
-			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label15->Location = System::Drawing::Point(118, 210);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(56, 16);
+			this->label15->Size = System::Drawing::Size(47, 13);
 			this->label15->TabIndex = 23;
 			this->label15->Text = L"ID Client";
 			// 
 			// numericUpDown1
 			// 
-			this->numericUpDown1->Location = System::Drawing::Point(221, 257);
+			this->numericUpDown1->Location = System::Drawing::Point(166, 209);
+			this->numericUpDown1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 10000, 0, 0, System::Int32::MinValue });
 			this->numericUpDown1->Name = L"numericUpDown1";
-			this->numericUpDown1->Size = System::Drawing::Size(68, 22);
+			this->numericUpDown1->Size = System::Drawing::Size(51, 20);
 			this->numericUpDown1->TabIndex = 24;
 			// 
 			// MyFormStat
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1377, 742);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1033, 603);
 			this->Controls->Add(this->numericUpDown1);
 			this->Controls->Add(this->label15);
 			this->Controls->Add(this->groupBox2);
@@ -721,7 +681,8 @@ namespace ProjetAPP {
 			this->Controls->Add(this->btnStat3);
 			this->Controls->Add(this->btnStat1);
 			this->Controls->Add(this->btnReturn);
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyFormStat";
 			this->Text = L"MyFormStat";
 			this->Load += gcnew System::EventHandler(this, &MyFormStat::MyFormStat_Load);

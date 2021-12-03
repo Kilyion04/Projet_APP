@@ -88,6 +88,7 @@ namespace ProjetAPP {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyFormPersoSelecMod::typeid));
 			this->btnModCli = (gcnew System::Windows::Forms::Button());
 			this->btnReturn = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
@@ -117,10 +118,9 @@ namespace ProjetAPP {
 			// 
 			// btnModCli
 			// 
-			this->btnModCli->Location = System::Drawing::Point(16, 71);
-			this->btnModCli->Margin = System::Windows::Forms::Padding(4);
+			this->btnModCli->Location = System::Drawing::Point(12, 58);
 			this->btnModCli->Name = L"btnModCli";
-			this->btnModCli->Size = System::Drawing::Size(100, 28);
+			this->btnModCli->Size = System::Drawing::Size(75, 23);
 			this->btnModCli->TabIndex = 41;
 			this->btnModCli->Text = L"Modifier";
 			this->btnModCli->UseVisualStyleBackColor = true;
@@ -128,10 +128,9 @@ namespace ProjetAPP {
 			// 
 			// btnReturn
 			// 
-			this->btnReturn->Location = System::Drawing::Point(16, 15);
-			this->btnReturn->Margin = System::Windows::Forms::Padding(4);
+			this->btnReturn->Location = System::Drawing::Point(12, 12);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(100, 28);
+			this->btnReturn->Size = System::Drawing::Size(75, 23);
 			this->btnReturn->TabIndex = 47;
 			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = true;
@@ -139,9 +138,10 @@ namespace ProjetAPP {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(327, 340);
+			this->button2->Location = System::Drawing::Point(245, 276);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(117, 41);
+			this->button2->Size = System::Drawing::Size(88, 33);
 			this->button2->TabIndex = 70;
 			this->button2->Text = L"Actualiser villes";
 			this->button2->UseVisualStyleBackColor = true;
@@ -157,86 +157,76 @@ namespace ProjetAPP {
 			this->groupBox2->Controls->Add(this->label7);
 			this->groupBox2->Controls->Add(this->label6);
 			this->groupBox2->Controls->Add(this->comboBox1);
-			this->groupBox2->Location = System::Drawing::Point(3, 252);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(4);
+			this->groupBox2->Location = System::Drawing::Point(2, 205);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
-			this->groupBox2->Size = System::Drawing::Size(611, 81);
+			this->groupBox2->Size = System::Drawing::Size(458, 66);
 			this->groupBox2->TabIndex = 69;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Adresse";
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(464, 44);
-			this->textBox7->Margin = System::Windows::Forms::Padding(4);
+			this->textBox7->Location = System::Drawing::Point(348, 36);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(77, 22);
+			this->textBox7->Size = System::Drawing::Size(59, 20);
 			this->textBox7->TabIndex = 46;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(13, 43);
-			this->textBox5->Margin = System::Windows::Forms::Padding(4);
+			this->textBox5->Location = System::Drawing::Point(10, 35);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(49, 22);
+			this->textBox5->Size = System::Drawing::Size(38, 20);
 			this->textBox5->TabIndex = 43;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(9, 20);
-			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Location = System::Drawing::Point(7, 16);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(21, 16);
+			this->label5->Size = System::Drawing::Size(19, 13);
 			this->label5->TabIndex = 21;
 			this->label5->Text = L"N°";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(461, 20);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Location = System::Drawing::Point(346, 16);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(80, 16);
+			this->label8->Size = System::Drawing::Size(63, 13);
 			this->label8->TabIndex = 24;
 			this->label8->Text = L"Code postal";
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(72, 43);
-			this->textBox6->Margin = System::Windows::Forms::Padding(4);
+			this->textBox6->Location = System::Drawing::Point(54, 35);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(243, 22);
+			this->textBox6->Size = System::Drawing::Size(183, 20);
 			this->textBox6->TabIndex = 44;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(320, 20);
-			this->label7->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label7->Location = System::Drawing::Point(240, 16);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(33, 16);
+			this->label7->Size = System::Drawing::Size(26, 13);
 			this->label7->TabIndex = 23;
 			this->label7->Text = L"Ville";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(68, 20);
-			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label6->Location = System::Drawing::Point(51, 16);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(84, 16);
+			this->label6->Size = System::Drawing::Size(67, 13);
 			this->label6->TabIndex = 22;
 			this->label6->Text = L"Nom de voie";
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(324, 42);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
+			this->comboBox1->Location = System::Drawing::Point(243, 34);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(132, 24);
+			this->comboBox1->Size = System::Drawing::Size(100, 21);
 			this->comboBox1->TabIndex = 45;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyFormPersoSelecMod::comboBox1_SelectedIndexChanged);
 			this->comboBox1->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyFormPersoSelecMod::comboBox1_KeyUp);
@@ -244,40 +234,36 @@ namespace ProjetAPP {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(12, 346);
-			this->label9->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label9->Location = System::Drawing::Point(9, 281);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(36, 16);
+			this->label9->Size = System::Drawing::Size(30, 13);
 			this->label9->TabIndex = 68;
 			this->label9->Text = L"Date";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(323, 199);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(242, 162);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(65, 16);
+			this->label4->Size = System::Drawing::Size(52, 13);
 			this->label4->TabIndex = 66;
 			this->label4->Text = L"Supérieur";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(12, 199);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(9, 162);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(54, 16);
+			this->label3->Size = System::Drawing::Size(43, 13);
 			this->label3->TabIndex = 65;
 			this->label3->Text = L"Prénom";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(12, 139);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(9, 113);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(36, 16);
+			this->label2->Size = System::Drawing::Size(29, 13);
 			this->label2->TabIndex = 64;
 			this->label2->Text = L"Nom";
 			// 
@@ -285,62 +271,64 @@ namespace ProjetAPP {
 			// 
 			this->dateTimePicker1->CustomFormat = L"yyyy-MM-dd";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(16, 365);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(4);
+			this->dateTimePicker1->Location = System::Drawing::Point(12, 297);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(139, 22);
+			this->dateTimePicker1->Size = System::Drawing::Size(105, 20);
 			this->dateTimePicker1->TabIndex = 63;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(16, 219);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4);
+			this->textBox3->Location = System::Drawing::Point(12, 178);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(243, 22);
+			this->textBox3->Size = System::Drawing::Size(183, 20);
 			this->textBox3->TabIndex = 60;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(16, 159);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4);
+			this->textBox2->Location = System::Drawing::Point(12, 129);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(243, 22);
+			this->textBox2->Size = System::Drawing::Size(183, 20);
 			this->textBox2->TabIndex = 59;
 			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Location = System::Drawing::Point(326, 15);
+			this->dataGridView1->Location = System::Drawing::Point(244, 12);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->Size = System::Drawing::Size(288, 166);
+			this->dataGridView1->Size = System::Drawing::Size(216, 135);
 			this->dataGridView1->TabIndex = 71;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormPersoSelecMod::dataGridView1_CellContentClick);
 			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(162, 370);
+			this->checkBox1->Location = System::Drawing::Point(122, 301);
+			this->checkBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(18, 17);
+			this->checkBox1->Size = System::Drawing::Size(15, 14);
 			this->checkBox1->TabIndex = 47;
 			this->checkBox1->UseVisualStyleBackColor = true;
 			this->checkBox1->CheckedChanged += gcnew System::EventHandler(this, &MyFormPersoSelecMod::checkBox1_CheckedChanged);
 			// 
 			// numericUpDown3
 			// 
-			this->numericUpDown3->Location = System::Drawing::Point(327, 218);
+			this->numericUpDown3->Location = System::Drawing::Point(245, 177);
+			this->numericUpDown3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->numericUpDown3->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 100000, 0, 0, 0 });
 			this->numericUpDown3->Name = L"numericUpDown3";
-			this->numericUpDown3->Size = System::Drawing::Size(120, 22);
+			this->numericUpDown3->Size = System::Drawing::Size(90, 20);
 			this->numericUpDown3->TabIndex = 72;
 			// 
 			// MyFormPersoSelecMod
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(637, 416);
+			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(478, 338);
 			this->Controls->Add(this->numericUpDown3);
 			this->Controls->Add(this->checkBox1);
 			this->Controls->Add(this->button2);
@@ -355,7 +343,8 @@ namespace ProjetAPP {
 			this->Controls->Add(this->btnReturn);
 			this->Controls->Add(this->btnModCli);
 			this->Controls->Add(this->dataGridView1);
-			this->Margin = System::Windows::Forms::Padding(4);
+			this->DoubleBuffered = true;
+			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
 			this->Name = L"MyFormPersoSelecMod";
 			this->Text = L"MyFormPersoSelecMod";
 			this->Load += gcnew System::EventHandler(this, &MyFormPersoSelecMod::MyFormPersoSelecMod_Load);
