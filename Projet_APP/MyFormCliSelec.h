@@ -55,6 +55,7 @@ namespace ProjetAPP {
 	private: System::String^ idClient;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::PictureBox^ pictureBox1;
 
 	private:
 		/// <summary>
@@ -76,16 +77,19 @@ namespace ProjetAPP {
 			this->btnModCli = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CliView))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// btnReturn
 			// 
 			this->btnReturn->BackColor = System::Drawing::Color::Transparent;
 			this->btnReturn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->btnReturn->Location = System::Drawing::Point(12, 12);
+			this->btnReturn->Location = System::Drawing::Point(16, 15);
+			this->btnReturn->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnReturn->Name = L"btnReturn";
-			this->btnReturn->Size = System::Drawing::Size(75, 23);
+			this->btnReturn->Size = System::Drawing::Size(100, 28);
 			this->btnReturn->TabIndex = 1;
 			this->btnReturn->Text = L"Retour";
 			this->btnReturn->UseVisualStyleBackColor = false;
@@ -96,10 +100,11 @@ namespace ProjetAPP {
 			this->CliView->BackgroundColor = System::Drawing::Color::White;
 			this->CliView->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->CliView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->CliView->Location = System::Drawing::Point(12, 41);
+			this->CliView->Location = System::Drawing::Point(16, 50);
+			this->CliView->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->CliView->Name = L"CliView";
 			this->CliView->RowHeadersWidth = 51;
-			this->CliView->Size = System::Drawing::Size(758, 76);
+			this->CliView->Size = System::Drawing::Size(1011, 114);
 			this->CliView->TabIndex = 2;
 			this->CliView->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &MyFormCliSelec::CliView_Click);
 			// 
@@ -107,9 +112,10 @@ namespace ProjetAPP {
 			// 
 			this->btnSupCli->BackColor = System::Drawing::Color::Transparent;
 			this->btnSupCli->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->btnSupCli->Location = System::Drawing::Point(93, 124);
+			this->btnSupCli->Location = System::Drawing::Point(124, 174);
+			this->btnSupCli->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnSupCli->Name = L"btnSupCli";
-			this->btnSupCli->Size = System::Drawing::Size(75, 23);
+			this->btnSupCli->Size = System::Drawing::Size(100, 28);
 			this->btnSupCli->TabIndex = 40;
 			this->btnSupCli->Text = L"Supprimer";
 			this->btnSupCli->UseVisualStyleBackColor = false;
@@ -119,9 +125,10 @@ namespace ProjetAPP {
 			// 
 			this->btnModCli->BackColor = System::Drawing::Color::Transparent;
 			this->btnModCli->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->btnModCli->Location = System::Drawing::Point(12, 124);
+			this->btnModCli->Location = System::Drawing::Point(16, 175);
+			this->btnModCli->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->btnModCli->Name = L"btnModCli";
-			this->btnModCli->Size = System::Drawing::Size(75, 23);
+			this->btnModCli->Size = System::Drawing::Size(100, 28);
 			this->btnModCli->TabIndex = 39;
 			this->btnModCli->Text = L"Modifier";
 			this->btnModCli->UseVisualStyleBackColor = false;
@@ -131,9 +138,10 @@ namespace ProjetAPP {
 			// 
 			this->button2->BackColor = System::Drawing::Color::Transparent;
 			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button2->Location = System::Drawing::Point(174, 124);
+			this->button2->Location = System::Drawing::Point(232, 175);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(131, 23);
+			this->button2->Size = System::Drawing::Size(175, 28);
 			this->button2->TabIndex = 42;
 			this->button2->Text = L"Adresse(s) de livraison";
 			this->button2->UseVisualStyleBackColor = false;
@@ -143,21 +151,36 @@ namespace ProjetAPP {
 			// 
 			this->button1->BackColor = System::Drawing::Color::Transparent;
 			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button1->Location = System::Drawing::Point(311, 124);
+			this->button1->Location = System::Drawing::Point(415, 175);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(149, 23);
+			this->button1->Size = System::Drawing::Size(199, 28);
 			this->button1->TabIndex = 43;
 			this->button1->Text = L"Adresse(s) de facturation";
 			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &MyFormCliSelec::button1_Click);
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->BackColor = System::Drawing::Color::Transparent;
+			this->pictureBox1->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Center;
+			this->pictureBox1->Image = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"pictureBox1.Image")));
+			this->pictureBox1->Location = System::Drawing::Point(847, 172);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(4);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(180, 60);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 76;
+			this->pictureBox1->TabStop = false;
+			// 
 			// MyFormCliSelec
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(782, 157);
+			this->ClientSize = System::Drawing::Size(1053, 245);
+			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->btnSupCli);
@@ -166,10 +189,12 @@ namespace ProjetAPP {
 			this->Controls->Add(this->btnReturn);
 			this->DoubleBuffered = true;
 			this->Icon = (cli::safe_cast<System::Drawing::Icon^>(resources->GetObject(L"$this.Icon")));
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyFormCliSelec";
 			this->Text = L"MyFormCliSelec";
 			this->Load += gcnew System::EventHandler(this, &MyFormCliSelec::MyFormCliSelec_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->CliView))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 
 		}

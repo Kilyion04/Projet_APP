@@ -33,7 +33,7 @@ System::String^ NS_Comp_Mappage_Commande::mapCommande::afficherUneCommande(void)
 
 System::String^ NS_Comp_Mappage_Commande::mapCommande::afficherToutCommande(void)
 {
-	return "SELECT * FROM commande;";
+	return "SELECT * FROM commande ;";
 }
 
 System::String^ NS_Comp_Mappage_Commande::mapCommande::ajouterArticle(void)

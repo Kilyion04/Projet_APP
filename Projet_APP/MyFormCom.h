@@ -1180,6 +1180,7 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 		MessageBoxButtons::OK, MessageBoxIcon::Warning);
 		this->nbArticles = 0;
 		this->i = 0;
+		refreshCommande();
 	}
 }
 private: void refreshCommande() {
